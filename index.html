@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam & Health Boutique 593 | Cosméticos, Vitaminas y Ropa Americana</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#FFFBF9',
+                            100: '#FBE9EC',
+                            200: '#F4D3D8',
+                            300: '#E8B4BC',
+                            400: '#D48C98',
+                            500: '#B56576',
+                            600: '#9E475B',
+                            700: '#823647',
+                            800: '#682A39',
+                            900: '#4A1F2B',
+                        },
+                        champagne: {
+                            50: '#FBF8F3',
+                            100: '#F5EFE6',
+                            200: '#E8D8C8',
+                            400: '#D4B483',
+                            500: '#C5A059',
+                            600: '#A6823E',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFBF9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E8B4BC;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B56576;
+        }
+        .glass-header {
+            background: rgba(255, 251, 249, 0.92);
+            backdrop-filter: blur(14px);
+        }
+        .soft-card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(181, 101, 118, 0.08), 0 4px 12px -2px rgba(181, 101, 118, 0.04);
+        }
+        .soft-card-shadow:hover {
+            box-shadow: 0 20px 35px -8px rgba(181, 101, 118, 0.16), 0 8px 16px -4px rgba(181, 101, 118, 0.06);
+        }
+        .fade-in {
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-[#FFFBF9] text-[#4A353B] font-sans antialiased min-h-screen flex flex-col selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Top Promo Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-brand-700 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide shadow-xs">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <span id="topPromoBanner">
+                <i class="fa-solid fa-wand-magic-sparkles text-champagne-200 mr-1.5"></i> Envíos a domicilio | Usa el cupón <strong class="underline text-champagne-200 cursor-pointer" onclick="copyPromoCode('BIENVENIDA10')">BIENVENIDA10</strong> para 10% OFF
+            </span>
+            <span id="cloudStatusBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] bg-white/15 text-white font-semibold ml-2">
+                <span id="cloudStatusDot" class="w-2 h-2 rounded-full bg-amber-300 animate-pulse"></span>
+                <span id="cloudStatusText">Modo Local / Conectando...</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 glass-header border-b border-brand-200/60 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#" onclick="switchView('store'); return false;" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-gem text-lg text-champagne-100"></i>
+                </div>
+                <div>
+                    <span id="headerStoreName" class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-brand-900 block leading-none">
+                        Glam & Health
+                    </span>
+                    <span class="text-[11px] uppercase tracking-widest text-brand-500 font-semibold block mt-1">
+                        Cosméticos • Vitaminas • Boutique USA
+                    </span>
+                </div>
+            </a>
+
+            <!-- Quick Search Bar (Desktop) -->
+            <div id="headerSearchContainer" class="hidden md:flex flex-1 max-w-md mx-6">
+                <div class="relative w-full">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-brand-400 text-sm"></i>
+                    <input 
+                        type="text" 
+                        id="desktopSearchInput" 
+                        placeholder="Buscar labiales, colágeno, chaquetas, tallas..." 
+                        oninput="handleSearchInput(this.value)"
+                        class="w-full pl-11 pr-9 py-2.5 bg-brand-100/50 hover:bg-brand-100/80 focus:bg-white rounded-full text-sm border border-brand-200/80 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 focus:outline-none transition-all placeholder:text-brand-400"
+                    >
+                    <button id="clearDesktopSearch" onclick="handleSearchInput('')" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-brand-400 hover:text-brand-700">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Action Buttons (Store / Admin Switch + Cart Drawer Trigger) -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <button 
+                    id="navStoreBtn"
+                    onclick="switchView('store')" 
+                    class="hidden items-center gap-2 px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-brand-100 text-brand-800 hover:bg-brand-200 transition-colors"
+                >
+                    <i class="fa-solid fa-store"></i>
+                    <span>Ver Tienda</span>
+                </button>
+
+                <button 
+                    id="navAdminBtn"
+                    onclick="handleAdminAccess()" 
+                    class="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-brand-200 bg-white text-brand-800 hover:bg-brand-100/60 transition-all"
+                    title="Panel Administrable"
+                >
+                    <i class="fa-solid fa-sliders text-brand-500"></i>
+                    <span class="hidden sm:inline">Panel Admin</span>
+                </button>
+
+                <button 
+                    onclick="toggleCartDrawer(true)" 
+                    class="relative flex items-center gap-2.5 bg-brand-600 hover:bg-brand-700 text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-md shadow-brand-600/20 hover:shadow-lg transition-all active:scale-95"
+                >
+                    <i class="fa-solid fa-bag-shopping text-base"></i>
+                    <span class="hidden sm:inline">Mi Carrito</span>
+                    <span id="cartCountBadge" class="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 text-xs font-bold bg-champagne-100 text-brand-900 rounded-full">
+                        0
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Search Bar -->
+        <div id="mobileSearchContainer" class="md:hidden px-4 pb-3">
+            <div class="relative w-full">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-brand-400 text-sm"></i>
+                <input 
+                    type="text" 
+                    id="mobileSearchInput" 
+                    placeholder="Buscar cosméticos, vitaminas o ropa..." 
+                    oninput="handleSearchInput(this.value)"
+                    class="w-full pl-10 pr-9 py-2 bg-brand-100/50 focus:bg-white rounded-full text-sm border border-brand-200 focus:border-brand-500 focus:outline-none"
+                >
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- CLIENT STOREFRONT VIEW                     -->
+    <!-- ========================================== -->
+    <main id="storeView" class="flex-1">
+        <!-- Warm Feminine Hero Banner -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-[#FBE9EC] via-[#FDF6F3] to-[#F5EFE6] border-b border-brand-200/60">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-200/40 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-champagne-200/40 blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="max-w-2xl text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
+                        <i class="fa-solid fa-heart text-brand-500"></i> Boutique Exclusiva • Productos 100% Originales USA
+                    </div>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-brand-900 leading-tight">
+                        Realza tu belleza, cuida tu bienestar y viste con encanto.
+                    </h1>
+                    <p class="mt-3 sm:mt-4 text-[#6D545D] text-sm sm:text-base leading-relaxed">
+                        Descubre nuestra selección de maquillaje importado, vitaminas esenciales y moda americana. Elige tu tono, presentación o talla favorita y recíbelo cómodamente en la puerta de tu hogar.
+                    </p>
+                    <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                        <a href="#catalogo" class="px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-lg shadow-brand-600/25 transition-all flex items-center gap-2">
+                            <span>Ver Colección</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <div class="flex items-center gap-4 text-xs sm:text-sm text-brand-800 font-medium px-3 py-2">
+                            <span><i class="fa-solid fa-circle-check text-brand-500 mr-1"></i> Entrega a domicilio</span>
+                            <span><i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> Atención personalizada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Highlight Cards -->
+                <div class="grid grid-cols-3 gap-3 sm:gap-4 w-full lg:w-auto max-w-md">
+                    <button onclick="setCategoryFilter('Cosméticos'); document.getElementById('catalogo').scrollIntoView();" class="group bg-white/90 hover:bg-white p-3.5 sm:p-4 rounded-2xl border border-brand-200/80 text-center soft-card-shadow transition-all">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 mx-auto rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-lg sm:text-xl mb-2 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <span class="block font-bold text-brand-900 text-xs sm:text-sm">Cosméticos</span>
+                        <span class="text-[11px] text-brand-500 hidden sm:block mt-0.5">Maquillaje & Piel</span>
+                    </button>
+
+                    <button onclick="setCategoryFilter('Vitaminas'); document.getElementById('catalogo').scrollIntoView();" class="group bg-white/90 hover:bg-white p-3.5 sm:p-4 rounded-2xl border border-brand-200/80 text-center soft-card-shadow transition-all">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 mx-auto rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg sm:text-xl mb-2 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <span class="block font-bold text-brand-900 text-xs sm:text-sm">Vitaminas</span>
+                        <span class="text-[11px] text-brand-500 hidden sm:block mt-0.5">Colágeno & Salud</span>
+                    </button>
+
+                    <button onclick="setCategoryFilter('Ropa Americana'); document.getElementById('catalogo').scrollIntoView();" class="group bg-white/90 hover:bg-white p-3.5 sm:p-4 rounded-2xl border border-brand-200/80 text-center soft-card-shadow transition-all">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 mx-auto rounded-2xl bg-champagne-100 text-champagne-600 flex items-center justify-center text-lg sm:text-xl mb-2 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <span class="block font-bold text-brand-900 text-xs sm:text-sm">Ropa USA</span>
+                        <span class="text-[11px] text-brand-500 hidden sm:block mt-0.5">Tallas S a XL</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog & Filter Controls Section -->
+        <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+            <!-- Category Pills + Price & Sort Filters -->
+            <div class="bg-white p-4 sm:p-5 rounded-3xl soft-card-shadow border border-brand-200/60 mb-8">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <!-- Category Tabs -->
+                    <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0" id="categoryTabs">
+                        <button onclick="setCategoryFilter('Todos')" data-cat="Todos" class="cat-tab px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-brand-600 text-white shadow-sm">
+                            <i class="fa-solid fa-border-all mr-1.5"></i> Todos
+                        </button>
+                        <button onclick="setCategoryFilter('Cosméticos')" data-cat="Cosméticos" class="cat-tab px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-brand-50 text-brand-800 border border-brand-200 hover:bg-brand-100">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-brand-500"></i> Cosméticos
+                        </button>
+                        <button onclick="setCategoryFilter('Vitaminas')" data-cat="Vitaminas" class="cat-tab px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-brand-50 text-brand-800 border border-brand-200 hover:bg-brand-100">
+                            <i class="fa-solid fa-capsules mr-1.5 text-emerald-600"></i> Vitaminas
+                        </button>
+                        <button onclick="setCategoryFilter('Ropa Americana')" data-cat="Ropa Americana" class="cat-tab px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-brand-50 text-brand-800 border border-brand-200 hover:bg-brand-100">
+                            <i class="fa-solid fa-shirt mr-1.5 text-champagne-600"></i> Ropa Americana
+                        </button>
+                    </div>
+
+                    <!-- Price Range & Order Selectors -->
+                    <div class="flex flex-wrap sm:flex-nowrap items-center gap-3">
+                        <div class="flex items-center gap-2 flex-1 sm:flex-initial">
+                            <label for="priceFilter" class="text-xs font-bold text-brand-600 uppercase whitespace-nowrap">Precio:</label>
+                            <select id="priceFilter" onchange="renderCatalog()" class="w-full sm:w-auto px-3.5 py-2 rounded-2xl bg-brand-50 border border-brand-200 text-sm font-medium text-brand-900 focus:outline-none focus:border-brand-500">
+                                <option value="all">Todos los precios</option>
+                                <option value="under15">Menos de $15.00</option>
+                                <option value="15to30">$15.00 a $30.00</option>
+                                <option value="over30">Más de $30.00</option>
+                            </select>
+                        </div>
+
+                        <div class="flex items-center gap-2 flex-1 sm:flex-initial">
+                            <label for="sortFilter" class="text-xs font-bold text-brand-600 uppercase whitespace-nowrap">Ordenar:</label>
+                            <select id="sortFilter" onchange="renderCatalog()" class="w-full sm:w-auto px-3.5 py-2 rounded-2xl bg-brand-50 border border-brand-200 text-sm font-medium text-brand-900 focus:outline-none focus:border-brand-500">
+                                <option value="featured">Favoritos de la Tienda</option>
+                                <option value="priceAsc">Precio: Menor a Mayor</option>
+                                <option value="priceDesc">Precio: Mayor a Menor</option>
+                                <option value="nameAsc">Nombre (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Filter Status Bar -->
+                <div class="mt-3 pt-3 border-t border-brand-100 flex items-center justify-between text-xs text-brand-600">
+                    <span id="resultsCounterText">Mostrando todos los productos</span>
+                    <button id="resetFiltersBtn" onclick="resetAllFilters()" class="hidden text-brand-600 hover:text-brand-800 font-bold underline">
+                        <i class="fa-solid fa-rotate-left mr-1"></i> Limpiar filtros
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="emptyCatalogState" class="hidden bg-white rounded-3xl p-12 text-center border border-brand-200 max-w-lg mx-auto my-8 soft-card-shadow">
+                <div class="w-16 h-16 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-brand-900">No encontramos coincidencias</h3>
+                <p class="text-sm text-brand-600 mt-1 mb-5">Prueba con otra palabra clave o explora todas nuestras categorías.</p>
+                <button onclick="resetAllFilters()" class="px-6 py-2.5 rounded-full bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition-colors">
+                    Mostrar todo el catálogo
+                </button>
+            </div>
+        </section>
+
+        <!-- Trust & Benefits Footer Banner -->
+        <section class="bg-gradient-to-b from-white to-brand-100/40 border-t border-brand-200/60 py-10 mt-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="flex items-start gap-4 p-5 rounded-3xl bg-white border border-brand-200/60 soft-card-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-brand-900 text-base">Entrega Rápida y Cuidadosa</h4>
+                        <p class="text-xs text-brand-700/80 mt-1 leading-relaxed">Coordinamos tu entrega por WhatsApp directamente hasta la puerta de tu casa u oficina.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 rounded-3xl bg-white border border-brand-200/60 soft-card-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-champagne-100 text-champagne-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-brand-900 text-base">Calidad 100% Original USA</h4>
+                        <p class="text-xs text-brand-700/80 mt-1 leading-relaxed">Cosméticos auténticos, suplementos sellados y prendas americanas con stock actualizado al instante.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 rounded-3xl bg-white border border-brand-200/60 soft-card-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-brand-900 text-base">Facilidad de Pago</h4>
+                        <p class="text-xs text-brand-700/80 mt-1 leading-relaxed">Paga en efectivo al recibir, por transferencia bancaria o con Deuna / Payphone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- ADMIN PANEL VIEW (PROTECTED CRUD + CLOUD)  -->
+    <!-- ========================================== -->
+    <section id="adminView" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Admin Header Bar -->
+        <div class="bg-gradient-to-r from-brand-800 via-brand-700 to-brand-600 text-white rounded-3xl p-6 sm:p-8 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
+            <div>
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-champagne-100 text-xs font-semibold">
+                        <i class="fa-solid fa-lock-open"></i> Modo Administradora Activo
+                    </span>
+                    <span id="adminCloudPill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 text-xs font-semibold">
+                        <i class="fa-solid fa-cloud"></i> Sincronización Lista
+                    </span>
+                </div>
+                <h1 class="font-serif text-2xl sm:text-3xl font-bold">Administración de Tu Boutique</h1>
+                <p class="text-brand-100 text-xs sm:text-sm mt-1">Todo cambio que guardes aquí se reflejará en los teléfonos Android y iPhone de tus clientas.</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2.5">
+                <button onclick="openProductModal()" class="px-4 py-2.5 rounded-2xl bg-white text-brand-800 hover:bg-champagne-50 text-sm font-bold shadow flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-plus text-brand-600"></i> Nuevo Producto
+                </button>
+                <button onclick="logoutAdmin()" class="px-4 py-2.5 rounded-2xl bg-brand-900/40 hover:bg-brand-900/60 text-white text-sm font-medium transition-all">
+                    <i class="fa-solid fa-right-from-bracket mr-1"></i> Salir
+                </button>
+            </div>
+        </div>
+
+        <!-- Admin KPI Summary Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white p-4 rounded-2xl border border-brand-200/70 soft-card-shadow">
+                <span class="text-xs text-brand-500 font-semibold">Total Productos</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="statTotalProducts" class="text-2xl font-bold text-brand-900">0</span>
+                    <i class="fa-solid fa-boxes-stacked text-brand-500"></i>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-brand-200/70 soft-card-shadow">
+                <span class="text-xs text-brand-500 font-semibold">Total Variantes (Tallas/Tonos)</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="statTotalVariants" class="text-2xl font-bold text-brand-900">0</span>
+                    <i class="fa-solid fa-tags text-champagne-500"></i>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-brand-200/70 soft-card-shadow">
+                <span class="text-xs text-brand-500 font-semibold">Unidades en Stock</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="statTotalStock" class="text-2xl font-bold text-emerald-600">0</span>
+                    <i class="fa-solid fa-warehouse text-emerald-500"></i>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-brand-200/70 soft-card-shadow">
+                <span class="text-xs text-brand-500 font-semibold">Cupones Activos</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="statActiveCoupons" class="text-2xl font-bold text-brand-600">0</span>
+                    <i class="fa-solid fa-ticket text-brand-500"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Navigation Tabs -->
+        <div class="flex border-b border-brand-200 mb-6 gap-2 overflow-x-auto">
+            <button onclick="switchAdminTab('products')" id="adminTabBtn-products" class="admin-tab-btn px-5 py-3 font-bold text-sm border-b-2 border-brand-600 text-brand-800 whitespace-nowrap">
+                <i class="fa-solid fa-box-open mr-1.5"></i> 1. Productos y Variantes
+            </button>
+            <button onclick="switchAdminTab('coupons')" id="adminTabBtn-coupons" class="admin-tab-btn px-5 py-3 font-bold text-sm border-b-2 border-transparent text-brand-400 hover:text-brand-700 whitespace-nowrap">
+                <i class="fa-solid fa-ticket mr-1.5"></i> 2. Cupones de Descuento
+            </button>
+            <button onclick="switchAdminTab('settings')" id="adminTabBtn-settings" class="admin-tab-btn px-5 py-3 font-bold text-sm border-b-2 border-transparent text-brand-400 hover:text-brand-700 whitespace-nowrap">
+                <i class="fa-solid fa-gear mr-1.5"></i> 3. WhatsApp y Envíos
+            </button>
+            <button onclick="switchAdminTab('cloud')" id="adminTabBtn-cloud" class="admin-tab-btn px-5 py-3 font-bold text-sm border-b-2 border-transparent text-brand-400 hover:text-brand-700 whitespace-nowrap">
+                <i class="fa-solid fa-cloud-arrow-up mr-1.5 text-emerald-600"></i> 4. Conexión Firebase (Nube en Vivo)
+            </button>
+        </div>
+
+        <!-- TAB 1: PRODUCTS & VARIANTS CRUD -->
+        <div id="adminTab-products" class="space-y-6">
+            <div class="bg-white rounded-3xl border border-brand-200/70 soft-card-shadow overflow-hidden">
+                <div class="p-5 sm:p-6 border-b border-brand-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="font-serif text-xl font-bold text-brand-900">Catálogo de Productos</h2>
+                        <p class="text-xs text-brand-500">Agrega, edita o elimina productos, fotos, tallas, tonos y precios.</p>
+                    </div>
+                    <button onclick="openProductModal()" class="px-4 py-2.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-bold transition-colors self-start sm:self-auto">
+                        <i class="fa-solid fa-plus mr-1.5"></i> Agregar Producto
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-brand-50 text-brand-600 text-xs uppercase tracking-wider border-b border-brand-200/70">
+                                <th class="py-3.5 px-4">Producto</th>
+                                <th class="py-3.5 px-4">Categoría</th>
+                                <th class="py-3.5 px-4">Variantes (Tallas / Tonos / Presentaciones)</th>
+                                <th class="py-3.5 px-4">Stock Total</th>
+                                <th class="py-3.5 px-4 text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductsTableBody" class="divide-y divide-brand-100 text-sm">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: COUPONS MANAGEMENT -->
+        <div id="adminTab-coupons" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-3xl border border-brand-200/70 soft-card-shadow h-fit">
+                <h3 class="font-serif text-lg font-bold text-brand-900 mb-1">Crear Nuevo Cupón</h3>
+                <p class="text-xs text-brand-500 mb-4">Configura códigos promocionales por porcentaje o monto fijo en dólares.</p>
+                <form id="couponForm" onsubmit="handleSaveCoupon(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Código Promocional *</label>
+                        <input type="text" id="couponCodeInput" required placeholder="Ej. GLAM15" class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm uppercase font-bold tracking-wider focus:outline-none focus:border-brand-500">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Tipo Descuento</label>
+                            <select id="couponTypeInput" class="w-full px-3 py-2 rounded-xl border border-brand-200 text-sm bg-white focus:outline-none focus:border-brand-500">
+                                <option value="percent">Porcentaje (%)</option>
+                                <option value="fixed">Monto Fijo ($)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Valor *</label>
+                            <input type="number" id="couponValueInput" required min="0.5" step="0.5" placeholder="Ej. 10" class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Descripción</label>
+                        <input type="text" id="couponDescInput" placeholder="Ej. Promo especial de fin de semana" class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+                    <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-colors">
+                        <i class="fa-solid fa-plus mr-1"></i> Guardar y Sincronizar Cupón
+                    </button>
+                </form>
+            </div>
+
+            <div class="lg:col-span-2 bg-white rounded-3xl border border-brand-200/70 soft-card-shadow overflow-hidden">
+                <div class="p-5 border-b border-brand-100">
+                    <h3 class="font-serif text-lg font-bold text-brand-900">Cupones Configurados</h3>
+                    <p class="text-xs text-brand-500">Activa, desactiva o elimina códigos promocionales al instante.</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-brand-50 text-brand-600 text-xs uppercase border-b border-brand-200/70">
+                                <th class="py-3 px-4">Código</th>
+                                <th class="py-3 px-4">Descuento</th>
+                                <th class="py-3 px-4">Estado</th>
+                                <th class="py-3 px-4 text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminCouponsTableBody" class="divide-y divide-brand-100">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: STORE CONFIGURATION -->
+        <div id="adminTab-settings" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-white p-6 rounded-3xl border border-brand-200/70 soft-card-shadow">
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-1">Configuración General y Envíos</h3>
+                <p class="text-xs text-brand-500 mb-6">Cambia aquí el número de WhatsApp que recibe los pedidos y las tarifas de entrega a domicilio.</p>
+
+                <form id="storeSettingsForm" onsubmit="handleSaveSettings(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Nombre de la Boutique *</label>
+                            <input type="text" id="confStoreName" required class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-700 uppercase mb-1">WhatsApp Receptor (Con código de país) *</label>
+                            <div class="relative">
+                                <i class="fa-brands fa-whatsapp absolute left-3.5 top-1/2 -translate-y-1/2 text-emerald-600 text-base"></i>
+                                <input type="text" id="confWhatsapp" required placeholder="593991234567" class="w-full pl-9 pr-3.5 py-2.5 rounded-xl border border-brand-200 text-sm font-mono focus:outline-none focus:border-brand-500">
+                            </div>
+                            <span class="text-[11px] text-brand-400">Ejemplo Ecuador: 593987654321 (sin el signo + ni espacios)</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Costo de Envío a Domicilio ($)</label>
+                            <input type="number" id="confShippingCost" required min="0" step="0.25" class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Envío Gratis desde ($)</label>
+                            <input type="number" id="confFreeShipping" required min="0" step="1" class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Contraseña Admin</label>
+                            <input type="text" id="confAdminPass" required class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm font-mono focus:outline-none focus:border-brand-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-brand-700 uppercase mb-1">Datos Bancarios (Para Transferencia / Depósito)</label>
+                        <textarea id="confBankDetails" rows="2" class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500"></textarea>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow transition-all">
+                            <i class="fa-solid fa-floppy-disk mr-1.5"></i> Guardar y Publicar Cambios
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-brand-200/70 soft-card-shadow flex flex-col justify-between space-y-6">
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-brand-900 mb-1">Copia de Seguridad</h3>
+                    <p class="text-xs text-brand-500 leading-relaxed mb-4">
+                        Descarga una copia de tus productos y precios en formato `.JSON` o restaura el catálogo inicial de demostración.
+                    </p>
+                    <button onclick="exportDatabaseJSON()" class="w-full py-2.5 px-4 rounded-xl border border-brand-200 hover:bg-brand-50 text-brand-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-solid fa-download text-brand-500"></i> Descargar Respaldo (.JSON)
+                    </button>
+                </div>
+
+                <div class="pt-4 border-t border-brand-100">
+                    <h4 class="text-xs font-bold uppercase text-rose-600 mb-1">Restauración de Fábrica</h4>
+                    <p class="text-xs text-brand-500 mb-3">Vuelve a cargar los 8 productos demostrativos originales:</p>
+                    <button onclick="resetFactoryDatabase()" class="w-full py-2.5 px-4 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold text-xs sm:text-sm transition-colors">
+                        <i class="fa-solid fa-rotate mr-1.5"></i> Restaurar Catálogo Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: FIREBASE LIVE CLOUD CONNECTION -->
+        <div id="adminTab-cloud" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-white p-6 rounded-3xl border border-brand-200/70 soft-card-shadow space-y-5">
+                <div class="flex items-start justify-between gap-4 border-b border-brand-100 pb-4">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-2">
+                            <i class="fa-solid fa-bolt"></i> Sincronización Multi-Dispositivo (Android, iPhone y PC)
+                        </span>
+                        <h3 class="font-serif text-xl font-bold text-brand-900">Conexión con Google Firebase</h3>
+                        <p class="text-xs text-brand-600 mt-1">
+                            Conecta tu tienda a Firebase Realtime Database o Firestore para que cada cambio de precio, talla o producto se actualice en vivo en todos los celulares de tus clientas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-50/70 border border-brand-200 rounded-2xl p-4 text-xs text-brand-900 space-y-2">
+                    <div class="font-bold text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-circle-nodes text-brand-600"></i>
+                        <span>Estado actual de la Nube:</span>
+                        <span id="cloudConfigStatusLabel" class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold">Revisando...</span>
+                    </div>
+                    <p class="text-brand-700 leading-relaxed">
+                        Puedes pegar aquí directamente la <strong>URL de tu Realtime Database</strong> (ej. <code class="bg-white px-1.5 py-0.5 rounded border border-brand-200">https://mi-tienda-default-rtdb.firebaseio.com</code>) o pegar el bloque <code class="bg-white px-1.5 py-0.5 rounded border border-brand-200">firebaseConfig</code> que te da Google Firebase.
+                    </p>
+                </div>
+
+                <form onsubmit="handleSaveCustomFirebase(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-brand-700 uppercase mb-1">
+                            Opción A (Más Fácil): URL de Firebase Realtime Database
+                        </label>
+                        <input 
+                            type="url" 
+                            id="customFirebaseDbUrl" 
+                            placeholder="https://tu-proyecto-default-rtdb.firebaseio.com" 
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm font-mono focus:outline-none focus:border-brand-500"
+                        >
+                        <span class="text-[11px] text-brand-500">Si usas Realtime Database en modo de prueba, solo necesitas pegar este enlace y pulsar Conectar.</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-brand-700 uppercase mb-1">
+                            Opción B: Objeto JSON `firebaseConfig` (Opcional para Firestore)
+                        </label>
+                        <textarea 
+                            id="customFirebaseJsonInput" 
+                            rows="4" 
+                            placeholder='{"apiKey": "AIzaSy...", "authDomain": "...", "projectId": "...", "databaseURL": "https://..."}' 
+                            class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-xs font-mono focus:outline-none focus:border-brand-500"
+                        ></textarea>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <button type="submit" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow transition-all">
+                            <i class="fa-solid fa-plug-circle-check mr-1.5"></i> Conectar y Sincronizar Ahora
+                        </button>
+                        <button type="button" onclick="pushLocalCatalogToCloud()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow transition-all">
+                            <i class="fa-solid fa-cloud-arrow-up mr-1.5"></i> Subir mi Catálogo Actual a la Nube
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-brand-200/70 soft-card-shadow space-y-4">
+                <h4 class="font-serif text-lg font-bold text-brand-900">¿Cómo funciona en todos los celulares?</h4>
+                <ol class="text-xs text-brand-700 space-y-3 list-decimal list-inside leading-relaxed">
+                    <li><strong>Base de Datos Central:</strong> Todos los productos, tallas, cupones y tu número de WhatsApp se guardan en un documento único en la nube de Google Firebase.</li>
+                    <li><strong>Actualización Instantánea:</strong> Cuando editas un precio o agregas una prenda desde tu celular o PC, Firebase transmite el cambio en menos de 1 segundo a todos los dispositivos Android y iPhone abiertos.</li>
+                    <li><strong>Para publicar fijo en internet:</strong> Pega tus credenciales en la constante <code class="bg-brand-50 px-1.5 py-0.5 rounded font-mono text-brand-800">CUSTOM_FIREBASE_CONFIG</code> al inicio del código en <code class="bg-brand-50 px-1.5 py-0.5 rounded font-mono text-brand-800">index.html</code> antes de subirlo a Netlify o Vercel.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE-OVER SHOPPING CART & CHECKOUT DRAWER -->
+    <!-- ========================================== -->
+    <div id="cartDrawerBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-brand-900/40 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+
+    <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Drawer Header -->
+        <div class="px-6 py-4 bg-gradient-to-r from-brand-700 to-brand-600 text-white flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-bag-shopping text-champagne-200 text-lg"></i>
+                <h2 id="drawerTitle" class="font-serif font-bold text-base sm:text-lg">Tu Carrito de Compras</h2>
+            </div>
+            <button onclick="toggleCartDrawer(false)" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- STEP 1: CART ITEMS LIST -->
+        <div id="cartStepItems" class="flex-1 flex flex-col overflow-hidden">
+            <!-- Free Shipping Progress Bar -->
+            <div id="freeShippingBarContainer" class="bg-brand-50 px-6 py-2.5 border-b border-brand-100 text-xs text-brand-900">
+                <div class="flex justify-between items-center mb-1">
+                    <span id="freeShippingText" class="font-medium">Calculando envío...</span>
+                    <span id="freeShippingPercent" class="font-bold">0%</span>
+                </div>
+                <div class="w-full h-1.5 bg-brand-200 rounded-full overflow-hidden">
+                    <div id="freeShippingProgress" class="h-full bg-brand-600 transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Scrollable Cart Items -->
+            <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Cart Footer Summary & Coupon -->
+            <div id="cartFooterSummary" class="border-t border-brand-200/70 bg-brand-50/60 p-5 space-y-4">
+                <div>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            id="cartCouponInput" 
+                            placeholder="Código promocional (ej. BIENVENIDA10)" 
+                            class="flex-1 px-3.5 py-2 rounded-xl border border-brand-200 bg-white text-xs sm:text-sm uppercase font-semibold focus:outline-none focus:border-brand-500"
+                        >
+                        <button onclick="applyCartCoupon()" class="px-4 py-2 rounded-xl bg-brand-700 hover:bg-brand-800 text-white text-xs font-bold transition-colors">
+                            Aplicar
+                        </button>
+                    </div>
+                    <div id="appliedCouponBadge" class="hidden mt-2 flex items-center justify-between bg-emerald-50 border border-emerald-200 text-emerald-800 px-3 py-1.5 rounded-lg text-xs">
+                        <span id="appliedCouponText" class="font-semibold"></span>
+                        <button onclick="removeCartCoupon()" class="text-emerald-700 hover:text-rose-600 font-bold ml-2">
+                            <i class="fa-solid fa-xmark"></i> Quitar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Totals Breakdown -->
+                <div class="space-y-1.5 text-sm border-t border-brand-200/70 pt-3">
+                    <div class="flex justify-between text-brand-700">
+                        <span>Subtotal productos:</span>
+                        <span id="cartSubtotalText" class="font-semibold">$0.00</span>
+                    </div>
+                    <div id="cartDiscountRow" class="hidden justify-between text-emerald-600 font-medium">
+                        <span>Descuento cupón:</span>
+                        <span id="cartDiscountText">-$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-brand-700">
+                        <span>Envío a domicilio:</span>
+                        <span id="cartShippingText" class="font-semibold">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-base font-bold text-brand-900 pt-2 border-t border-brand-200">
+                        <span>Total a Pagar:</span>
+                        <span id="cartTotalText" class="text-lg text-brand-600">$0.00</span>
+                    </div>
+                </div>
+
+                <button 
+                    onclick="showCheckoutStep(true)" 
+                    class="w-full py-3.5 px-5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2 transition-all"
+                >
+                    <span>Continuar con los Datos de Entrega</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- STEP 2: CHECKOUT FORM FOR WHATSAPP -->
+        <div id="cartStepCheckout" class="hidden flex-1 flex flex-col overflow-hidden">
+            <div class="px-6 py-3 bg-brand-50 border-b border-brand-200/70 flex items-center justify-between">
+                <button onclick="showCheckoutStep(false)" class="text-xs font-bold text-brand-700 hover:text-brand-900 flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al carrito
+                </button>
+                <span class="text-xs text-brand-500 font-semibold">Paso 2 de 2 • Envío a Domicilio</span>
+            </div>
+
+            <form id="checkoutWhatsappForm" onsubmit="processWhatsAppOrder(event)" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Nombre y Apellido *</label>
+                    <input type="text" id="custName" required placeholder="Ej. Camila Andrade" class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Teléfono / Celular *</label>
+                    <input type="tel" id="custPhone" required placeholder="Ej. 0998765432" class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Dirección Exacta de Entrega y Referencia *</label>
+                    <textarea id="custAddress" required rows="2" placeholder="Sector, calle principal, número de casa/edificio y referencia..." class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Método de Pago Preferido *</label>
+                    <select id="custPayment" onchange="toggleBankInfoBox()" class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm bg-white focus:outline-none focus:border-brand-500">
+                        <option value="Efectivo contra entrega">💵 Efectivo al recibir en domicilio</option>
+                        <option value="Transferencia Bancaria">🏦 Transferencia / Depósito Bancario</option>
+                        <option value="Deuna / Payphone">📱 Billetera Móvil (Deuna / Payphone)</option>
+                    </select>
+                    <div id="checkoutBankInfoBox" class="hidden mt-2 p-3 rounded-xl bg-champagne-50 border border-champagne-200 text-xs text-brand-900">
+                        <strong class="block mb-0.5"><i class="fa-solid fa-building-columns mr-1 text-champagne-600"></i> Datos Bancarios:</strong>
+                        <span id="checkoutBankDetailsText"></span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Notas Adicionales (Opcional)</label>
+                    <input type="text" id="custNotes" placeholder="Ej. Entregar por la tarde, llamar al llegar..." class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                </div>
+
+                <div class="p-4 rounded-2xl bg-brand-50 border border-brand-200/70 space-y-1 text-xs">
+                    <div class="flex justify-between font-bold text-brand-900 text-sm">
+                        <span>Total a Pagar:</span>
+                        <span id="checkoutFinalTotalBadge" class="text-brand-600">$0.00</span>
+                    </div>
+                    <p class="text-brand-600 leading-relaxed">
+                        Al confirmar, se abrirá WhatsApp con el resumen detallado de tu pedido listo para enviar.
+                    </p>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Enviar Pedido por WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- ========================================== -->
+    <!-- MODAL 1: ADMIN LOGIN PASSWORD              -->
+    <!-- ========================================== -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-brand-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-brand-100 fade-in">
+            <div class="flex justify-between items-center mb-4">
+                <div class="w-10 h-10 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button onclick="closeAdminLoginModal()" class="text-brand-400 hover:text-brand-700">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-900">Acceso Administrativo</h3>
+            <p class="text-xs text-brand-600 mt-1 mb-4">Ingresa tu clave para gestionar productos, tallas, cupones y Firebase.</p>
+
+            <form onsubmit="verifyAdminPassword(event)" class="space-y-4">
+                <div>
+                    <input 
+                        type="password" 
+                        id="adminPasswordInput" 
+                        required 
+                        placeholder="Contraseña..." 
+                        class="w-full px-4 py-2.5 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500"
+                    >
+                    <p class="text-[11px] text-brand-500 mt-1.5">
+                        <i class="fa-solid fa-circle-info mr-1 text-brand-500"></i> Clave por defecto: <code class="bg-brand-50 px-1.5 py-0.5 rounded font-bold text-brand-800">admin123</code>
+                    </p>
+                </div>
+                <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-colors">
+                    Entrar al Panel
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL 2: ADMIN CREATE / EDIT PRODUCT       -->
+    <!-- ========================================== -->
+    <div id="productFormModal" class="fixed inset-0 bg-brand-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-brand-100 my-8 max-h-[92vh] overflow-y-auto fade-in">
+            <div class="flex items-center justify-between pb-4 border-b border-brand-100 mb-5">
+                <div>
+                    <h3 id="productModalTitle" class="font-serif text-xl font-bold text-brand-900">Nuevo Producto</h3>
+                    <p class="text-xs text-brand-500">Configura el producto y sus variantes (Tallas, Tonos o Presentaciones).</p>
+                </div>
+                <button onclick="closeProductModal()" class="w-8 h-8 rounded-full bg-brand-50 hover:bg-brand-100 flex items-center justify-center text-brand-700">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="adminProductForm" onsubmit="handleSaveProduct(event)" class="space-y-5">
+                <input type="hidden" id="prodIdInput">
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Nombre del Producto *</label>
+                        <input type="text" id="prodNameInput" required placeholder="Ej. Labial Maybelline Matte Ink / Chaqueta Denim" class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Categoría *</label>
+                        <select id="prodCategoryInput" onchange="suggestVariantLabel()" class="w-full px-3.5 py-2.5 rounded-xl border border-brand-200 text-sm bg-white focus:outline-none focus:border-brand-500">
+                            <option value="Cosméticos">Cosméticos</option>
+                            <option value="Vitaminas">Vitaminas</option>
+                            <option value="Ropa Americana">Ropa Americana</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-800 uppercase mb-1">URL de Imagen del Producto *</label>
+                    <div class="flex gap-3 items-start">
+                        <div class="flex-1">
+                            <input type="url" id="prodImageInput" required oninput="updateProductImagePreview(this.value)" placeholder="https://images.unsplash.com/..." class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500">
+                            <div class="flex flex-wrap gap-1.5 mt-2">
+                                <span class="text-[11px] text-brand-400 mr-1">Imágenes de ejemplo:</span>
+                                <button type="button" onclick="setSampleImage('cosmetico')" class="text-[11px] px-2 py-0.5 rounded bg-brand-50 text-brand-700 hover:bg-brand-100 font-semibold">Cosmético</button>
+                                <button type="button" onclick="setSampleImage('vitamina')" class="text-[11px] px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-semibold">Vitamina</button>
+                                <button type="button" onclick="setSampleImage('ropa')" class="text-[11px] px-2 py-0.5 rounded bg-champagne-100 text-champagne-600 hover:bg-champagne-200 font-semibold">Ropa USA</button>
+                            </div>
+                        </div>
+                        <img id="prodImagePreview" src="https://placehold.co/100x100/FBE9EC/9E475B?text=Foto" alt="Preview" class="w-16 h-16 rounded-2xl object-cover border border-brand-200 shrink-0">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Descripción Comercial *</label>
+                    <textarea id="prodDescInput" required rows="2" placeholder="Describe beneficios, ingredientes o detalles de la prenda..." class="w-full px-3.5 py-2 rounded-xl border border-brand-200 text-sm focus:outline-none focus:border-brand-500"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center bg-brand-50/70 p-3.5 rounded-2xl border border-brand-200/70">
+                    <div>
+                        <label class="block text-xs font-bold text-brand-800 uppercase mb-1">Título del Selector de Variante *</label>
+                        <input type="text" id="prodVariantLabelInput" required placeholder="Ej. Selecciona Talla, Tono o Presentación" class="w-full px-3 py-2 rounded-xl border border-brand-200 bg-white text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+                    <div class="flex items-center gap-2.5 pt-4">
+                        <input type="checkbox" id="prodFeaturedInput" class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500">
+                        <label for="prodFeaturedInput" class="text-sm font-bold text-brand-800">Destacar como Favorito ✨</label>
+                    </div>
+                </div>
+
+                <!-- Dynamic Variants Builder -->
+                <div class="border border-brand-200 rounded-2xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <h4 class="text-sm font-bold text-brand-900">Variantes Disponibles (Tallas / Tonos / Presentaciones) *</h4>
+                            <p class="text-xs text-brand-500">Define el precio y stock de cada variante individualmente.</p>
+                        </div>
+                        <button type="button" onclick="addVariantRow()" class="px-3 py-1.5 rounded-xl bg-brand-100 hover:bg-brand-200 text-brand-800 font-bold text-xs flex items-center gap-1">
+                            <i class="fa-solid fa-plus"></i> Añadir Opción
+                        </button>
+                    </div>
+
+                    <div id="variantRowsContainer" class="space-y-2.5">
+                        <!-- Dynamic rows inserted via JS -->
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-end gap-3 pt-3 border-t border-brand-100">
+                    <button type="button" onclick="closeProductModal()" class="px-5 py-2.5 rounded-xl border border-brand-200 text-brand-700 text-sm font-semibold hover:bg-brand-50">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold shadow transition-all">
+                        <i class="fa-solid fa-check mr-1.5"></i> Guardar y Sincronizar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL 3: WHATSAPP ORDER CONFIRMATION       -->
+    <!-- ========================================== -->
+    <div id="whatsappPreviewModal" class="fixed inset-0 bg-brand-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-brand-100 fade-in">
+            <div class="flex items-center justify-between pb-3 border-b border-brand-100 mb-4">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-brand-900 text-lg">¡Pedido Listo para Enviar!</h3>
+                        <p class="text-xs text-brand-500">Se abrirá WhatsApp automáticamente con tu orden detallada</p>
+                    </div>
+                </div>
+                <button onclick="closeWhatsappPreviewModal()" class="text-brand-400 hover:text-brand-700">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <pre id="whatsappMessagePreviewBox" class="bg-brand-900 text-brand-50 p-4 rounded-2xl text-xs font-mono whitespace-pre-wrap max-h-64 overflow-y-auto leading-relaxed"></pre>
+
+            <div class="mt-5 flex flex-col sm:flex-row gap-2.5">
+                <button onclick="copyWhatsAppOrderText()" class="flex-1 py-2.5 px-4 rounded-xl border border-brand-200 hover:bg-brand-50 text-brand-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-copy"></i> Copiar Resumen
+                </button>
+                <a id="whatsappDirectLinkBtn" href="#" target="_blank" rel="noopener noreferrer" onclick="closeWhatsappPreviewModal()" class="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Enviar por WhatsApp Ahora
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-xs w-full pointer-events-none"></div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-brand-200 text-xs py-8 border-t border-brand-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <span id="footerStoreName" class="text-white font-serif font-bold text-base">Glam & Health Boutique 593</span>
+                <p class="mt-1 text-brand-300">Cosméticos Originales, Vitaminas Importadas y Ropa Americana Exclusiva.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="switchView('store')" class="hover:text-white transition-colors">Catálogo</button>
+                <span>•</span>
+                <button onclick="handleAdminAccess()" class="hover:text-white transition-colors">Administración</button>
+                <span>•</span>
+                <button onclick="toggleCartDrawer(true)" class="hover:text-white transition-colors">Mi Carrito</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================== -->
+    <!-- APPLICATION LOGIC + REAL-TIME FIREBASE CLOUD SYNC ENGINE   -->
+    <!-- ========================================================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        /**
+         * ============================================================================
+         * CONFIGURACIÓN RÁPIDA DE FIREBASE PARA PUBLICACIÓN EN INTERNET (NETLIFY/VERCEL)
+         * ============================================================================
+         * Cuando crees tu proyecto gratuito en https://console.firebase.google.com,
+         * pega aquí tu URL de Realtime Database o tus credenciales para que todos los
+         * teléfonos Android y iPhone carguen tu tienda sincronizada automáticamente:
+         */
+        const CUSTOM_FIREBASE_CONFIG = {
+            databaseURL: "", // <-- Pega aquí tu URL ej: "https://mi-boutique-default-rtdb.firebaseio.com"
+            apiKey: "",
+            authDomain: "",
+            projectId: ""
+        };
+
+        const STORAGE_KEYS = {
+            PRODUCTS: 'gh_boutique_products_v2',
+            COUPONS: 'gh_boutique_coupons_v2',
+            CONFIG: 'gh_boutique_config_v2',
+            CART: 'gh_boutique_cart_v2',
+            CUSTOM_CLOUD: 'gh_boutique_custom_cloud_v2'
+        };
+
+        const INITIAL_STORE_CONFIG = {
+            storeName: 'Glam & Health Boutique 593',
+            whatsappNumber: '593991234567',
+            shippingCost: 3.50,
+            freeShippingThreshold: 45.00,
+            adminPassword: 'admin123',
+            bankDetails: 'Banco Pichincha • Cta. Ahorros #2208491029 • A nombre de Glam & Health Boutique • RUC: 1790012345001'
+        };
+
+        const INITIAL_COUPONS = [
+            { code: 'BIENVENIDA10', type: 'percent', value: 10, description: '10% de descuento en tu compra', active: true },
+            { code: 'ENVIOGRATIS', type: 'fixed', value: 3.50, description: 'Cubre $3.50 del envío a domicilio', active: true },
+            { code: 'GLAM20', type: 'percent', value: 20, description: '20% OFF clientas VIP', active: false }
+        ];
+
+        const INITIAL_PRODUCTS = [
+            {
+                id: 'prod_1',
+                name: 'Labial Líquido Maybelline SuperStay Matte Ink',
+                category: 'Cosméticos',
+                description: 'Fórmula estadounidense de larga duración hasta 16 horas sin transferencia. Acabado aterciopelado con aplicador de alta precisión.',
+                image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Selecciona el Tono',
+                featured: true,
+                variants: [
+                    { id: 'v_101', name: 'Tono 20 Pioneer (Rojo Intenso)', price: 13.50, stock: 8 },
+                    { id: 'v_102', name: 'Tono 65 Seductress (Nude Rosado)', price: 13.50, stock: 12 },
+                    { id: 'v_103', name: 'Tono 80 Ruler (Vino Mate)', price: 14.00, stock: 4 },
+                    { id: 'v_104', name: 'Tono 15 Lover (Rosa Romántico)', price: 13.50, stock: 0 }
+                ]
+            },
+            {
+                id: 'prod_2',
+                name: 'Sérum Facial The Ordinary Niacinamida 10% + Zinc 1%',
+                category: 'Cosméticos',
+                description: 'Fórmula concentrada iluminadora que equilibra la piel, minimiza la apariencia de los poros y suaviza la textura.',
+                image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Tamaño del Envase',
+                featured: true,
+                variants: [
+                    { id: 'v_201', name: '30 ml (Tamaño Estándar)', price: 14.90, stock: 10 },
+                    { id: 'v_202', name: '60 ml (Tamaño Jumbo Ahorro)', price: 24.50, stock: 6 }
+                ]
+            },
+            {
+                id: 'prod_3',
+                name: 'Paleta de Sombras Rose Quartz Glow 18 Tonos',
+                category: 'Cosméticos',
+                description: 'Combinación de tonos rosados, champaña, mates sedosos y metálicos luminosos de alta pigmentación.',
+                image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Edición / Paleta',
+                featured: false,
+                variants: [
+                    { id: 'v_301', name: 'Edición Rose Gold', price: 22.00, stock: 5 },
+                    { id: 'v_302', name: 'Edición Warm Nude', price: 22.00, stock: 7 }
+                ]
+            },
+            {
+                id: 'prod_4',
+                name: 'Colágeno Hidrolizado + Biotina & Vitamina C (USA)',
+                category: 'Vitaminas',
+                description: 'Suplemento importado de máxima absorción para fortalecer cabello, piel radiante, uñas fuertes y articulaciones.',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Presentación',
+                featured: true,
+                variants: [
+                    { id: 'v_401', name: 'Frasco 90 Cápsulas (1 Mes)', price: 21.00, stock: 9 },
+                    { id: 'v_402', name: 'Frasco 180 Cápsulas (2 Meses)', price: 34.90, stock: 6 },
+                    { id: 'v_403', name: 'Polvo Péptidos 450g Vainilla', price: 38.00, stock: 4 }
+                ]
+            },
+            {
+                id: 'prod_5',
+                name: 'Gomitas Hair, Skin & Nails con Biotina 5000mcg',
+                category: 'Vitaminas',
+                description: 'Deliciosas gomitas americanas con sabor natural a fresa con biotina, vitamina E y vitamina C para cabello y piel.',
+                image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Presentación',
+                featured: false,
+                variants: [
+                    { id: 'v_501', name: 'Frasco 80 Gomitas Sabor Fresa', price: 18.50, stock: 11 },
+                    { id: 'v_502', name: 'Frasco Familiar 140 Gomitas', price: 27.00, stock: 5 }
+                ]
+            },
+            {
+                id: 'prod_6',
+                name: 'Omega 3 Fish Oil 1200mg + CoQ10 Purificado',
+                category: 'Vitaminas',
+                description: 'Ácidos grasos EPA y DHA destilados molecularmente para bienestar cardiovascular, energía celular y concentración.',
+                image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Cantidad',
+                featured: false,
+                variants: [
+                    { id: 'v_601', name: '100 Cápsulas Blandas (Softgels)', price: 19.50, stock: 8 },
+                    { id: 'v_602', name: '200 Cápsulas Blandas Familiar', price: 32.00, stock: 3 }
+                ]
+            },
+            {
+                id: 'prod_7',
+                name: 'Chaqueta Denim Americana Vintage Oversize',
+                category: 'Ropa Americana',
+                description: 'Mezclilla 100% algodón suave importada de EE. UU. Corte femenino relajado ideal para combinar con cualquier outfit.',
+                image: 'https://images.unsplash.com/photo-1551537482-f2075a1d41f2?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Selecciona tu Talla',
+                featured: true,
+                variants: [
+                    { id: 'v_701', name: 'Talla S (Azul Clásico)', price: 36.00, stock: 3 },
+                    { id: 'v_702', name: 'Talla M (Azul Clásico)', price: 36.00, stock: 5 },
+                    { id: 'v_703', name: 'Talla L (Celeste Vintage)', price: 38.00, stock: 4 },
+                    { id: 'v_704', name: 'Talla XL (Azul Oscuro)', price: 38.00, stock: 0 }
+                ]
+            },
+            {
+                id: 'prod_8',
+                name: 'Hoodie American Fleece Soft Blush & Cream',
+                category: 'Ropa Americana',
+                description: 'Buzo americano con interior afelpado ultrasuave, corte cómodo y costuras premium. Importado directamente de USA.',
+                image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80',
+                variantLabel: 'Talla y Color',
+                featured: true,
+                variants: [
+                    { id: 'v_801', name: 'Talla S • Rosa Pastel', price: 29.00, stock: 4 },
+                    { id: 'v_802', name: 'Talla M • Rosa Pastel', price: 29.00, stock: 6 },
+                    { id: 'v_803', name: 'Talla L • Beige Crema', price: 31.00, stock: 5 },
+                    { id: 'v_804', name: 'Talla XL • Blanco Nube', price: 31.00, stock: 2 }
+                ]
+            }
+        ];
+
+        let state = {
+            products: [],
+            coupons: [],
+            config: {},
+            cart: [],
+            selectedVariantsByProduct: {},
+            activeCategory: 'Todos',
+            searchQuery: '',
+            appliedCoupon: null,
+            isAdminAuthenticated: false,
+            lastWhatsAppText: '',
+            cloudMode: 'local', // 'firestore-env' | 'rtdb-url' | 'local'
+            firestoreDb: null,
+            firestoreUser: null,
+            rtdbUrl: '',
+            rtdbPollTimer: null
+        };
+
+        /**
+         * ==========================================
+         * INITIALIZATION & CLOUD SYNC BOOTSTRAP
+         * ==========================================
+         */
+        async function initApp() {
+            loadLocalFallbackState();
+            initializeSelectedVariants();
+            applyStoreBranding();
+            renderCatalog();
+            renderCartUI();
+            await setupCloudSynchronization();
+        }
+
+        function loadLocalFallbackState() {
+            try {
+                const p = localStorage.getItem(STORAGE_KEYS.PRODUCTS);
+                const c = localStorage.getItem(STORAGE_KEYS.COUPONS);
+                const cfg = localStorage.getItem(STORAGE_KEYS.CONFIG);
+                const crt = localStorage.getItem(STORAGE_KEYS.CART);
+
+                state.products = p ? JSON.parse(p) : JSON.parse(JSON.stringify(INITIAL_PRODUCTS));
+                state.coupons = c ? JSON.parse(c) : JSON.parse(JSON.stringify(INITIAL_COUPONS));
+                state.config = cfg ? JSON.parse(cfg) : JSON.parse(JSON.stringify(INITIAL_STORE_CONFIG));
+                state.cart = crt ? JSON.parse(crt) : [];
+                saveLocalCopy();
+            } catch (e) {
+                state.products = JSON.parse(JSON.stringify(INITIAL_PRODUCTS));
+                state.coupons = JSON.parse(JSON.stringify(INITIAL_COUPONS));
+                state.config = JSON.parse(JSON.stringify(INITIAL_STORE_CONFIG));
+                state.cart = [];
+            }
+        }
+
+        function saveLocalCopy() {
+            try {
+                localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(state.products));
+                localStorage.setItem(STORAGE_KEYS.COUPONS, JSON.stringify(state.coupons));
+                localStorage.setItem(STORAGE_KEYS.CONFIG, JSON.stringify(state.config));
+                localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(state.cart));
+            } catch (e) {
+                console.warn('Local cache warning:', e);
+            }
+        }
+
+        async function setupCloudSynchronization() {
+            // 1. Check if user configured a custom Firebase Realtime Database URL or Config JSON
+            const savedCloudRaw = localStorage.getItem(STORAGE_KEYS.CUSTOM_CLOUD);
+            let customCloud = savedCloudRaw ? JSON.parse(savedCloudRaw) : null;
+
+            const codeDbUrl = (CUSTOM_FIREBASE_CONFIG.databaseURL || '').trim();
+            if (codeDbUrl) {
+                customCloud = { dbUrl: codeDbUrl, jsonConfig: JSON.stringify(CUSTOM_FIREBASE_CONFIG) };
+            }
+
+            if (customCloud && customCloud.dbUrl) {
+                await connectRealtimeDatabaseUrl(customCloud.dbUrl);
+                return;
+            }
+
+            // 2. Otherwise check environment built-in Firebase Firestore (__firebase_config)
+            if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                try {
+                    const firebaseConfig = JSON.parse(__firebase_config);
+                    const app = initializeApp(firebaseConfig);
+                    const auth = getAuth(app);
+                    const db = getFirestore(app);
+
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+
+                    state.firestoreUser = auth.currentUser;
+                    state.firestoreDb = db;
+                    state.cloudMode = 'firestore-env';
+
+                    const appId = typeof __app_id !== 'undefined' ? __app_id : 'glam-health-boutique-593';
+                    const storeDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'store_state', 'main');
+
+                    onSnapshot(
+                        storeDocRef,
+                        async (snapshot) => {
+                            if (snapshot.exists()) {
+                                const data = snapshot.data();
+                                applyIncomingCloudData(data);
+                                updateCloudStatusBadge('connected', 'Firebase Cloud En Vivo');
+                            } else {
+                                // Seed initial catalog into cloud on first run
+                                await syncStateToCloud(false);
+                                updateCloudStatusBadge('connected', 'Firebase Cloud En Vivo');
+                            }
+                        },
+                        (error) => {
+                            console.warn('Firestore listener fallback:', error);
+                            updateCloudStatusBadge('local', 'Modo Local (Configura Firebase en Admin)');
+                        }
+                    );
+                    return;
+                } catch (err) {
+                    console.warn('Built-in Firebase init fallback:', err);
+                }
+            }
+
+            updateCloudStatusBadge('local', 'Modo Local (Lista para conectar Firebase)');
+        }
+
+        async function connectRealtimeDatabaseUrl(rawUrl) {
+            const cleanUrl = rawUrl.trim().replace(/\/+$/, '');
+            state.rtdbUrl = cleanUrl;
+            state.cloudMode = 'rtdb-url';
+
+            if (state.rtdbPollTimer) clearInterval(state.rtdbPollTimer);
+
+            try {
+                const res = await fetch(`${cleanUrl}/boutique_store.json`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.products) {
+                        applyIncomingCloudData(data);
+                    } else {
+                        await syncStateToCloud(false);
+                    }
+                    updateCloudStatusBadge('connected', 'Firebase RTDB En Vivo');
+                } else {
+                    updateCloudStatusBadge('error', 'Verifica reglas (.read/.write) en Firebase');
+                }
+            } catch (e) {
+                updateCloudStatusBadge('error', 'Error de red con Firebase URL');
+            }
+
+            // Poll every 4 seconds so all Android/iPhone devices stay in sync
+            state.rtdbPollTimer = setInterval(async () => {
+                try {
+                    const r = await fetch(`${state.rtdbUrl}/boutique_store.json`);
+                    if (r.ok) {
+                        const d = await r.json();
+                        if (d && d.updatedAt && d.updatedAt !== state.lastCloudTimestamp) {
+                            applyIncomingCloudData(d);
+                        }
+                    }
+                } catch (_) {}
+            }, 4000);
+        }
+
+        function applyIncomingCloudData(data) {
+            if (!data) return;
+            state.lastCloudTimestamp = data.updatedAt || Date.now();
+            if (data.products) {
+                state.products = typeof data.products === 'string' ? JSON.parse(data.products) : data.products;
+            }
+            if (data.coupons) {
+                state.coupons = typeof data.coupons === 'string' ? JSON.parse(data.coupons) : data.coupons;
+            }
+            if (data.config) {
+                state.config = typeof data.config === 'string' ? JSON.parse(data.config) : data.config;
+            }
+
+            saveLocalCopy();
+            initializeSelectedVariants();
+            applyStoreBranding();
+            renderCatalog();
+            renderCartUI();
+            if (state.isAdminAuthenticated) {
+                renderAdminDashboard();
+            }
+        }
+
+        async function syncStateToCloud(showNotification = true) {
+            saveLocalCopy();
+            const timestamp = Date.now();
+            state.lastCloudTimestamp = timestamp;
+
+            if (state.cloudMode === 'firestore-env' && state.firestoreDb && state.firestoreUser) {
+                try {
+                    const appId = typeof __app_id !== 'undefined' ? __app_id : 'glam-health-boutique-593';
+                    const storeDocRef = doc(state.firestoreDb, 'artifacts', appId, 'public', 'data', 'store_state', 'main');
+                    await setDoc(storeDocRef, {
+                        updatedAt: timestamp,
+                        products: JSON.stringify(state.products),
+                        coupons: JSON.stringify(state.coupons),
+                        config: JSON.stringify(state.config)
+                    });
+                    if (showNotification) showToast('Sincronizado en vivo con todos los dispositivos', 'success');
+                    return;
+                } catch (e) {
+                    console.error('Error syncing to Firestore:', e);
+                }
+            }
+
+            if (state.cloudMode === 'rtdb-url' && state.rtdbUrl) {
+                try {
+                    const res = await fetch(`${state.rtdbUrl}/boutique_store.json`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            updatedAt: timestamp,
+                            products: state.products,
+                            coupons: state.coupons,
+                            config: state.config
+                        })
+                    });
+                    if (res.ok && showNotification) {
+                        showToast('¡Cambios publicados en vivo en Firebase!', 'success');
+                    }
+                } catch (e) {
+                    console.error('Error syncing to RTDB:', e);
+                }
+            }
+        }
+
+        function updateCloudStatusBadge(status, text) {
+            const dot = document.getElementById('cloudStatusDot');
+            const label = document.getElementById('cloudStatusText');
+            const adminLabel = document.getElementById('cloudConfigStatusLabel');
+
+            if (label) label.textContent = text;
+            if (adminLabel) adminLabel.textContent = text;
+
+            if (dot) {
+                if (status === 'connected') {
+                    dot.className = 'w-2 h-2 rounded-full bg-emerald-400';
+                } else if (status === 'error') {
+                    dot.className = 'w-2 h-2 rounded-full bg-rose-400';
+                } else {
+                    dot.className = 'w-2 h-2 rounded-full bg-amber-300';
+                }
+            }
+        }
+
+        /**
+         * ==========================================
+         * CLIENT CATALOG & DYNAMIC VARIANT SELECTION
+         * ==========================================
+         */
+        function initializeSelectedVariants() {
+            state.products.forEach(prod => {
+                if (!prod.variants || prod.variants.length === 0) return;
+                const currentSelected = state.selectedVariantsByProduct[prod.id];
+                const stillExists = prod.variants.some(v => v.id === currentSelected);
+                if (!stillExists) {
+                    const firstInStock = prod.variants.find(v => Number(v.stock) > 0) || prod.variants[0];
+                    state.selectedVariantsByProduct[prod.id] = firstInStock.id;
+                }
+            });
+        }
+
+        function applyStoreBranding() {
+            document.getElementById('headerStoreName').textContent = state.config.storeName || 'Glam & Health Boutique';
+            document.getElementById('footerStoreName').textContent = state.config.storeName || 'Glam & Health Boutique';
+            document.getElementById('checkoutBankDetailsText').textContent = state.config.bankDetails || '';
+        }
+
+        function setCategoryFilter(category) {
+            state.activeCategory = category;
+            document.querySelectorAll('.cat-tab').forEach(btn => {
+                if (btn.dataset.cat === category) {
+                    btn.className = 'cat-tab px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-brand-600 text-white shadow-sm';
+                } else {
+                    btn.className = 'cat-tab px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-brand-50 text-brand-800 border border-brand-200 hover:bg-brand-100';
+                }
+            });
+            renderCatalog();
+        }
+
+        function handleSearchInput(query) {
+            state.searchQuery = query.trim();
+            const desktopInput = document.getElementById('desktopSearchInput');
+            const mobileInput = document.getElementById('mobileSearchInput');
+            const clearBtn = document.getElementById('clearDesktopSearch');
+
+            if (desktopInput && desktopInput.value !== query) desktopInput.value = query;
+            if (mobileInput && mobileInput.value !== query) mobileInput.value = query;
+            if (clearBtn) {
+                clearBtn.classList.toggle('hidden', state.searchQuery.length === 0);
+            }
+            renderCatalog();
+        }
+
+        function resetAllFilters() {
+            state.activeCategory = 'Todos';
+            state.searchQuery = '';
+            document.getElementById('priceFilter').value = 'all';
+            document.getElementById('sortFilter').value = 'featured';
+            handleSearchInput('');
+            setCategoryFilter('Todos');
+        }
+
+        function getProductCurrentVariant(product) {
+            const selectedId = state.selectedVariantsByProduct[product.id];
+            return product.variants.find(v => v.id === selectedId) || product.variants[0];
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('catalogGrid');
+            const emptyState = document.getElementById('emptyCatalogState');
+            const priceFilter = document.getElementById('priceFilter').value;
+            const sortFilter = document.getElementById('sortFilter').value;
+            const resetBtn = document.getElementById('resetFiltersBtn');
+
+            let filtered = state.products.filter(prod => {
+                const matchesCat = state.activeCategory === 'Todos' || prod.category === state.activeCategory;
+                const q = state.searchQuery.toLowerCase();
+                const matchesSearch = !q ||
+                    prod.name.toLowerCase().includes(q) ||
+                    prod.description.toLowerCase().includes(q) ||
+                    prod.category.toLowerCase().includes(q) ||
+                    prod.variants.some(v => v.name.toLowerCase().includes(q));
+
+                const activeVar = getProductCurrentVariant(prod);
+                const price = Number(activeVar?.price || 0);
+                let matchesPrice = true;
+                if (priceFilter === 'under15') matchesPrice = price < 15;
+                else if (priceFilter === '15to30') matchesPrice = price >= 15 && price <= 30;
+                else if (priceFilter === 'over30') matchesPrice = price > 30;
+
+                return matchesCat && matchesSearch && matchesPrice;
+            });
+
+            filtered.sort((a, b) => {
+                const priceA = Number(getProductCurrentVariant(a)?.price || 0);
+                const priceB = Number(getProductCurrentVariant(b)?.price || 0);
+                if (sortFilter === 'priceAsc') return priceA - priceB;
+                if (sortFilter === 'priceDesc') return priceB - priceA;
+                if (sortFilter === 'nameAsc') return a.name.localeCompare(b.name);
+                return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+            });
+
+            const hasActiveFilters = state.activeCategory !== 'Todos' || state.searchQuery !== '' || priceFilter !== 'all';
+            resetBtn.classList.toggle('hidden', !hasActiveFilters);
+            document.getElementById('resultsCounterText').textContent = 
+                `Mostrando ${filtered.length} de ${state.products.length} productos disponibles`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filtered.map(prod => {
+                const activeVariant = getProductCurrentVariant(prod);
+                const stock = Number(activeVariant.stock);
+                const isOutOfStock = stock <= 0;
+
+                const categoryBadgeStyles = {
+                    'Cosméticos': 'bg-brand-100/95 text-brand-800 border-brand-200',
+                    'Vitaminas': 'bg-emerald-50/95 text-emerald-800 border-emerald-200',
+                    'Ropa Americana': 'bg-champagne-100/95 text-brand-900 border-champagne-200'
+                }[prod.category] || 'bg-brand-50 text-brand-800';
+
+                return `
+                <article class="bg-white rounded-3xl border border-brand-200/70 soft-card-shadow transition-all duration-300 flex flex-col overflow-hidden group">
+                    <div class="relative h-60 bg-brand-50 overflow-hidden">
+                        <img 
+                            src="${prod.image}" 
+                            alt="${escapeHtml(prod.name)}"
+                            onerror="this.src='https://placehold.co/600x400/FBE9EC/9E475B?text=Glam+Boutique'"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold border backdrop-blur-md ${categoryBadgeStyles}">
+                                ${prod.category}
+                            </span>
+                            ${prod.featured ? `<span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-champagne-400 text-white shadow-xs"><i class="fa-solid fa-star mr-1"></i>Favorito</span>` : ''}
+                        </div>
+
+                        <div class="absolute bottom-3 right-3">
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold shadow-xs backdrop-blur-md ${
+                                isOutOfStock 
+                                    ? 'bg-rose-600 text-white' 
+                                    : stock <= 4 
+                                        ? 'bg-amber-500 text-white' 
+                                        : 'bg-white/90 text-brand-900 border border-brand-200'
+                            }">
+                                ${isOutOfStock ? 'Agotado en esta opción' : `Disponible: ${stock} uds.`}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-brand-900 text-lg leading-snug line-clamp-2">${escapeHtml(prod.name)}</h3>
+                            <p class="text-xs text-brand-600/90 mt-1.5 line-clamp-2 leading-relaxed">${escapeHtml(prod.description)}</p>
+                        </div>
+
+                        <div class="pt-2 border-t border-brand-100">
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-brand-500 mb-2">
+                                ${escapeHtml(prod.variantLabel || 'Selecciona Opción')}:
+                            </label>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${prod.variants.map(v => {
+                                    const isSelected = v.id === activeVariant.id;
+                                    const vOut = Number(v.stock) <= 0;
+                                    return `
+                                        <button 
+                                            type="button"
+                                            onclick="selectProductVariant('${prod.id}', '${v.id}')"
+                                            class="px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
+                                                isSelected
+                                                    ? 'bg-brand-600 text-white border-brand-600 shadow-xs'
+                                                    : vOut
+                                                        ? 'bg-brand-50/40 text-brand-300 border-brand-100 line-through'
+                                                        : 'bg-brand-50/60 text-brand-800 border-brand-200 hover:border-brand-400 hover:bg-brand-100/60'
+                                            }"
+                                        >
+                                            ${escapeHtml(v.name)}
+                                        </button>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-brand-100 flex items-center justify-between gap-3">
+                            <div>
+                                <span class="text-[11px] text-brand-400 block font-medium">Precio</span>
+                                <span class="text-xl font-extrabold text-brand-900">
+                                    $${Number(activeVariant.price).toFixed(2)}
+                                </span>
+                            </div>
+
+                            <button 
+                                onclick="addToCart('${prod.id}')"
+                                ${isOutOfStock ? 'disabled' : ''}
+                                class="px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 transition-all ${
+                                    isOutOfStock
+                                        ? 'bg-brand-100 text-brand-400 cursor-not-allowed'
+                                        : 'bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/15 active:scale-95'
+                                }"
+                            >
+                                <i class="fa-solid ${isOutOfStock ? 'fa-ban' : 'fa-bag-shopping'}"></i>
+                                <span>${isOutOfStock ? 'Agotado' : 'Agregar'}</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                `;
+            }).join('');
+        }
+
+        function selectProductVariant(productId, variantId) {
+            state.selectedVariantsByProduct[productId] = variantId;
+            renderCatalog();
+        }
+
+        /**
+         * ==========================================
+         * SHOPPING CART & COUPON ENGINE
+         * ==========================================
+         */
+        function addToCart(productId) {
+            const product = state.products.find(p => p.id === productId);
+            if (!product) return;
+
+            const variant = getProductCurrentVariant(product);
+            if (!variant || Number(variant.stock) <= 0) {
+                showToast('Esta opción se encuentra agotada', 'error');
+                return;
+            }
+
+            const existingItem = state.cart.find(item => item.productId === product.id && item.variantId === variant.id);
+            const currentQtyInCart = existingItem ? existingItem.quantity : 0;
+
+            if (currentQtyInCart + 1 > Number(variant.stock)) {
+                showToast(`Solo quedan ${variant.stock} unidades disponibles de ${variant.name}`, 'warning');
+                return;
+            }
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                state.cart.push({
+                    productId: product.id,
+                    variantId: variant.id,
+                    name: product.name,
+                    category: product.category,
+                    variantName: variant.name,
+                    price: Number(variant.price),
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+
+            saveLocalCopy();
+            renderCartUI();
+            showToast(`Agregado: ${product.name} (${variant.name})`, 'success');
+        }
+
+        function updateCartQuantity(productId, variantId, delta) {
+            const idx = state.cart.findIndex(i => i.productId === productId && i.variantId === variantId);
+            if (idx === -1) return;
+
+            const item = state.cart[idx];
+            const prod = state.products.find(p => p.id === productId);
+            const variant = prod ? prod.variants.find(v => v.id === variantId) : null;
+            const maxStock = variant ? Number(variant.stock) : 99;
+
+            const newQty = item.quantity + delta;
+            if (newQty <= 0) {
+                state.cart.splice(idx, 1);
+            } else if (newQty > maxStock) {
+                showToast(`Stock máximo disponible: ${maxStock} uds.`, 'warning');
+                return;
+            } else {
+                item.quantity = newQty;
+            }
+
+            saveLocalCopy();
+            renderCartUI();
+        }
+
+        function removeFromCart(productId, variantId) {
+            state.cart = state.cart.filter(i => !(i.productId === productId && i.variantId === variantId));
+            saveLocalCopy();
+            renderCartUI();
+        }
+
+        function applyCartCoupon() {
+            const input = document.getElementById('cartCouponInput');
+            const code = input.value.trim().toUpperCase();
+            if (!code) return;
+
+            const found = state.coupons.find(c => c.code.toUpperCase() === code && c.active);
+            if (!found) {
+                showToast('El cupón ingresado no es válido o expiró', 'error');
+                return;
+            }
+
+            state.appliedCoupon = found;
+            input.value = '';
+            renderCartUI();
+            showToast(`¡Cupón ${found.code} aplicado con éxito!`, 'success');
+        }
+
+        function removeCartCoupon() {
+            state.appliedCoupon = null;
+            renderCartUI();
+        }
+
+        function copyPromoCode(code) {
+            const temp = document.createElement('textarea');
+            temp.value = code;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            document.getElementById('cartCouponInput').value = code;
+            showToast(`Cupón ${code} copiado al carrito`, 'success');
+        }
+
+        function calculateCartTotals() {
+            const subtotal = state.cart.reduce((acc, item) => acc + (Number(item.price) * item.quantity), 0);
+            let discount = 0;
+
+            if (state.appliedCoupon && subtotal > 0) {
+                if (state.appliedCoupon.type === 'percent') {
+                    discount = subtotal * (Number(state.appliedCoupon.value) / 100);
+                } else {
+                    discount = Number(state.appliedCoupon.value);
+                }
+                if (discount > subtotal) discount = subtotal;
+            }
+
+            const freeThreshold = Number(state.config.freeShippingThreshold || 45);
+            const baseShipping = Number(state.config.shippingCost || 3.50);
+            const shipping = (subtotal === 0 || subtotal >= freeThreshold) ? 0 : baseShipping;
+            const total = Math.max(0, subtotal - discount + shipping);
+
+            return { subtotal, discount, shipping, total, freeThreshold };
+        }
+
+        function renderCartUI() {
+            const totalCount = state.cart.reduce((sum, i) => sum + i.quantity, 0);
+            document.getElementById('cartCountBadge').textContent = totalCount;
+
+            const container = document.getElementById('cartItemsContainer');
+            const footer = document.getElementById('cartFooterSummary');
+            const { subtotal, discount, shipping, total, freeThreshold } = calculateCartTotals();
+
+            const ratio = Math.min(100, Math.round((subtotal / freeThreshold) * 100));
+            document.getElementById('freeShippingProgress').style.width = `${ratio}%`;
+            document.getElementById('freeShippingPercent').textContent = `${ratio}%`;
+            if (subtotal >= freeThreshold && subtotal > 0) {
+                document.getElementById('freeShippingText').innerHTML = `<i class="fa-solid fa-heart text-brand-600 mr-1"></i> ¡Felicidades! Tienes <strong>Envío a Domicilio GRATIS</strong>`;
+            } else {
+                const missing = Math.max(0, freeThreshold - subtotal).toFixed(2);
+                document.getElementById('freeShippingText').innerHTML = `Agrega <strong>$${missing}</strong> más para tener Envío GRATIS`;
+            }
+
+            if (state.cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center py-12 text-brand-400">
+                        <div class="w-16 h-16 rounded-full bg-brand-50 flex items-center justify-center text-2xl mb-3 text-brand-500">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <p class="font-serif font-bold text-brand-900 text-base">Tu carrito está vacío</p>
+                        <p class="text-xs text-brand-500 mt-1 max-w-xs">Elige tus cosméticos, vitaminas o prendas favoritas para armar tu pedido.</p>
+                    </div>
+                `;
+                footer.classList.add('hidden');
+                return;
+            }
+
+            footer.classList.remove('hidden');
+
+            container.innerHTML = state.cart.map(item => `
+                <div class="flex gap-3.5 p-3 rounded-2xl bg-brand-50/50 border border-brand-200/70 items-center">
+                    <img src="${item.image}" alt="${escapeHtml(item.name)}" class="w-16 h-16 rounded-xl object-cover border border-brand-200 shrink-0">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-xs font-bold text-brand-900 truncate">${escapeHtml(item.name)}</h4>
+                        <span class="inline-block text-[11px] font-semibold text-brand-700 bg-brand-100 px-2 py-0.5 rounded-md mt-0.5">
+                            ${escapeHtml(item.variantName)}
+                        </span>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs font-extrabold text-brand-900">$${(item.price * item.quantity).toFixed(2)}</span>
+                            <div class="flex items-center gap-1.5 bg-white border border-brand-200 rounded-lg px-1.5 py-0.5">
+                                <button onclick="updateCartQuantity('${item.productId}', '${item.variantId}', -1)" class="w-5 h-5 text-xs font-bold text-brand-700 hover:text-brand-900">-</button>
+                                <span class="text-xs font-bold px-1 text-brand-900">${item.quantity}</span>
+                                <button onclick="updateCartQuantity('${item.productId}', '${item.variantId}', 1)" class="w-5 h-5 text-xs font-bold text-brand-700 hover:text-brand-900">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart('${item.productId}', '${item.variantId}')" class="text-brand-400 hover:text-rose-600 p-1" title="Eliminar">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                </div>
+            `).join('');
+
+            const couponBadge = document.getElementById('appliedCouponBadge');
+            const discountRow = document.getElementById('cartDiscountRow');
+            if (state.appliedCoupon) {
+                couponBadge.classList.remove('hidden');
+                document.getElementById('appliedCouponText').textContent = 
+                    `Cupón ${state.appliedCoupon.code} (${state.appliedCoupon.type === 'percent' ? state.appliedCoupon.value + '%' : '$' + state.appliedCoupon.value})`;
+                discountRow.classList.remove('hidden');
+                discountRow.classList.add('flex');
+                document.getElementById('cartDiscountText').textContent = `-$${discount.toFixed(2)}`;
+            } else {
+                couponBadge.classList.add('hidden');
+                discountRow.classList.add('hidden');
+                discountRow.classList.remove('flex');
+            }
+
+            document.getElementById('cartSubtotalText').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cartShippingText').textContent = shipping === 0 ? 'GRATIS' : `$${shipping.toFixed(2)}`;
+            document.getElementById('cartTotalText').textContent = `$${total.toFixed(2)}`;
+            document.getElementById('checkoutFinalTotalBadge').textContent = `$${total.toFixed(2)} USD`;
+        }
+
+        function toggleCartDrawer(open) {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (open) {
+                backdrop.classList.remove('hidden');
+                drawer.classList.remove('translate-x-full');
+                showCheckoutStep(false);
+                renderCartUI();
+            } else {
+                backdrop.classList.add('hidden');
+                drawer.classList.add('translate-x-full');
+            }
+        }
+
+        function showCheckoutStep(isCheckout) {
+            document.getElementById('cartStepItems').classList.toggle('hidden', isCheckout);
+            document.getElementById('cartStepCheckout').classList.toggle('hidden', !isCheckout);
+            document.getElementById('drawerTitle').textContent = isCheckout ? 'Datos de Entrega a Domicilio' : 'Tu Carrito de Compras';
+            toggleBankInfoBox();
+        }
+
+        function toggleBankInfoBox() {
+            const method = document.getElementById('custPayment').value;
+            const box = document.getElementById('checkoutBankInfoBox');
+            box.classList.toggle('hidden', method !== 'Transferencia Bancaria');
+        }
+
+        /**
+         * ==========================================
+         * WHATSAPP ORDER GENERATOR & CLOUD STOCK SYNC
+         * ==========================================
+         */
+        async function processWhatsAppOrder(event) {
+            event.preventDefault();
+            if (state.cart.length === 0) return;
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const payment = document.getElementById('custPayment').value;
+            const notes = document.getElementById('custNotes').value.trim();
+
+            const { subtotal, discount, shipping, total } = calculateCartTotals();
+            const orderId = 'GH-' + Math.floor(100000 + Math.random() * 900000);
+            const dateStr = new Date().toLocaleDateString('es-EC', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+            state.cart.forEach(item => {
+                const prod = state.products.find(p => p.id === item.productId);
+                if (prod) {
+                    const variant = prod.variants.find(v => v.id === item.variantId);
+                    if (variant) {
+                        variant.stock = Math.max(0, Number(variant.stock) - item.quantity);
+                    }
+                }
+            });
+
+            let lines = [];
+            lines.push(`🌸 *NUEVO PEDIDO - ${state.config.storeName.toUpperCase()}* 🌸`);
+            lines.push(`🧾 *Orden:* #${orderId}`);
+            lines.push(`📅 *Fecha:* ${dateStr}`);
+            lines.push(`-----------------------------------------`);
+            lines.push(`👤 *DATOS DE ENTREGA:*`);
+            lines.push(`• *Clienta:* ${name}`);
+            lines.push(`• *Teléfono:* ${phone}`);
+            lines.push(`• *Dirección Exacta:* ${address}`);
+            lines.push(`• *Forma de Pago:* ${payment}`);
+            if (notes) lines.push(`• *Notas:* ${notes}`);
+            lines.push(`-----------------------------------------`);
+            lines.push(`🛍️ *PRODUCTOS SELECCIONADOS:*`);
+
+            state.cart.forEach((item, index) => {
+                const lineTotal = (item.price * item.quantity).toFixed(2);
+                lines.push(`${index + 1}. *${item.name}*`);
+                lines.push(`   ↳ Opción: _${item.variantName}_`);
+                lines.push(`   ↳ Cant: ${item.quantity} x $${Number(item.price).toFixed(2)} = *$${lineTotal}*`);
+            });
+
+            lines.push(`-----------------------------------------`);
+            lines.push(`💵 *Subtotal:* $${subtotal.toFixed(2)}`);
+            if (state.appliedCoupon && discount > 0) {
+                lines.push(`🎟️ *Descuento (${state.appliedCoupon.code}):* -$${discount.toFixed(2)}`);
+            }
+            lines.push(`🚚 *Envío a domicilio:* ${shipping === 0 ? 'GRATIS' : '$' + shipping.toFixed(2)}`);
+            lines.push(`💖 *TOTAL A PAGAR: $${total.toFixed(2)} USD*`);
+            lines.push(`-----------------------------------------`);
+            lines.push(`Hola, deseo confirmar mi pedido para entrega a domicilio. ¡Muchas gracias!`);
+
+            const fullMessage = lines.join('\n');
+            state.lastWhatsAppText = fullMessage;
+
+            const cleanPhone = (state.config.whatsappNumber || '593991234567').replace(/\D/g, '');
+            const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(fullMessage)}`;
+
+            state.cart = [];
+            state.appliedCoupon = null;
+            await syncStateToCloud(false);
+            initializeSelectedVariants();
+            renderCatalog();
+            renderCartUI();
+            toggleCartDrawer(false);
+
+            document.getElementById('whatsappMessagePreviewBox').textContent = fullMessage;
+            document.getElementById('whatsappDirectLinkBtn').href = waUrl;
+            document.getElementById('whatsappPreviewModal').classList.remove('hidden');
+            document.getElementById('whatsappPreviewModal').classList.add('flex');
+
+            window.open(waUrl, '_blank');
+        }
+
+        function closeWhatsappPreviewModal() {
+            const modal = document.getElementById('whatsappPreviewModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function copyWhatsAppOrderText() {
+            const temp = document.createElement('textarea');
+            temp.value = state.lastWhatsAppText;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast('Resumen copiado al portapapeles', 'success');
+        }
+
+        /**
+         * ==========================================
+         * ADMIN PANEL AUTHENTICATION & CRUD
+         * ==========================================
+         */
+        function handleAdminAccess() {
+            if (state.isAdminAuthenticated) {
+                switchView('admin');
+            } else {
+                const modal = document.getElementById('adminLoginModal');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.getElementById('adminPasswordInput').value = '';
+                setTimeout(() => document.getElementById('adminPasswordInput').focus(), 100);
+            }
+        }
+
+        function closeAdminLoginModal() {
+            const modal = document.getElementById('adminLoginModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function verifyAdminPassword(event) {
+            event.preventDefault();
+            const inputPass = document.getElementById('adminPasswordInput').value;
+            const validPass = state.config.adminPassword || 'admin123';
+
+            if (inputPass === validPass) {
+                state.isAdminAuthenticated = true;
+                closeAdminLoginModal();
+                switchView('admin');
+                showToast('Bienvenida al Panel de tu Boutique', 'success');
+            } else {
+                showToast('Contraseña incorrecta. Usa admin123', 'error');
+            }
+        }
+
+        function logoutAdmin() {
+            state.isAdminAuthenticated = false;
+            switchView('store');
+            showToast('Sesión cerrada correctamente', 'info');
+        }
+
+        function switchView(viewName) {
+            const isStore = viewName === 'store';
+            document.getElementById('storeView').classList.toggle('hidden', !isStore);
+            document.getElementById('adminView').classList.toggle('hidden', isStore);
+            document.getElementById('headerSearchContainer').classList.toggle('md:hidden', !isStore);
+            document.getElementById('mobileSearchContainer').classList.toggle('hidden', !isStore);
+
+            const navStoreBtn = document.getElementById('navStoreBtn');
+            const navAdminBtn = document.getElementById('navAdminBtn');
+
+            if (isStore) {
+                navStoreBtn.classList.add('hidden');
+                navStoreBtn.classList.remove('flex');
+                navAdminBtn.classList.remove('hidden');
+                renderCatalog();
+            } else {
+                navStoreBtn.classList.remove('hidden');
+                navStoreBtn.classList.add('flex');
+                navAdminBtn.classList.add('hidden');
+                renderAdminDashboard();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchAdminTab(tabId) {
+            ['products', 'coupons', 'settings', 'cloud'].forEach(t => {
+                document.getElementById(`adminTab-${t}`).classList.toggle('hidden', t !== tabId);
+                const btn = document.getElementById(`adminTabBtn-${t}`);
+                if (t === tabId) {
+                    btn.className = 'admin-tab-btn px-5 py-3 font-bold text-sm border-b-2 border-brand-600 text-brand-800 whitespace-nowrap';
+                } else {
+                    btn.className = 'admin-tab-btn px-5 py-3 font-bold text-sm border-b-2 border-transparent text-brand-400 hover:text-brand-700 whitespace-nowrap';
+                }
+            });
+        }
+
+        function renderAdminDashboard() {
+            const totalProducts = state.products.length;
+            let totalVariants = 0;
+            let totalStock = 0;
+            state.products.forEach(p => {
+                totalVariants += p.variants.length;
+                p.variants.forEach(v => totalStock += Number(v.stock || 0));
+            });
+            const activeCoupons = state.coupons.filter(c => c.active).length;
+
+            document.getElementById('statTotalProducts').textContent = totalProducts;
+            document.getElementById('statTotalVariants').textContent = totalVariants;
+            document.getElementById('statTotalStock').textContent = totalStock;
+            document.getElementById('statActiveCoupons').textContent = activeCoupons;
+
+            const tbody = document.getElementById('adminProductsTableBody');
+            tbody.innerHTML = state.products.map(prod => {
+                const prodStock = prod.variants.reduce((acc, v) => acc + Number(v.stock || 0), 0);
+                return `
+                    <tr class="hover:bg-brand-50/50 transition-colors">
+                        <td class="py-3.5 px-4">
+                            <div class="flex items-center gap-3">
+                                <img src="${prod.image}" alt="" class="w-12 h-12 rounded-2xl object-cover border border-brand-200 shrink-0">
+                                <div>
+                                    <span class="font-bold text-brand-900 block">${escapeHtml(prod.name)}</span>
+                                    <span class="text-xs text-brand-400">${prod.featured ? '✨ Favorito' : 'Estándar'}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3.5 px-4">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-700 border border-brand-200">
+                                ${prod.category}
+                            </span>
+                        </td>
+                        <td class="py-3.5 px-4">
+                            <div class="flex flex-wrap gap-1.5 max-w-md">
+                                ${prod.variants.map(v => `
+                                    <span class="px-2 py-0.5 rounded-lg text-xs border ${Number(v.stock) > 0 ? 'bg-white border-brand-200 text-brand-800' : 'bg-rose-50 border-rose-200 text-rose-700'}">
+                                        <strong>${escapeHtml(v.name)}</strong>: $${Number(v.price).toFixed(2)} (${v.stock})
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </td>
+                        <td class="py-3.5 px-4 font-bold ${prodStock > 0 ? 'text-emerald-600' : 'text-rose-600'}">
+                            ${prodStock} uds.
+                        </td>
+                        <td class="py-3.5 px-4 text-right whitespace-nowrap">
+                            <button onclick="openProductModal('${prod.id}')" class="px-3 py-1.5 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-800 font-bold text-xs mr-1">
+                                <i class="fa-solid fa-pen-to-square mr-1"></i> Editar
+                            </button>
+                            <button onclick="deleteProduct('${prod.id}')" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold text-xs">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            const couponsBody = document.getElementById('adminCouponsTableBody');
+            couponsBody.innerHTML = state.coupons.map((c, idx) => `
+                <tr>
+                    <td class="py-3 px-4">
+                        <span class="font-mono font-bold text-brand-900 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-200">${escapeHtml(c.code)}</span>
+                        <span class="block text-xs text-brand-400 mt-0.5">${escapeHtml(c.description || '')}</span>
+                    </td>
+                    <td class="py-3 px-4 font-bold text-brand-700">
+                        ${c.type === 'percent' ? `${c.value}% OFF` : `-$${Number(c.value).toFixed(2)} USD`}
+                    </td>
+                    <td class="py-3 px-4">
+                        <button onclick="toggleCouponStatus(${idx})" class="px-2.5 py-1 rounded-full text-xs font-bold ${c.active ? 'bg-emerald-100 text-emerald-700' : 'bg-brand-100 text-brand-500'}">
+                            ${c.active ? '● Activo' : '○ Inactivo'}
+                        </button>
+                    </td>
+                    <td class="py-3 px-4 text-right">
+                        <button onclick="deleteCoupon(${idx})" class="text-rose-600 hover:text-rose-800 text-xs font-bold">
+                            <i class="fa-solid fa-trash mr-1"></i> Eliminar
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+
+            document.getElementById('confStoreName').value = state.config.storeName || '';
+            document.getElementById('confWhatsapp').value = state.config.whatsappNumber || '';
+            document.getElementById('confShippingCost').value = state.config.shippingCost ?? 3.5;
+            document.getElementById('confFreeShipping').value = state.config.freeShippingThreshold ?? 45;
+            document.getElementById('confAdminPass').value = state.config.adminPassword || 'admin123';
+            document.getElementById('confBankDetails').value = state.config.bankDetails || '';
+
+            const savedCloudRaw = localStorage.getItem(STORAGE_KEYS.CUSTOM_CLOUD);
+            if (savedCloudRaw) {
+                try {
+                    const parsed = JSON.parse(savedCloudRaw);
+                    document.getElementById('customFirebaseDbUrl').value = parsed.dbUrl || '';
+                    document.getElementById('customFirebaseJsonInput').value = parsed.jsonConfig || '';
+                } catch (_) {}
+            }
+        }
+
+        function openProductModal(productId = null) {
+            const modal = document.getElementById('productFormModal');
+            const rowsContainer = document.getElementById('variantRowsContainer');
+            rowsContainer.innerHTML = '';
+
+            if (productId) {
+                const prod = state.products.find(p => p.id === productId);
+                if (!prod) return;
+                document.getElementById('productModalTitle').textContent = 'Editar Producto';
+                document.getElementById('prodIdInput').value = prod.id;
+                document.getElementById('prodNameInput').value = prod.name;
+                document.getElementById('prodCategoryInput').value = prod.category;
+                document.getElementById('prodImageInput').value = prod.image;
+                updateProductImagePreview(prod.image);
+                document.getElementById('prodDescInput').value = prod.description;
+                document.getElementById('prodVariantLabelInput').value = prod.variantLabel || 'Selecciona Opción';
+                document.getElementById('prodFeaturedInput').checked = !!prod.featured;
+
+                prod.variants.forEach(v => addVariantRow(v.name, v.price, v.stock, v.id));
+            } else {
+                document.getElementById('productModalTitle').textContent = 'Crear Nuevo Producto';
+                document.getElementById('adminProductForm').reset();
+                document.getElementById('prodIdInput').value = '';
+                suggestVariantLabel();
+                setSampleImage('cosmetico');
+                addVariantRow('Talla S / Tono 01', 15.00, 10);
+                addVariantRow('Talla M / Tono 02', 15.00, 8);
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('productFormModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function suggestVariantLabel() {
+            const cat = document.getElementById('prodCategoryInput').value;
+            const labelInput = document.getElementById('prodVariantLabelInput');
+            if (cat === 'Cosméticos') labelInput.value = 'Selecciona el Tono / Acabado';
+            else if (cat === 'Vitaminas') labelInput.value = 'Selecciona la Presentación';
+            else if (cat === 'Ropa Americana') labelInput.value = 'Selecciona Talla y Color';
+        }
+
+        function setSampleImage(type) {
+            const urls = {
+                cosmetico: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80',
+                vitamina: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80',
+                ropa: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=700&q=80'
+            };
+            const url = urls[type];
+            document.getElementById('prodImageInput').value = url;
+            updateProductImagePreview(url);
+        }
+
+        function updateProductImagePreview(url) {
+            const img = document.getElementById('prodImagePreview');
+            img.src = url || 'https://placehold.co/100x100/FBE9EC/9E475B?text=Foto';
+        }
+
+        function addVariantRow(name = '', price = '', stock = '', existingId = '') {
+            const container = document.getElementById('variantRowsContainer');
+            const row = document.createElement('div');
+            row.className = 'variant-row grid grid-cols-12 gap-2 items-center bg-brand-50/50 p-2.5 rounded-xl border border-brand-200/70';
+            row.dataset.variantId = existingId || ('v_' + Date.now() + '_' + Math.floor(Math.random() * 1000));
+
+            row.innerHTML = `
+                <div class="col-span-6">
+                    <input type="text" required placeholder="Ej. Talla M / Tono Rose / 60 Cáps." value="${escapeHtml(name)}" class="var-name-input w-full px-3 py-1.5 rounded-lg border border-brand-200 bg-white text-xs sm:text-sm focus:outline-none focus:border-brand-500">
+                </div>
+                <div class="col-span-3">
+                    <div class="relative">
+                        <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs text-brand-400">$</span>
+                        <input type="number" required min="0.1" step="0.01" placeholder="Precio" value="${price}" class="var-price-input w-full pl-6 pr-2 py-1.5 rounded-lg border border-brand-200 bg-white text-xs sm:text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <input type="number" required min="0" step="1" placeholder="Stock" value="${stock}" class="var-stock-input w-full px-2.5 py-1.5 rounded-lg border border-brand-200 bg-white text-xs sm:text-sm focus:outline-none focus:border-brand-500">
+                </div>
+                <div class="col-span-1 text-right">
+                    <button type="button" onclick="removeVariantRow(this)" class="text-brand-400 hover:text-rose-600 p-1">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                </div>
+            `;
+            container.appendChild(row);
+        }
+
+        function removeVariantRow(btn) {
+            const container = document.getElementById('variantRowsContainer');
+            if (container.querySelectorAll('.variant-row').length <= 1) {
+                showToast('Cada producto requiere al menos 1 variante', 'warning');
+                return;
+            }
+            btn.closest('.variant-row').remove();
+        }
+
+        async function handleSaveProduct(event) {
+            event.preventDefault();
+            const existingId = document.getElementById('prodIdInput').value;
+            const name = document.getElementById('prodNameInput').value.trim();
+            const category = document.getElementById('prodCategoryInput').value;
+            const image = document.getElementById('prodImageInput').value.trim();
+            const description = document.getElementById('prodDescInput').value.trim();
+            const variantLabel = document.getElementById('prodVariantLabelInput').value.trim();
+            const featured = document.getElementById('prodFeaturedInput').checked;
+
+            const variantRows = Array.from(document.querySelectorAll('#variantRowsContainer .variant-row'));
+            const variants = variantRows.map(row => ({
+                id: row.dataset.variantId,
+                name: row.querySelector('.var-name-input').value.trim(),
+                price: parseFloat(row.querySelector('.var-price-input').value) || 0,
+                stock: parseInt(row.querySelector('.var-stock-input').value, 10) || 0
+            }));
+
+            if (existingId) {
+                const idx = state.products.findIndex(p => p.id === existingId);
+                if (idx !== -1) {
+                    state.products[idx] = { id: existingId, name, category, image, description, variantLabel, featured, variants };
+                }
+            } else {
+                state.products.unshift({
+                    id: 'prod_' + Date.now(),
+                    name,
+                    category,
+                    image,
+                    description,
+                    variantLabel,
+                    featured,
+                    variants
+                });
+            }
+
+            initializeSelectedVariants();
+            closeProductModal();
+            renderAdminDashboard();
+            renderCatalog();
+            await syncStateToCloud(true);
+        }
+
+        async function deleteProduct(productId) {
+            state.products = state.products.filter(p => p.id !== productId);
+            state.cart = state.cart.filter(i => i.productId !== productId);
+            renderAdminDashboard();
+            renderCatalog();
+            renderCartUI();
+            await syncStateToCloud(true);
+        }
+
+        async function handleSaveCoupon(event) {
+            event.preventDefault();
+            const code = document.getElementById('couponCodeInput').value.trim().toUpperCase();
+            const type = document.getElementById('couponTypeInput').value;
+            const value = parseFloat(document.getElementById('couponValueInput').value);
+            const description = document.getElementById('couponDescInput').value.trim();
+
+            if (!code || isNaN(value)) return;
+
+            const existingIdx = state.coupons.findIndex(c => c.code.toUpperCase() === code);
+            if (existingIdx !== -1) {
+                state.coupons[existingIdx] = { code, type, value, description, active: true };
+            } else {
+                state.coupons.push({ code, type, value, description, active: true });
+            }
+
+            document.getElementById('couponForm').reset();
+            renderAdminDashboard();
+            await syncStateToCloud(true);
+        }
+
+        async function toggleCouponStatus(index) {
+            if (!state.coupons[index]) return;
+            state.coupons[index].active = !state.coupons[index].active;
+            renderAdminDashboard();
+            await syncStateToCloud(true);
+        }
+
+        async function deleteCoupon(index) {
+            state.coupons.splice(index, 1);
+            renderAdminDashboard();
+            await syncStateToCloud(true);
+        }
+
+        async function handleSaveSettings(event) {
+            event.preventDefault();
+            state.config.storeName = document.getElementById('confStoreName').value.trim();
+            state.config.whatsappNumber = document.getElementById('confWhatsapp').value.trim();
+            state.config.shippingCost = parseFloat(document.getElementById('confShippingCost').value) || 0;
+            state.config.freeShippingThreshold = parseFloat(document.getElementById('confFreeShipping').value) || 0;
+            state.config.adminPassword = document.getElementById('confAdminPass').value.trim() || 'admin123';
+            state.config.bankDetails = document.getElementById('confBankDetails').value.trim();
+
+            applyStoreBranding();
+            renderCartUI();
+            await syncStateToCloud(true);
+        }
+
+        async function handleSaveCustomFirebase(event) {
+            event.preventDefault();
+            let dbUrl = document.getElementById('customFirebaseDbUrl').value.trim();
+            const jsonRaw = document.getElementById('customFirebaseJsonInput').value.trim();
+
+            if (!dbUrl && jsonRaw) {
+                try {
+                    const parsed = JSON.parse(jsonRaw);
+                    if (parsed.databaseURL) dbUrl = parsed.databaseURL;
+                } catch (_) {
+                    showToast('Revisa que el JSON de Firebase esté bien copiado', 'warning');
+                }
+            }
+
+            if (!dbUrl) {
+                showToast('Ingresa la URL de tu Firebase Realtime Database', 'warning');
+                return;
+            }
+
+            localStorage.setItem(STORAGE_KEYS.CUSTOM_CLOUD, JSON.stringify({ dbUrl, jsonConfig: jsonRaw }));
+            await connectRealtimeDatabaseUrl(dbUrl);
+            showToast('¡Conectado a tu Firebase Realtime Database!', 'success');
+        }
+
+        async function pushLocalCatalogToCloud() {
+            await syncStateToCloud(true);
+        }
+
+        function exportDatabaseJSON() {
+            const payload = {
+                exportedAt: new Date().toISOString(),
+                storeConfig: state.config,
+                coupons: state.coupons,
+                products: state.products
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `respaldo-boutique-${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('Archivo de respaldo descargado', 'success');
+        }
+
+        async function resetFactoryDatabase() {
+            state.products = JSON.parse(JSON.stringify(INITIAL_PRODUCTS));
+            state.coupons = JSON.parse(JSON.stringify(INITIAL_COUPONS));
+            state.config = JSON.parse(JSON.stringify(INITIAL_STORE_CONFIG));
+            state.cart = [];
+            initializeSelectedVariants();
+            applyStoreBranding();
+            renderAdminDashboard();
+            renderCatalog();
+            renderCartUI();
+            await syncStateToCloud(true);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+
+            const styles = {
+                success: 'bg-brand-800 text-white border-champagne-400',
+                error: 'bg-rose-600 text-white border-rose-300',
+                warning: 'bg-amber-500 text-white border-amber-200',
+                info: 'bg-brand-700 text-white border-brand-300'
+            };
+
+            const icons = {
+                success: 'fa-heart text-champagne-200',
+                error: 'fa-circle-exclamation text-white',
+                warning: 'fa-triangle-exclamation text-white',
+                info: 'fa-sparkles text-champagne-200'
+            };
+
+            toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-2xl shadow-xl border-l-4 text-xs sm:text-sm font-semibold fade-in ${styles[type] || styles.info}`;
+            toast.innerHTML = `
+                <i class="fa-solid ${icons[type] || icons.info} text-base"></i>
+                <span class="flex-1">${escapeHtml(message)}</span>
+            `;
+
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.25s ease';
+                setTimeout(() => toast.remove(), 250);
+            }, 3200);
+        }
+
+        // Expose handlers to global window scope for HTML inline events
+        Object.assign(window, {
+            switchView,
+            setCategoryFilter,
+            handleSearchInput,
+            resetAllFilters,
+            renderCatalog,
+            selectProductVariant,
+            addToCart,
+            updateCartQuantity,
+            removeFromCart,
+            applyCartCoupon,
+            removeCartCoupon,
+            copyPromoCode,
+            toggleCartDrawer,
+            showCheckoutStep,
+            toggleBankInfoBox,
+            processWhatsAppOrder,
+            closeWhatsappPreviewModal,
+            copyWhatsAppOrderText,
+            handleAdminAccess,
+            closeAdminLoginModal,
+            verifyAdminPassword,
+            logoutAdmin,
+            switchAdminTab,
+            openProductModal,
+            closeProductModal,
+            suggestVariantLabel,
+            setSampleImage,
+            updateProductImagePreview,
+            addVariantRow,
+            removeVariantRow,
+            handleSaveProduct,
+            deleteProduct,
+            handleSaveCoupon,
+            toggleCouponStatus,
+            deleteCoupon,
+            handleSaveSettings,
+            handleSaveCustomFirebase,
+            pushLocalCatalogToCloud,
+            exportDatabaseJSON,
+            resetFactoryDatabase
+        });
+
+        initApp();
+    </script>
+</body>
+</html>
