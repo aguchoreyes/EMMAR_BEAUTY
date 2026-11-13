@@ -713,6 +713,62 @@ const firebaseConfig = {
                         </p>
                     </div>
 
+                    <!-- ASISTENTE DIRECTO PARA ABRIR Y ACTIVAR RULES EN 2 CLICS -->
+                    <div id="firebaseRulesHelperBox" class="p-4 rounded-2xl bg-amber-50 border border-amber-300 space-y-3 text-xs">
+                        <div class="flex items-start justify-between gap-2">
+                            <div>
+                                <p class="font-bold text-amber-900 text-sm flex items-center gap-1.5">
+                                    <i class="fa-solid fa-unlock-keyhole text-amber-600"></i>
+                                    <span>¿Te sale aviso de Reglas (Rules) o no encuentras dónde activarlas?</span>
+                                </p>
+                                <p class="text-[11px] text-amber-800 mt-1 leading-relaxed">
+                                    Haz clic en cualquiera de estos dos botones azules: te llevarán <strong>directamente a la pantalla exacta de tu proyecto en Google Firebase</strong> sin que tengas que buscar menús:
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                            <button
+                                type="button"
+                                onclick="window.openFirebaseConsoleDirect('firestore-rules')"
+                                class="p-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-sm flex items-center justify-center gap-2 transition"
+                            >
+                                <i class="fa-solid fa-up-right-from-square"></i>
+                                <span>1. Abrir Reglas de Cloud Firestore</span>
+                            </button>
+                            <button
+                                type="button"
+                                onclick="window.openFirebaseConsoleDirect('rtdb-rules')"
+                                class="p-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm flex items-center justify-center gap-2 transition"
+                            >
+                                <i class="fa-solid fa-up-right-from-square"></i>
+                                <span>2. Abrir Reglas de Realtime Database</span>
+                            </button>
+                        </div>
+
+                        <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-brand-900 text-[11px]">
+                                    Si en esa ventana ves un botón que dice "Crear base de datos" (Create database):
+                                </span>
+                            </div>
+                            <p class="text-[11px] text-brand-700">
+                                1️⃣ Haz clic en <strong>"Crear base de datos"</strong> &rarr; elige <strong>"Comenzar en modo de prueba" (Start in test mode)</strong> &rarr; dale a <strong>Habilitar/Crear</strong>.<br>
+                                2️⃣ Si ya está creada, pega estas reglas públicas y dale al botón <strong>Publicar (Publish)</strong>:
+                            </p>
+                            <div class="flex items-center justify-between gap-2 bg-brand-50 p-2 rounded-lg border border-brand-200 font-mono text-[10px] text-brand-900">
+                                <code id="firestoreRulesSnippetText" class="truncate">rules_version = '2'; service cloud.firestore { match /databases/{database}/documents { match /{document=**} { allow read, write: if true; } } }</code>
+                                <button
+                                    type="button"
+                                    onclick="window.copyFirestoreRulesSnippet()"
+                                    class="px-2.5 py-1 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-sans font-bold text-[10px] shrink-0"
+                                >
+                                    Copiar Regla
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Bloque para dejar la Base de Datos CONECTADA PERMANENTEMENTE en GitHub -->
                     <div class="p-4 rounded-2xl bg-brand-50 border border-brand-200 space-y-2.5 mt-4">
                         <p class="text-xs font-bold text-brand-900 flex items-center gap-1.5">
@@ -1169,7 +1225,29 @@ const firebaseConfig = {
         };
 
         /* Estado reactivo en memoria */
+        const LOCAL_STORAGE_BACKUP_KEY = "glam_boutique_593_permanent_state_v2";
         let appState = JSON.parse(JSON.stringify(INITIAL_SEED_STATE));
+
+        // Cargar respaldo local inmediato para que nunca se pierdan los cambios hechos en este dispositivo
+        try {
+            const savedLocalRaw = localStorage.getItem(LOCAL_STORAGE_BACKUP_KEY);
+            if (savedLocalRaw) {
+                const parsedLocal = JSON.parse(savedLocalRaw);
+                if (parsedLocal && parsedLocal.products && parsedLocal.storeConfig) {
+                    appState = {
+                        ...appState,
+                        ...parsedLocal,
+                        storeConfig: {
+                            ...INITIAL_SEED_STATE.storeConfig,
+                            ...(parsedLocal.storeConfig || {})
+                        }
+                    };
+                }
+            }
+        } catch (localErr) {
+            console.warn("No se pudo leer respaldo local:", localErr);
+        }
+
         appState.lastModifiedAt = Number(appState.lastModifiedAt) || 0;
         let selectedVariantsMap = {}; // { productId: variantId }
         let cart = [];
@@ -1249,6 +1327,10 @@ const firebaseConfig = {
             };
 
             hasLoadedInitialCloudState = true;
+
+            try {
+                localStorage.setItem(LOCAL_STORAGE_BACKUP_KEY, JSON.stringify(appState));
+            } catch (e) {}
 
             // No interrumpir si la administradora tiene un formulario abierto o está escribiendo en un input del Admin
             const activeTag = document.activeElement?.tagName || "";
@@ -1443,7 +1525,7 @@ const firebaseConfig = {
         }
 
         async function pushToCustomFirestoreRest(projectId) {
-            if (!projectId) return false;
+            if (!projectId) return { ok: false, reason: "no_project_id" };
             try {
                 const apiKey = (appState.storeConfig.customFirebaseApiKey || "").trim();
                 const keyParam = apiKey ? `?key=${encodeURIComponent(apiKey)}` : "";
@@ -1459,10 +1541,20 @@ const firebaseConfig = {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(bodyObj)
                 });
-                return res.ok;
+                if (!res.ok) {
+                    let errData = {};
+                    try { errData = await res.json(); } catch (e) {}
+                    const status = res.status;
+                    return {
+                        ok: false,
+                        status,
+                        message: errData?.error?.message || `HTTP ${status}`
+                    };
+                }
+                return { ok: true };
             } catch (err) {
                 console.warn("Error guardando por REST en Firestore:", err);
-                return false;
+                return { ok: false, reason: "network_error" };
             }
         }
 
@@ -1578,8 +1670,16 @@ const firebaseConfig = {
             lastLocalSaveTimestamp = nowTs;
             isSavingToCloud = true;
 
+            // 1. Guardar SIEMPRE de inmediato en el navegador local (nunca se pierde ningún cambio)
+            try {
+                localStorage.setItem(LOCAL_STORAGE_BACKUP_KEY, JSON.stringify(appState));
+            } catch (localWriteErr) {
+                console.warn("Aviso almacenamiento local:", localWriteErr);
+            }
+
             renderAll();
             let savedSomewhere = false;
+            let cloudErrorReason = "";
 
             try {
                 // Solo escribir en el Firestore del entorno si NO hay un Firebase propio configurado
@@ -1606,14 +1706,17 @@ const firebaseConfig = {
                         setCloudBadge("Cloud Firestore Activo", true);
                     } catch (err) {
                         console.warn("Error guardando en Cloud Firestore SDK:", err);
+                        cloudErrorReason = err?.code || err?.message || "";
                     }
                 }
 
                 if (appState.storeConfig.customFirebaseProjectId) {
-                    const okRestFs = await pushToCustomFirestoreRest(appState.storeConfig.customFirebaseProjectId);
-                    if (okRestFs) {
+                    const restResult = await pushToCustomFirestoreRest(appState.storeConfig.customFirebaseProjectId);
+                    if (restResult && restResult.ok) {
                         savedSomewhere = true;
                         setCloudBadge("Cloud Firestore Sincronizado", true);
+                    } else if (restResult) {
+                        cloudErrorReason = restResult.message || `Código ${restResult.status || ""}`;
                     }
                 }
 
@@ -1659,16 +1762,60 @@ const firebaseConfig = {
                 lastLocalSaveTimestamp = Date.now();
             }
 
-            updateDiagnosticsBox(savedSomewhere ? "Conectado y Guardado Permanente" : "Modo Local (Verifica Reglas de Firestore)", savedSomewhere);
+            if (savedSomewhere) {
+                updateDiagnosticsBox("Conectado y Guardado en Firebase", true);
+            } else {
+                setCloudBadge("Guardado Local Activo", false);
+                updateDiagnosticsBox(
+                    cloudErrorReason.includes("NOT_FOUND") || cloudErrorReason.includes("404")
+                        ? "Guardado Local (Falta darle a 'Crear base de datos' en Firebase)"
+                        : "Guardado Local (Usa el botón azul abajo para activar Rules)",
+                    false
+                );
+            }
 
             if (showNotification) {
                 if (savedSomewhere) {
-                    window.showToast("Cambios guardados de forma permanente en tu Base de Datos");
+                    window.showToast("¡Cambios guardados en vivo en tu Base de Datos Firebase!");
                 } else {
-                    window.showToast("No se pudo escribir en Firebase. Verifica que las Reglas (Rules) estén en modo público.", "error");
+                    window.showToast("Cambios guardados en tu equipo. Para publicar en la nube usa el botón azul en la pestaña 6 (Firebase).", "info");
                 }
             }
         }
+
+        /* Botones directos para abrir exactamente la página de Reglas (Rules) del proyecto del usuario en Firebase */
+        window.openFirebaseConsoleDirect = function(targetType) {
+            const projectId = (
+                document.getElementById("firebaseCustomProjectIdInput")?.value ||
+                appState.storeConfig.customFirebaseProjectId ||
+                ""
+            ).trim();
+
+            if (!projectId) {
+                window.open("https://console.firebase.google.com/", "_blank");
+                window.showToast("Primero pega tu bloque de Firebase para detectar tu Project ID", "info");
+                return;
+            }
+
+            if (targetType === "firestore-rules") {
+                const url = `https://console.firebase.google.com/project/${encodeURIComponent(projectId)}/firestore/databases/-default-/rules`;
+                window.open(url, "_blank");
+            } else {
+                const url = `https://console.firebase.google.com/project/${encodeURIComponent(projectId)}/database`;
+                window.open(url, "_blank");
+            }
+        };
+
+        window.copyFirestoreRulesSnippet = function() {
+            const rulesText = `rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if true;\n    }\n  }\n}`;
+            const tempArea = document.createElement("textarea");
+            tempArea.value = rulesText;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempArea);
+            window.showToast("Reglas copiadas. Pégalas en la ventana de Firebase y dale a Publicar.");
+        };
 
         async function pullFromCustomRealtimeDb(dbUrl, notify = true) {
             if (!dbUrl || !dbUrl.startsWith("https://")) return false;
