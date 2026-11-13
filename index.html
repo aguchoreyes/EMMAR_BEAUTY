@@ -1,0 +1,3197 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Glam & Health Boutique 593 | Cosméticos, Vitaminas y Moda USA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#FFFBF9',
+                            100: '#FDF4F5',
+                            200: '#FBE8EB',
+                            300: '#F5D0D8',
+                            400: '#E8A5B5',
+                            500: '#D47A92',
+                            600: '#B55B73',
+                            700: '#96445B',
+                            800: '#6E3244',
+                            900: '#4A202D',
+                        },
+                        champagne: {
+                            100: '#FBF7EE',
+                            300: '#EAD8B1',
+                            500: '#C5A059',
+                            600: '#A9843E'
+                        },
+                        deuna: {
+                            50: '#F5F0FF',
+                            100: '#EDE3FF',
+                            500: '#6D28D9',
+                            600: '#5B21B6',
+                            700: '#4C1D95'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFBF9;
+            color: #4A202D;
+            font-family: 'Inter', sans-serif;
+        }
+        .soft-card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(181, 91, 115, 0.08), 0 4px 12px -2px rgba(181, 91, 115, 0.04);
+        }
+        .soft-card-shadow:hover {
+            box-shadow: 0 18px 35px -5px rgba(181, 91, 115, 0.15), 0 8px 16px -4px rgba(181, 91, 115, 0.08);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #FFF8F6 0%, #FBE8EB 50%, #F7D9DF 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #FDF4F5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E8A5B5;
+            border-radius: 9999px;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-brand-700 text-white text-xs py-2 px-4 no-print">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-sparkles text-champagne-300"></i>
+                <span id="topBarPromoText" class="font-medium">Envío GRATIS en pedidos superiores a $45 | Pagos con Deuna! o Transferencia</span>
+            </div>
+            <div class="flex items-center gap-3 ml-auto">
+                <!-- Estado de Sincronización en Vivo -->
+                <span id="cloudStatusBadge" class="inline-flex items-center gap-1.5 bg-white/15 px-2.5 py-0.5 rounded-full text-[11px]">
+                    <span id="cloudStatusDot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span id="cloudStatusText">Catálogo en Vivo</span>
+                </span>
+                <!-- Botón Compartir Link de la Tienda por WhatsApp -->
+                <button onclick="window.copyOrShareStoreLink()" class="inline-flex items-center gap-1.5 bg-champagne-500 hover:bg-champagne-600 text-white font-semibold px-3 py-0.5 rounded-full text-[11px] shadow-sm transition" title="Copiar link personalizado de la tienda para enviar por WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Compartir Link Tienda</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-brand-200 transition-all no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo + Nombre -->
+            <a href="#" onclick="window.switchView('store'); return false;" class="flex items-center gap-3 group">
+                <div id="headerLogoContainer" class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-100 to-brand-200 border border-brand-300 flex items-center justify-center overflow-hidden shadow-sm">
+                    <img id="headerLogoImg" src="" alt="Logo" class="w-full h-full object-cover hidden">
+                    <i id="headerLogoIcon" class="fa-solid fa-gem text-brand-600 text-xl group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div>
+                    <span id="headerStoreName" class="font-serif text-xl sm:text-2xl font-bold text-brand-800 tracking-tight block leading-none">Glam & Health</span>
+                    <span id="headerStoreTagline" class="text-[11px] uppercase tracking-widest text-brand-500 font-semibold block mt-1">Boutique 593 • Belleza & Moda</span>
+                </div>
+            </a>
+
+            <!-- Buscador Instantáneo Desktop -->
+            <div id="headerSearchWrapper" class="hidden md:flex flex-1 max-w-md mx-4">
+                <div class="relative w-full">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-brand-400 text-sm"></i>
+                    <input
+                        id="searchInputDesktop"
+                        type="text"
+                        oninput="window.handleSearch(this.value)"
+                        placeholder="Buscar cosméticos, vitaminas, ropa, tallas..."
+                        class="w-full pl-10 pr-9 py-2.5 rounded-full bg-brand-50 border border-brand-200 text-sm text-brand-900 placeholder-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:bg-white transition"
+                    >
+                    <button id="clearSearchBtnDesktop" onclick="window.handleSearch('')" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-brand-400 hover:text-brand-700">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button onclick="window.toggleAdminView()" id="navAdminBtn" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium border border-brand-200 bg-brand-50 text-brand-700 hover:bg-brand-100 transition">
+                    <i class="fa-solid fa-sliders text-brand-500"></i>
+                    <span id="navAdminBtnText">Panel Admin</span>
+                </button>
+
+                <button onclick="window.toggleCartDrawer(true)" class="relative inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
+                    <i class="fa-solid fa-bag-shopping text-base"></i>
+                    <span class="hidden sm:inline">Mi Carrito</span>
+                    <span id="cartCountBadge" class="px-2 py-0.5 text-xs rounded-full bg-white text-brand-700 font-bold">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Buscador Móvil -->
+        <div id="mobileSearchWrapper" class="md:hidden px-4 pb-3">
+            <div class="relative w-full">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-400 text-sm"></i>
+                <input
+                    id="searchInputMobile"
+                    type="text"
+                    oninput="window.handleSearch(this.value)"
+                    placeholder="Buscar productos, tonos, vitaminas o tallas..."
+                    class="w-full pl-9 pr-8 py-2 rounded-full bg-brand-50 border border-brand-200 text-sm text-brand-900 placeholder-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400"
+                >
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- VISTA CLIENTE (TIENDA / CATÁLOGO)          -->
+    <!-- ========================================== -->
+    <main id="storeView" class="flex-1">
+        <!-- Hero Banner Femenino y Acogedor -->
+        <section class="hero-gradient border-b border-brand-200 relative overflow-hidden no-print">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-brand-200 text-brand-700 text-xs font-semibold shadow-sm">
+                            <i class="fa-solid fa-heart text-brand-500"></i>
+                            <span>Productos 100% Originales Importados • Entrega a Domicilio</span>
+                        </div>
+                        <h1 class="font-serif text-3xl sm:text-5xl font-bold text-brand-900 leading-tight">
+                            Realza tu belleza, cuida tu salud y viste con <span class="text-brand-600 italic">estilo único</span>.
+                        </h1>
+                        <p class="text-brand-700 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Explora nuestra selección exclusiva de cosméticos en tendencia, vitaminas americanas certificadas y prendas importadas. Elige tu talla o tono ideal y recibe tu pedido en la puerta de tu casa.
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+                            <a href="#catalogoSection" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md transition">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Ver Catálogo Completo</span>
+                            </a>
+                            <button onclick="window.copyOrShareStoreLink()" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-brand-50 text-brand-800 border border-brand-300 font-semibold text-sm shadow-sm transition">
+                                <i class="fa-solid fa-share-nodes text-brand-600"></i>
+                                <span>Copiar Link de la Tienda</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Destacada Derecha -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white/90 backdrop-blur rounded-3xl p-5 border border-brand-200 soft-card-shadow">
+                            <div class="grid grid-cols-3 gap-3 text-center">
+                                <div class="p-3 rounded-2xl bg-brand-50 border border-brand-100">
+                                    <div class="w-10 h-10 mx-auto rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-2">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    </div>
+                                    <p class="font-serif font-bold text-brand-800 text-sm">Cosméticos</p>
+                                    <p class="text-[11px] text-brand-500 mt-0.5">Tonos en vivo</p>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-brand-50 border border-brand-100">
+                                    <div class="w-10 h-10 mx-auto rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-2">
+                                        <i class="fa-solid fa-capsules"></i>
+                                    </div>
+                                    <p class="font-serif font-bold text-brand-800 text-sm">Vitaminas</p>
+                                    <p class="text-[11px] text-brand-500 mt-0.5">100% USA</p>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-brand-50 border border-brand-100">
+                                    <div class="w-10 h-10 mx-auto rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-2">
+                                        <i class="fa-solid fa-shirt"></i>
+                                    </div>
+                                    <p class="font-serif font-bold text-brand-800 text-sm">Moda USA</p>
+                                    <p class="text-[11px] text-brand-500 mt-0.5">Tallas S a XL</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-brand-100 flex items-center justify-between text-xs text-brand-700">
+                                <span class="flex items-center gap-1.5 font-medium">
+                                    <i class="fa-solid fa-qrcode text-deuna-600"></i> Aceptamos pago directo con <strong>Deuna!</strong>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-full bg-brand-100 text-brand-700 font-semibold">Código: BIENVENIDA10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de Filtros Dinámicos (Categorías Infinitas + Rango de Precio + Orden) -->
+        <section id="catalogoSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+            <div class="bg-white rounded-3xl p-4 sm:p-6 border border-brand-200 soft-card-shadow space-y-4 no-print">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="font-serif text-xl sm:text-2xl font-bold text-brand-900">Explorar Categorías</h2>
+                        <p class="text-xs text-brand-500">Selecciona una categoría y elige la variante (talla, tono o presentación) en cada producto</p>
+                    </div>
+                    <!-- Controles de Precio y Ordenamiento -->
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div class="flex items-center gap-2 bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                            <span class="text-xs text-brand-700 font-medium">Precio máx:</span>
+                            <input id="priceFilterRange" type="range" min="5" max="200" step="5" value="200" oninput="window.handlePriceFilter(this.value)" class="w-24 accent-brand-600 cursor-pointer">
+                            <span id="priceFilterLabel" class="text-xs font-bold text-brand-800 min-w-[42px]">$200</span>
+                        </div>
+                        <select id="sortSelect" onchange="window.handleSort(this.value)" class="text-xs bg-brand-50 border border-brand-200 text-brand-800 font-medium rounded-full px-3.5 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400">
+                            <option value="featured">Destacados primero</option>
+                            <option value="price-asc">Precio: Menor a Mayor</option>
+                            <option value="price-desc">Precio: Mayor a Menor</option>
+                            <option value="name-asc">Nombre: A - Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Píldoras de Categorías Dinámicas (Infinitas desde el Backend) -->
+                <div id="categoryFilterBar" class="flex items-center gap-2 overflow-x-auto pb-1 custom-scrollbar"></div>
+            </div>
+
+            <!-- Contador de Resultados -->
+            <div class="flex items-center justify-between mt-6 mb-4 px-1">
+                <p id="catalogCountText" class="text-xs sm:text-sm text-brand-600 font-medium">Mostrando productos...</p>
+                <button id="resetFiltersBtn" onclick="window.resetFilters()" class="hidden text-xs text-brand-600 hover:text-brand-800 underline font-semibold">
+                    Restablecer filtros
+                </button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-12"></div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- VISTA PANEL ADMINISTRABLE (/ADMIN)         -->
+    <!-- ========================================== -->
+    <section id="adminView" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 no-print">
+        <!-- Pantalla de Login si no ha iniciado sesión -->
+        <div id="adminLoginCard" class="max-w-md mx-auto bg-white rounded-3xl p-8 border border-brand-200 soft-card-shadow text-center my-8">
+            <div class="w-16 h-16 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-brand-900">Acceso Administrativo</h2>
+            <p class="text-xs text-brand-500 mt-1 mb-6">Ingresa la contraseña de administrador para gestionar productos, categorías infinitas, cupones y pagos Deuna!.</p>
+            <form onsubmit="window.handleAdminLogin(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-semibold text-brand-700 mb-1">Contraseña de la Tienda</label>
+                    <input id="adminPasswordInput" type="password" placeholder="Contraseña (por defecto: admin123)" required class="w-full px-4 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400">
+                </div>
+                <p class="text-[11px] text-brand-500 bg-brand-50 px-3 py-2 rounded-xl border border-brand-100">
+                    <i class="fa-solid fa-circle-info mr-1"></i> Clave demostrativa predeterminada: <strong>admin123</strong>
+                </p>
+                <div class="flex gap-2 pt-2">
+                    <button type="button" onclick="window.switchView('store')" class="w-1/2 py-2.5 rounded-xl border border-brand-200 text-brand-700 text-sm font-medium hover:bg-brand-50">
+                        Volver a Tienda
+                    </button>
+                    <button type="submit" class="w-1/2 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-sm">
+                        Ingresar al Panel
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Dashboard Admin Autenticado -->
+        <div id="adminDashboardContent" class="hidden space-y-6">
+            <div class="bg-white rounded-3xl p-6 border border-brand-200 soft-card-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Backoffice en Tiempo Real</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-900">Panel Administrable de la Tienda</h2>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="window.copyOrShareStoreLink()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Copiar Link para Clientes</span>
+                    </button>
+                    <button onclick="window.switchView('store')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-100 hover:bg-brand-200 text-brand-800 text-xs font-semibold transition">
+                        <i class="fa-solid fa-store"></i>
+                        <span>Ver Tienda</span>
+                    </button>
+                    <button onclick="window.handleAdminLogout()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-brand-200 text-brand-600 hover:bg-brand-50 text-xs font-medium">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Salir</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pestañas del Panel Admin -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 custom-scrollbar">
+                <button onclick="window.switchAdminTab('orders')" id="adminTabBtn_orders" class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-brand-600 text-white shadow-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>1. Pedidos y Motorizado</span>
+                    <span id="adminPendingOrdersBadge" class="px-2 py-0.5 text-[10px] rounded-full bg-white text-brand-700 font-bold">0</span>
+                </button>
+                <button onclick="window.switchAdminTab('products')" id="adminTabBtn_products" class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-brand-700 border border-brand-200 hover:bg-brand-50">
+                    <i class="fa-solid fa-boxes-stacked mr-1.5"></i>2. Productos y Variantes
+                </button>
+                <button onclick="window.switchAdminTab('categories')" id="adminTabBtn_categories" class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-brand-700 border border-brand-200 hover:bg-brand-50">
+                    <i class="fa-solid fa-layer-group mr-1.5"></i>3. Categorías Infinitas
+                </button>
+                <button onclick="window.switchAdminTab('coupons')" id="adminTabBtn_coupons" class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-brand-700 border border-brand-200 hover:bg-brand-50">
+                    <i class="fa-solid fa-ticket mr-1.5"></i>4. Cupones de Descuento
+                </button>
+                <button onclick="window.switchAdminTab('settings')" id="adminTabBtn_settings" class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-brand-700 border border-brand-200 hover:bg-brand-50">
+                    <i class="fa-solid fa-qrcode mr-1.5"></i>5. Logo, Deuna! QR y Envíos
+                </button>
+                <button onclick="window.switchAdminTab('firebase')" id="adminTabBtn_firebase" class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-brand-700 border border-brand-200 hover:bg-brand-50">
+                    <i class="fa-solid fa-cloud-arrow-up mr-1.5"></i>6. Conexión Firebase
+                </button>
+            </div>
+
+            <!-- TAB 0: GESTIÓN DE PEDIDOS, ESTADOS Y DESPACHO A MOTORIZADO -->
+            <div id="adminTab_orders" class="space-y-6">
+                <div class="bg-white rounded-3xl p-6 border border-brand-200 soft-card-shadow space-y-5">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-brand-100 pb-4">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-brand-900 flex items-center gap-2">
+                                <i class="fa-solid fa-motorcycle text-brand-600"></i> Control de Pedidos y Despacho a Motorizado
+                            </h3>
+                            <p class="text-xs text-brand-500 mt-0.5">
+                                Todos los pedidos confirmados por tus clientes se guardan automáticamente aquí. Cambia su estado y envía la hoja de ruta con GPS al motorizado en un clic.
+                            </p>
+                        </div>
+
+                        <!-- Configuración rápida del WhatsApp del Motorizado Predeterminado -->
+                        <div class="flex flex-wrap items-center gap-2 bg-brand-50 p-2.5 rounded-2xl border border-brand-200">
+                            <div class="flex items-center gap-1.5 text-xs font-semibold text-brand-800 pl-1">
+                                <i class="fa-solid fa-helmet-safety text-brand-600"></i>
+                                <span>WhatsApp Motorizado (Opcional):</span>
+                            </div>
+                            <input
+                                id="quickDriverPhoneInput"
+                                type="tel"
+                                placeholder="Ej. 593987654321"
+                                onchange="window.saveQuickDriverPhone(this.value)"
+                                class="px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs font-mono w-40 focus:outline-none focus:ring-2 focus:ring-brand-400"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Resumen de Contadores por Estado y Filtros -->
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5" id="adminOrdersStatsBar"></div>
+
+                    <!-- Lista de Tarjetas de Pedidos -->
+                    <div id="adminOrdersListContainer" class="space-y-4"></div>
+                </div>
+            </div>
+
+            <!-- TAB 1: GESTIÓN DE PRODUCTOS Y VARIANTES -->
+            <div id="adminTab_products" class="hidden space-y-6">
+                <div class="bg-white rounded-3xl p-6 border border-brand-200 soft-card-shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-brand-900">Inventario de Productos y Variantes</h3>
+                            <p class="text-xs text-brand-500">Agrega tallas (S, M, L, XL), tonos de maquillaje o presentaciones en cápsulas con su respectivo precio y stock.</p>
+                        </div>
+                        <button onclick="window.openProductModal()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Nuevo Producto</span>
+                        </button>
+                    </div>
+                    <div id="adminProductsTableContainer" class="overflow-x-auto"></div>
+                </div>
+            </div>
+
+            <!-- TAB 2: CATEGORÍAS INFINITAS -->
+            <div id="adminTab_categories" class="hidden space-y-6">
+                <div class="bg-white rounded-3xl p-6 border border-brand-200 soft-card-shadow">
+                    <h3 class="font-serif text-xl font-bold text-brand-900 mb-1">Gestor de Categorías Infinitas</h3>
+                    <p class="text-xs text-brand-500 mb-6">Crea todas las categorías que necesites para tu tienda (ej. Perfumería, Skincare, Calzado, Accesorios, Bolsos, Ofertas). Se actualizan al instante en el catálogo.</p>
+
+                    <form onsubmit="window.handleAddCategory(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-3 bg-brand-50 p-4 rounded-2xl border border-brand-200 mb-6">
+                        <div class="sm:col-span-5">
+                            <label class="block text-[11px] font-semibold text-brand-700 mb-1">Nombre de la Categoría</label>
+                            <input id="newCatNameInput" type="text" required placeholder="Ej. Skincare Coreano, Perfumes, Calzado..." class="w-full px-3.5 py-2 rounded-xl bg-white border border-brand-200 text-sm">
+                        </div>
+                        <div class="sm:col-span-4">
+                            <label class="block text-[11px] font-semibold text-brand-700 mb-1">Ícono Visual</label>
+                            <select id="newCatIconSelect" class="w-full px-3.5 py-2 rounded-xl bg-white border border-brand-200 text-sm">
+                                <option value="fa-wand-magic-sparkles">✨ Cosméticos / Maquillaje</option>
+                                <option value="fa-capsules">💊 Vitaminas / Suplementos</option>
+                                <option value="fa-shirt">👗 Ropa / Moda</option>
+                                <option value="fa-spray-can-sparkles">🌸 Perfumería / Fragancias</option>
+                                <option value="fa-pump-soap">🧴 Skincare / Cuidado Piel</option>
+                                <option value="fa-bag-shopping">👜 Bolsos y Carteras</option>
+                                <option value="fa-shoe-prints">👠 Calzado / Zapatos</option>
+                                <option value="fa-gem">💎 Joyería y Accesorios</option>
+                                <option value="fa-fire">🔥 Promociones / Liquidación</option>
+                                <option value="fa-star">⭐ Destacados / Especial</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-3 flex items-end">
+                            <button type="submit" class="w-full py-2 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-sm transition">
+                                <i class="fa-solid fa-plus mr-1"></i> Crear Categoría
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="adminCategoriesList" class="space-y-2.5"></div>
+                </div>
+            </div>
+
+            <!-- TAB 3: CUPONES DE DESCUENTO -->
+            <div id="adminTab_coupons" class="hidden space-y-6">
+                <div class="bg-white rounded-3xl p-6 border border-brand-200 soft-card-shadow">
+                    <h3 class="font-serif text-xl font-bold text-brand-900 mb-1">Códigos Promocionales y Cupones</h3>
+                    <p class="text-xs text-brand-500 mb-6">Crea códigos de descuento por porcentaje (%) o monto fijo ($) y actívalos o desactívalos cuando quieras.</p>
+
+                    <form onsubmit="window.handleAddCoupon(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-3 bg-brand-50 p-4 rounded-2xl border border-brand-200 mb-6">
+                        <div class="sm:col-span-3">
+                            <label class="block text-[11px] font-semibold text-brand-700 mb-1">Código (Ej. GLAM15)</label>
+                            <input id="couponCodeInput" type="text" required placeholder="GLAM15" class="w-full px-3 py-2 rounded-xl bg-white border border-brand-200 text-sm uppercase">
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label class="block text-[11px] font-semibold text-brand-700 mb-1">Tipo de Descuento</label>
+                            <select id="couponTypeInput" class="w-full px-3 py-2 rounded-xl bg-white border border-brand-200 text-sm">
+                                <option value="percent">Porcentaje (%)</option>
+                                <option value="fixed">Monto Fijo ($ USD)</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold text-brand-700 mb-1">Valor</label>
+                            <input id="couponValueInput" type="number" step="0.01" min="1" required placeholder="10" class="w-full px-3 py-2 rounded-xl bg-white border border-brand-200 text-sm">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold text-brand-700 mb-1">Compra Mín. ($)</label>
+                            <input id="couponMinInput" type="number" step="1" min="0" value="0" class="w-full px-3 py-2 rounded-xl bg-white border border-brand-200 text-sm">
+                        </div>
+                        <div class="sm:col-span-2 flex items-end">
+                            <button type="submit" class="w-full py-2 px-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">
+                                + Agregar
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="adminCouponsList" class="space-y-2.5"></div>
+                </div>
+            </div>
+
+            <!-- TAB 4: CONFIGURACIÓN DE LOGOTIPO, DEUNA! QR Y ENVÍOS -->
+            <div id="adminTab_settings" class="hidden space-y-6">
+                <form onsubmit="window.handleSaveStoreSettings(event)" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Identidad del Negocio y Logotipo -->
+                    <div class="bg-white rounded-3xl p-6 border border-brand-200 soft-card-shadow space-y-4">
+                        <h3 class="font-serif text-xl font-bold text-brand-900 flex items-center gap-2">
+                            <i class="fa-solid fa-image text-brand-500"></i> Identidad y Logotipo del Negocio
+                        </h3>
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-50 border border-brand-200">
+                            <div class="w-20 h-20 rounded-2xl bg-white border border-brand-200 flex items-center justify-center overflow-hidden shrink-0">
+                                <img id="adminLogoPreviewImg" src="" alt="Preview Logo" class="w-full h-full object-cover hidden">
+                                <i id="adminLogoPreviewIcon" class="fa-solid fa-gem text-2xl text-brand-500"></i>
+                            </div>
+                            <div class="space-y-2 flex-1">
+                                <label class="block text-xs font-semibold text-brand-800">Subir Logotipo desde tu Teléfono o PC</label>
+                                <input type="file" accept="image/*" onchange="window.handleLogoUpload(event)" class="block w-full text-xs text-brand-700 file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-brand-600 file:text-white hover:file:bg-brand-700">
+                                <button type="button" onclick="window.clearStoreLogo()" class="text-[11px] text-rose-600 hover:underline">Quitar logotipo actual</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">O pegar URL directa del Logotipo (opcional)</label>
+                            <input id="cfgLogoUrl" type="text" placeholder="https://..." oninput="window.previewLogoUrl(this.value)" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-700 mb-1">Nombre de la Tienda</label>
+                                <input id="cfgStoreName" type="text" required class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-700 mb-1">Subtítulo / Eslogan</label>
+                                <input id="cfgStoreTagline" type="text" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-700 mb-1">WhatsApp Receptor (Con código país)</label>
+                                <input id="cfgWhatsapp" type="text" required placeholder="593991234567" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-700 mb-1">Costo Envío ($ USD)</label>
+                                <input id="cfgShippingCost" type="number" step="0.25" min="0" required class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-700 mb-1">Envío Gratis desde ($)</label>
+                                <input id="cfgFreeThreshold" type="number" step="1" min="0" required class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">Datos de Transferencia Bancaria Tradicional</label>
+                            <textarea id="cfgBankDetails" rows="2" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">Cambiar Contraseña del Panel Admin</label>
+                            <input id="cfgAdminPassword" type="text" required class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                        </div>
+
+                        <!-- Vista previa en vivo del Link Personalizado con el nombre del negocio -->
+                        <div class="p-3.5 rounded-2xl bg-brand-50 border border-brand-200 space-y-1.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[11px] font-bold text-brand-800 flex items-center gap-1">
+                                    <i class="fa-solid fa-link text-brand-600"></i> Link Personalizado para enviar por WhatsApp:
+                                </span>
+                                <button type="button" onclick="window.copyOrShareStoreLink()" class="text-[11px] font-bold text-brand-600 hover:underline">
+                                    Copiar Link
+                                </button>
+                            </div>
+                            <p id="adminPreviewStoreUrl" class="text-[11px] font-mono text-brand-700 break-all bg-white px-2.5 py-1.5 rounded-xl border border-brand-100"></p>
+                        </div>
+                    </div>
+
+                    <!-- Configuración de Pago con Deuna! y Generador/Subida de QR -->
+                    <div class="bg-white rounded-3xl p-6 border border-deuna-100 soft-card-shadow space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-serif text-xl font-bold text-deuna-700 flex items-center gap-2">
+                                <i class="fa-solid fa-qrcode text-deuna-600"></i> Configurar Pago con Deuna! y QR
+                            </h3>
+                            <label class="inline-flex items-center gap-2 text-xs font-semibold text-deuna-700 cursor-pointer">
+                                <input id="cfgDeunaEnabled" type="checkbox" checked class="accent-deuna-600 w-4 h-4">
+                                <span>Habilitar Deuna!</span>
+                            </label>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-700 mb-1">Nombre del Titular en Deuna!</label>
+                                <input id="cfgDeunaHolder" type="text" placeholder="Ej. María Fernanda Gómez" oninput="window.updateAdminDeunaQRPreview()" class="w-full px-3.5 py-2 rounded-xl bg-deuna-50 border border-deuna-100 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-700 mb-1">Número Celular / Cuenta Deuna!</label>
+                                <input id="cfgDeunaPhone" type="text" placeholder="Ej. 0991234567" oninput="window.updateAdminDeunaQRPreview()" class="w-full px-3.5 py-2 rounded-xl bg-deuna-50 border border-deuna-100 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">Link de Cobro Deuna! o Texto para Generar QR Automático</label>
+                            <div class="flex gap-2">
+                                <input id="cfgDeunaPaymentLink" type="text" placeholder="https://deuna.app/... o datos de cobro" oninput="window.updateAdminDeunaQRPreview()" class="flex-1 px-3.5 py-2 rounded-xl bg-deuna-50 border border-deuna-100 text-sm">
+                                <button type="button" onclick="window.generateAutoDeunaQR()" class="px-3.5 py-2 rounded-xl bg-deuna-600 hover:bg-deuna-700 text-white text-xs font-semibold whitespace-nowrap">
+                                    <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Generar QR
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-deuna-50 border border-deuna-100 flex flex-col sm:flex-row items-center gap-4">
+                            <div class="w-36 h-36 rounded-2xl bg-white p-2 border border-deuna-100 flex items-center justify-center shrink-0 shadow-sm">
+                                <img id="adminDeunaQrPreview" src="" alt="QR Deuna" class="w-full h-full object-contain">
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <p class="font-bold text-deuna-700">O sube tu propia captura del QR oficial de Deuna!:</p>
+                                <input type="file" accept="image/*" onchange="window.handleDeunaQrUpload(event)" class="block w-full text-xs text-deuna-700 file:mr-2 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-deuna-600 file:text-white hover:file:bg-deuna-700">
+                                <p class="text-[11px] text-brand-600">Puedes usar el QR generado automáticamente o subir la imagen descargada desde tu app Deuna!.</p>
+                                <button type="button" onclick="window.resetToAutoDeunaQR()" class="text-[11px] text-deuna-600 font-semibold hover:underline">
+                                    Usar generador automático de QR
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <button type="submit" class="flex-1 py-3 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md transition">
+                                <i class="fa-solid fa-floppy-disk mr-1.5"></i> Guardar Configuración y Sincronizar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- TAB 5: CONEXIÓN FIREBASE EN VIVO -->
+            <div id="adminTab_firebase" class="hidden space-y-6">
+                <div class="bg-white rounded-3xl p-6 border border-brand-200 soft-card-shadow max-w-3xl space-y-5">
+                    <h3 class="font-serif text-xl font-bold text-brand-900 flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-bolt text-amber-500"></i> Conectar Google Cloud Firestore & Firebase (Autodetector Inteligente)
+                    </h3>
+                    <p class="text-xs text-brand-600 leading-relaxed">
+                        Pega el bloque completo de configuración que te da Firebase (<code>const firebaseConfig = { ... }</code>) en el <strong>Autodetector Inteligente</strong> o completa los campos manualmente. Se conectará automáticamente a <strong>Google Cloud Firestore</strong> y/o <strong>Realtime Database</strong> en tiempo real.
+                    </p>
+
+                    <!-- AUTODETECTOR INTELIGENTE DE BLOQUE FIREBASE -->
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-50/90 to-brand-50 border border-amber-200 space-y-3">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <label class="text-xs font-bold text-brand-900 flex items-center gap-1.5">
+                                <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+                                <span>Autodetector Inteligente: Pega aquí el bloque completo de Firebase</span>
+                            </label>
+                            <span id="autoDetectStatusBadge" class="px-2.5 py-0.5 rounded-full bg-white border border-amber-200 text-[10px] font-bold text-amber-700">
+                                Detecta apiKey, projectId, databaseURL y appId
+                            </span>
+                        </div>
+                        <textarea
+                            id="firebaseRawSnippetInput"
+                            rows="5"
+                            oninput="window.smartParseFirebaseSnippet(this.value, false)"
+                            placeholder='Pega aquí todo el código de Firebase, por ejemplo:
+const firebaseConfig = {
+  apiKey: "AIzaSy...",
+  authDomain: "mi-tienda.firebaseapp.com",
+  databaseURL: "https://mi-tienda-default-rtdb.firebaseio.com",
+  projectId: "mi-tienda",
+  appId: "1:123456789:web:abcdef"
+};'
+                            class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-amber-300 text-xs font-mono text-brand-900 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                        ></textarea>
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <p id="autoDetectFeedbackText" class="text-[11px] text-brand-600">
+                                <i class="fa-solid fa-circle-info mr-1 text-amber-600"></i>Al pegar el texto se rellenarán automáticamente todos los parámetros de abajo.
+                            </p>
+                            <button
+                                type="button"
+                                onclick="window.smartParseFirebaseSnippet(document.getElementById('firebaseRawSnippetInput').value, true)"
+                                class="px-4 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-sm transition flex items-center gap-1.5"
+                            >
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>Autodetectar y Conectar Ahora</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campos extraídos automáticamente o editables -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">Project ID (Google Cloud Firestore)</label>
+                            <input id="firebaseCustomProjectIdInput" type="text" placeholder="ej. mi-tienda-593" class="w-full px-4 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-sm font-mono">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">Firebase Web API Key</label>
+                            <input id="firebaseCustomApiKeyInput" type="text" placeholder="AIzaSyB..." class="w-full px-4 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-sm font-mono">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">URL de Firebase Realtime Database (Opcional si usas Firestore)</label>
+                            <input id="firebaseCustomUrlInput" type="url" placeholder="https://tu-tienda-default-rtdb.firebaseio.com" class="w-full px-4 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-700 mb-1">App ID (Opcional)</label>
+                            <input id="firebaseCustomAppIdInput" type="text" placeholder="1:123456789:web:abcdef" class="w-full px-4 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-sm font-mono">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <button type="button" onclick="window.connectCustomFirebaseUrl()" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold shadow-sm transition">
+                            <i class="fa-solid fa-link mr-1"></i> Conectar y Afianzar Firebase / Firestore en Tiempo Real
+                        </button>
+                        <button type="button" onclick="window.forcePushToCloud()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition">
+                            <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Forzar Publicación de Cambios Ahora
+                        </button>
+                    </div>
+
+                    <!-- Bloque para garantizar que GitHub tenga las credenciales y datos incrustados por defecto -->
+                    <div class="p-4 rounded-2xl bg-brand-50 border border-brand-200 space-y-2 mt-4">
+                        <p class="text-xs font-bold text-brand-900 flex items-center gap-1.5">
+                            <i class="fa-brands fa-github text-base"></i> ¿Subes tu código a GitHub?
+                        </p>
+                        <p class="text-[11px] text-brand-700 leading-relaxed">
+                            Para que cualquier cliente que abra el link de GitHub en un teléfono nuevo vea automáticamente tu tienda conectada a tu Firebase sin depender del enlace largo, descarga o copia tu <code>index.html</code> con tus productos, categorías, logo, URL de Firebase y API Key ya grabados de fábrica:
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <button type="button" onclick="window.exportUpdatedHtmlForGithub()" class="px-4 py-2 rounded-xl bg-brand-800 hover:bg-brand-900 text-white text-xs font-semibold shadow-sm">
+                                <i class="fa-solid fa-code mr-1"></i> Descargar index.html Actualizado para GitHub
+                            </button>
+                            <button type="button" onclick="window.copyOrShareStoreLink()" class="px-4 py-2 rounded-xl bg-white hover:bg-brand-100 text-brand-800 border border-brand-300 text-xs font-semibold">
+                                <i class="fa-brands fa-whatsapp mr-1 text-emerald-600"></i> Copiar Link Directo para Clientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MODAL CREAR / EDITAR PRODUCTO Y VARIANTES  -->
+    <!-- ========================================== -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden bg-brand-900/50 backdrop-blur-sm flex items-center justify-center p-4 no-print">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 border border-brand-200 soft-card-shadow space-y-4 custom-scrollbar">
+            <div class="flex items-center justify-between border-b border-brand-100 pb-3">
+                <h3 id="productModalTitle" class="font-serif text-xl font-bold text-brand-900">Nuevo Producto</h3>
+                <button onclick="window.closeProductModal()" class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 hover:bg-brand-100 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form onsubmit="window.handleSaveProduct(event)" class="space-y-4">
+                <input type="hidden" id="prodIdInput">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-700 mb-1">Nombre del Producto</label>
+                        <input id="prodNameInput" type="text" required placeholder="Ej. Labial Matte Velvet NYX" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <label class="text-xs font-semibold text-brand-700">Categoría</label>
+                            <button type="button" onclick="window.quickCreateCategoryPrompt()" class="text-[11px] font-bold text-brand-600 hover:underline">+ Crear nueva categoría</button>
+                        </div>
+                        <select id="prodCategoryInput" required class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm"></select>
+                    </div>
+                </div>
+
+                <!-- Creación rápida de categoría in-situ -->
+                <div id="quickCatBox" class="hidden p-3 rounded-2xl bg-brand-50 border border-brand-200 flex items-center gap-2">
+                    <input id="quickCatNameInput" type="text" placeholder="Nombre de nueva categoría (ej. Perfumería)" class="flex-1 px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs">
+                    <button type="button" onclick="window.confirmQuickCategory()" class="px-3 py-1.5 rounded-xl bg-brand-600 text-white text-xs font-semibold">Guardar</button>
+                    <button type="button" onclick="document.getElementById('quickCatBox').classList.add('hidden')" class="text-xs text-brand-500 px-2">Cancelar</button>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-brand-700 mb-1">Descripción atractiva</label>
+                    <textarea id="prodDescInput" rows="2" required placeholder="Describe beneficios, ingredientes o tela..." class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+                    <div class="sm:col-span-7">
+                        <label class="block text-xs font-semibold text-brand-700 mb-1">URL de Imagen o Subir Foto desde dispositivo</label>
+                        <input id="prodImageInput" type="text" required placeholder="https://images.unsplash.com/..." class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                    </div>
+                    <div class="sm:col-span-5">
+                        <label class="block text-xs font-semibold text-brand-700 mb-1">O elegir foto de tu galería</label>
+                        <input type="file" accept="image/*" onchange="window.handleProductImageUpload(event)" class="block w-full text-xs text-brand-700 file:mr-2 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-brand-100 file:text-brand-700">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-700 mb-1">Etiqueta de Variante (Ej. Talla, Tono, Presentación)</label>
+                        <input id="prodVariantLabelInput" type="text" required value="Talla / Tono" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-sm">
+                    </div>
+                    <div class="pt-4">
+                        <label class="inline-flex items-center gap-2 text-xs font-semibold text-brand-800 cursor-pointer">
+                            <input id="prodFeaturedInput" type="checkbox" class="accent-brand-600 w-4 h-4">
+                            <span>Destacar producto con insignia Especial</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Variantes Dinámicas -->
+                <div class="p-4 rounded-2xl bg-brand-50 border border-brand-200 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <label class="text-xs font-bold text-brand-800">Variantes Disponibles (Tallas, Colores, Tonos o Cápsulas)</label>
+                        <button type="button" onclick="window.addVariantRow()" class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700">
+                            + Añadir Variante
+                        </button>
+                    </div>
+                    <div id="variantRowsContainer" class="space-y-2"></div>
+                </div>
+
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="window.closeProductModal()" class="px-4 py-2.5 rounded-xl border border-brand-200 text-brand-700 text-xs font-semibold">Cancelar</button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold shadow-sm">Guardar Producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- CARRITO LATERAL DINÁMICO + CHECKOUT DEUNA! -->
+    <!-- ========================================== -->
+    <div id="cartDrawerBackdrop" onclick="window.toggleCartDrawer(false)" class="fixed inset-0 z-40 hidden bg-brand-900/40 backdrop-blur-sm transition-opacity no-print"></div>
+
+    <aside id="cartDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-white shadow-2xl border-l border-brand-200 transform translate-x-full transition-transform duration-300 flex flex-col no-print">
+        <!-- Cabecera del Carrito -->
+        <div class="p-5 border-b border-brand-100 flex items-center justify-between bg-brand-50/70">
+            <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-brand-600 text-white flex items-center justify-center">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-brand-900 leading-none">Tu Carrito de Compras</h3>
+                    <span id="drawerItemsSubtitle" class="text-[11px] text-brand-500">0 artículos seleccionados</span>
+                </div>
+            </div>
+            <button onclick="window.toggleCartDrawer(false)" class="w-8 h-8 rounded-full bg-white border border-brand-200 text-brand-600 hover:bg-brand-100 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Contenido Desplazable: Lista de Productos + Cupón + Checkout -->
+        <div class="flex-1 overflow-y-auto p-5 space-y-5 custom-scrollbar">
+            <!-- Lista de Ítems -->
+            <div id="cartItemsContainer" class="space-y-3"></div>
+
+            <!-- Bloque de Cupón Promocional -->
+            <div id="cartCouponSection" class="p-3.5 rounded-2xl bg-brand-50 border border-brand-200 space-y-2">
+                <label class="block text-xs font-semibold text-brand-800">¿Tienes un código de descuento?</label>
+                <div class="flex gap-2">
+                    <input id="cartCouponInput" type="text" placeholder="Ej. BIENVENIDA10" class="flex-1 px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs uppercase">
+                    <button onclick="window.applyCouponCode()" class="px-3.5 py-1.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold">Aplicar</button>
+                </div>
+                <p id="cartCouponFeedback" class="text-[11px] hidden"></p>
+            </div>
+
+            <!-- Resumen de Costos -->
+            <div id="cartTotalsBox" class="p-4 rounded-2xl bg-white border border-brand-200 space-y-2 text-xs">
+                <div class="flex justify-between text-brand-700">
+                    <span>Subtotal productos:</span>
+                    <span id="summarySubtotal" class="font-semibold">$0.00</span>
+                </div>
+                <div id="summaryDiscountRow" class="hidden flex justify-between text-emerald-700 font-semibold">
+                    <span id="summaryDiscountLabel">Descuento cupón:</span>
+                    <span id="summaryDiscountValue">-$0.00</span>
+                </div>
+                <div class="flex justify-between text-brand-700">
+                    <span>Entrega a domicilio:</span>
+                    <span id="summaryShipping" class="font-semibold">$0.00</span>
+                </div>
+                <div class="border-t border-brand-100 pt-2 flex justify-between text-sm font-bold text-brand-900">
+                    <span>Total a Pagar:</span>
+                    <span id="summaryTotal" class="text-brand-600 text-base">$0.00</span>
+                </div>
+            </div>
+
+            <!-- Formulario de Entrega y Pago -->
+            <form id="checkoutForm" onsubmit="window.submitWhatsAppOrder(event)" class="space-y-3 pt-2 border-t border-brand-200">
+                <h4 class="font-serif text-base font-bold text-brand-900 flex items-center gap-1.5">
+                    <i class="fa-solid fa-truck-fast text-brand-500 text-sm"></i> Datos de Entrega a Domicilio
+                </h4>
+
+                <div>
+                    <label class="block text-[11px] font-semibold text-brand-700 mb-1">Nombre y Apellido *</label>
+                    <input id="chkName" type="text" required placeholder="Ej. Carolina Andrade" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-semibold text-brand-700 mb-1">Teléfono / WhatsApp *</label>
+                    <input id="chkPhone" type="tel" required placeholder="Ej. 0998765432" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-semibold text-brand-700 mb-1">Dirección Exacta y Referencia (Ciudad / Sector / Calle) *</label>
+                    <textarea id="chkAddress" rows="2" required placeholder="Ej. Quito, Av. República y Eloy Alfaro, Edificio Rosé piso 4" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs"></textarea>
+                    
+                    <!-- Botón para adjuntar Ubicación GPS en Tiempo Real -->
+                    <div class="mt-2 flex flex-col gap-1.5">
+                        <div class="flex items-center gap-2">
+                            <button
+                                type="button"
+                                id="btnGetGpsLocation"
+                                onclick="window.captureCustomerGps()"
+                                class="flex-1 py-2 px-3 rounded-xl bg-brand-100 hover:bg-brand-200 text-brand-800 border border-brand-300 text-xs font-semibold flex items-center justify-center gap-2 transition shadow-sm"
+                            >
+                                <i id="gpsBtnIcon" class="fa-solid fa-location-crosshairs text-brand-600"></i>
+                                <span id="gpsBtnText">Adjuntar mi Ubicación GPS (Google Maps)</span>
+                            </button>
+                            <button
+                                type="button"
+                                id="btnClearGpsLocation"
+                                onclick="window.clearCustomerGps()"
+                                class="hidden px-2.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 text-xs font-semibold transition"
+                                title="Quitar ubicación GPS"
+                            >
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <input type="hidden" id="chkGpsUrl" value="">
+                        <div id="gpsStatusBadge" class="hidden px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-800 flex items-center justify-between gap-2">
+                            <span class="truncate font-medium">
+                                <i class="fa-solid fa-map-pin text-emerald-600 mr-1"></i>
+                                <span id="gpsCoordsLabel">Ubicación GPS lista para enviar</span>
+                            </span>
+                            <a id="gpsPreviewLink" href="#" target="_blank" rel="noopener noreferrer" class="underline font-bold text-emerald-700 shrink-0">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-semibold text-brand-700 mb-1">Método de Pago Preferido *</label>
+                    <select id="chkPaymentMethod" onchange="window.handlePaymentMethodChange(this.value)" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs font-semibold text-brand-800">
+                        <option value="Pago con Deuna! (QR / Número)">💜 Pago inmediato con Deuna! (Ver QR)</option>
+                        <option value="Transferencia Bancaria">🏦 Transferencia Bancaria</option>
+                        <option value="Efectivo Contra Entrega">💵 Efectivo al recibir en casa</option>
+                    </select>
+                </div>
+
+                <!-- Tarjeta Interactiva de Pago con Deuna! en el Checkout -->
+                <div id="checkoutDeunaCard" class="p-3.5 rounded-2xl bg-deuna-50 border border-deuna-100 space-y-2.5 text-xs">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-deuna-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-qrcode"></i> Escanea o transfiere con Deuna!
+                        </span>
+                        <span class="px-2 py-0.5 rounded-full bg-deuna-600 text-white text-[10px] font-bold">Sin comisión</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white p-2.5 rounded-xl border border-deuna-100">
+                        <img id="checkoutDeunaQrImg" src="" alt="QR Deuna" class="w-24 h-24 object-contain rounded-lg border border-deuna-100 shrink-0">
+                        <div class="space-y-1 flex-1 min-w-0">
+                            <p class="text-[11px] text-brand-500">Titular:</p>
+                            <p id="checkoutDeunaHolder" class="font-bold text-brand-900 truncate">Glam & Health Boutique</p>
+                            <p class="text-[11px] text-brand-500 mt-1">Celular Deuna!:</p>
+                            <div class="flex items-center gap-1.5">
+                                <span id="checkoutDeunaPhone" class="font-mono font-bold text-deuna-700">0991234567</span>
+                                <button type="button" onclick="window.copyDeunaPhone()" class="px-2 py-0.5 rounded bg-deuna-100 hover:bg-deuna-500 hover:text-white text-deuna-700 text-[10px] font-semibold transition">
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Datos Bancarios si elige Transferencia -->
+                <div id="checkoutBankCard" class="hidden p-3 rounded-2xl bg-brand-50 border border-brand-200 text-xs text-brand-800">
+                    <p class="font-bold mb-1">Datos para Transferencia:</p>
+                    <p id="checkoutBankText" class="text-[11px] whitespace-pre-line"></p>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-semibold text-brand-700 mb-1">Notas adicionales (Opcional)</label>
+                    <input id="chkNotes" type="text" placeholder="Ej. Entregar en horario de la tarde" class="w-full px-3.5 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs">
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Confirmar Pedido por WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Notificación Toast Flotante -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none no-print"></div>
+
+    <!-- Pie de Página -->
+    <footer class="bg-white border-t border-brand-200 mt-12 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-600">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div>
+                    <p id="footerStoreName" class="font-serif font-bold text-brand-900 text-sm">Glam & Health Boutique 593</p>
+                    <p>Cosméticos, Vitaminas y Moda Americana • Envíos seguros a domicilio</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+                <button onclick="window.copyOrShareStoreLink()" class="text-brand-700 hover:text-brand-900 font-semibold underline">
+                    <i class="fa-solid fa-link mr-1"></i>Compartir Link de la Tienda
+                </button>
+                <span>•</span>
+                <button onclick="window.toggleAdminView()" class="text-brand-600 hover:text-brand-900">
+                    Administrar Tienda
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- LÓGICA PRINCIPAL + SINCRONIZACIÓN FIREBASE -->
+    <!-- ========================================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getDatabase, ref as dbRef, set as dbSet, onValue } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
+
+        /* 1. DATOS SEMILLA INICIALES (SIEMPRE DISPONIBLES AUN SIN CONEXIÓN) */
+        const INITIAL_SEED_STATE = {
+            storeConfig: {
+                storeName: "Glam & Health",
+                storeTagline: "Boutique 593 • Belleza & Moda",
+                logoUrl: "",
+                whatsappNumber: "593991234567",
+                driverWhatsappNumber: "",
+                shippingCost: 3.50,
+                freeShippingThreshold: 45.00,
+                bankDetails: "Banco Pichincha - Cuenta Ahorros #2204567890\nTitular: Glam & Health Boutique\nC.I.: 1723456789",
+                adminPassword: "admin123",
+                deunaEnabled: true,
+                deunaHolder: "María Fernanda Gómez • Glam Boutique",
+                deunaPhone: "0991234567",
+                deunaPaymentLink: "Deuna! Cobro: Maria Fernanda Gomez - Cel: 0991234567",
+                deunaCustomQrImage: "",
+                customFirebaseDbUrl: "",
+                customFirebaseApiKey: "",
+                customFirebaseProjectId: "",
+                customFirebaseAppId: "",
+                customFirebaseRawSnippet: ""
+            },
+            orders: [
+                {
+                    id: "PED-1001",
+                    createdAt: "Hoy, 10:30 AM",
+                    customerName: "Valeria Domínguez",
+                    customerPhone: "0998123456",
+                    address: "Quito, Av. González Suárez N32 y Coruña, Edif. Murano Dpto 6B",
+                    gpsUrl: "https://www.google.com/maps?q=-0.198611,-78.480833",
+                    paymentMethod: "Pago con Deuna! (QR / Número)",
+                    notes: "Dejar en guardianía si no contesto el timbre",
+                    status: "Pendiente",
+                    subtotal: 45.40,
+                    discount: 0,
+                    shipping: 0,
+                    total: 45.40,
+                    items: [
+                        { name: "Labial Líquido Matte Ink Maybelline USA", variantLabel: "Tono Disponible", variantName: "65 Seductress (Nude Rosado)", quantity: 1, price: 13.50 },
+                        { name: "Gomitas Hair, Skin & Nails Biotina Nature's Bounty", variantLabel: "Presentación Frasco", variantName: "Frasco 80 Gomitas", quantity: 1, price: 18.90 }
+                    ]
+                }
+            ],
+            categories: [
+                { id: "cat-cosmeticos", name: "Cosméticos", icon: "fa-wand-magic-sparkles" },
+                { id: "cat-vitaminas", name: "Vitaminas", icon: "fa-capsules" },
+                { id: "cat-ropa", name: "Ropa Americana", icon: "fa-shirt" },
+                { id: "cat-skincare", name: "Skincare & Piel", icon: "fa-pump-soap" }
+            ],
+            coupons: [
+                { id: "cp-1", code: "BIENVENIDA10", type: "percent", value: 10, minPurchase: 15, active: true },
+                { id: "cp-2", code: "GLAM5", type: "fixed", value: 5, minPurchase: 35, active: true }
+            ],
+            products: [
+                {
+                    id: "prod-1",
+                    name: "Labial Líquido Matte Ink Maybelline USA",
+                    category: "Cosméticos",
+                    description: "Fórmula original importada de larga duración (hasta 16 horas) sin transferir. Acabado aterciopelado hidratante.",
+                    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80",
+                    featured: true,
+                    variantLabel: "Tono Disponible",
+                    variants: [
+                        { id: "v-101", name: "20 Pioneer (Rojo Intenso)", price: 13.50, stock: 12 },
+                        { id: "v-102", name: "65 Seductress (Nude Rosado)", price: 13.50, stock: 9 },
+                        { id: "v-103", name: "15 Lover (Rosa Malva)", price: 14.00, stock: 6 }
+                    ]
+                },
+                {
+                    id: "prod-2",
+                    name: "Gomitas Hair, Skin & Nails Biotina Nature's Bounty",
+                    category: "Vitaminas",
+                    description: "Suplemento americano original con Biotina 2500 mcg, Colágeno y Vitamina C + E para cabello radiante, uñas fuertes y piel luminosa.",
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80",
+                    featured: true,
+                    variantLabel: "Presentación Frasco",
+                    variants: [
+                        { id: "v-201", name: "Frasco 80 Gomitas", price: 18.90, stock: 10 },
+                        { id: "v-202", name: "Frasco Familiar 140 Gomitas", price: 26.50, stock: 7 },
+                        { id: "v-203", name: "Pack 230 Gomitas Max", price: 34.00, stock: 4 }
+                    ]
+                },
+                {
+                    id: "prod-3",
+                    name: "Chaqueta Denim Oversize Importada USA",
+                    category: "Ropa Americana",
+                    description: "Denim premium americano 100% algodón con corte relajado y botones metálicos grabados. Ideal para cualquier temporada.",
+                    image: "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?auto=format&fit=crop&w=800&q=80",
+                    featured: true,
+                    variantLabel: "Talla Americana",
+                    variants: [
+                        { id: "v-301", name: "Talla S (Small)", price: 38.00, stock: 4 },
+                        { id: "v-302", name: "Talla M (Medium)", price: 38.00, stock: 8 },
+                        { id: "v-303", name: "Talla L (Large)", price: 39.50, stock: 5 },
+                        { id: "v-304", name: "Talla XL", price: 41.00, stock: 3 }
+                    ]
+                },
+                {
+                    id: "prod-4",
+                    name: "Sérum Facial Ácido Hialurónico + Vitamina B5 The Ordinary",
+                    category: "Skincare & Piel",
+                    description: "Hidratación profunda multicapa que rellena líneas de expresión y deja la piel suave y luminosa desde la primera semana.",
+                    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80",
+                    featured: false,
+                    variantLabel: "Tamaño Envase",
+                    variants: [
+                        { id: "v-401", name: "30 ml Estándar", price: 16.00, stock: 14 },
+                        { id: "v-402", name: "60 ml Jumbo", price: 27.00, stock: 6 }
+                    ]
+                },
+                {
+                    id: "prod-5",
+                    name: "Vestido Floral Midi Estilo Californiano",
+                    category: "Ropa Americana",
+                    description: "Tela fresca con caída suave, cintura ajustable y estampado botánico primaveral importado de Los Ángeles.",
+                    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80",
+                    featured: false,
+                    variantLabel: "Talla",
+                    variants: [
+                        { id: "v-501", name: "S - Rosa Pastel", price: 32.00, stock: 5 },
+                        { id: "v-502", name: "M - Rosa Pastel", price: 32.00, stock: 6 },
+                        { id: "v-503", name: "L - Marfil Floral", price: 33.50, stock: 4 }
+                    ]
+                },
+                {
+                    id: "prod-6",
+                    name: "Citrato de Magnesio + Ashwagandha Premium USA",
+                    category: "Vitaminas",
+                    description: "Fórmula sinérgica para descanso profundo, reducción del estrés diario y bienestar muscular.",
+                    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=800&q=80",
+                    featured: true,
+                    variantLabel: "Contenido",
+                    variants: [
+                        { id: "v-601", name: "90 Cápsulas Veganas", price: 22.00, stock: 11 },
+                        { id: "v-602", name: "180 Cápsulas Ahorro", price: 36.00, stock: 6 }
+                    ]
+                }
+            ]
+        };
+
+        /* Estado reactivo en memoria */
+        let appState = JSON.parse(JSON.stringify(INITIAL_SEED_STATE));
+        let selectedVariantsMap = {}; // { productId: variantId }
+        let cart = [];
+        let appliedCoupon = null;
+        let currentFilter = {
+            category: "TODAS",
+            search: "",
+            maxPrice: 200,
+            sort: "featured"
+        };
+        let currentAdminOrderFilter = "TODOS";
+        let isAdminAuthenticated = false;
+        let currentView = "store";
+        let firestoreDocRef = null;
+        let currentUser = null;
+        let customRtdbRef = null;
+        let customFirestoreDocRef = null;
+
+        /* Generador de URL QR seguro para Deuna! */
+        function buildQrImageUrl(dataText) {
+            const cleanText = (dataText || "Deuna! Glam & Health Boutique").trim();
+            return `https://api.qrserver.com/v1/create-qr-code/?size=280x280&margin=10&color=4C1D95&bgcolor=FFFFFF&data=${encodeURIComponent(cleanText)}`;
+        }
+
+        function getActiveDeunaQrSrc() {
+            const cfg = appState.storeConfig;
+            if (cfg.deunaCustomQrImage && cfg.deunaCustomQrImage.trim() !== "") {
+                return cfg.deunaCustomQrImage;
+            }
+            const qrPayload = cfg.deunaPaymentLink || `Deuna! Titular: ${cfg.deunaHolder} | Cel: ${cfg.deunaPhone}`;
+            return buildQrImageUrl(qrPayload);
+        }
+
+        /* Notificaciones Toast */
+        window.showToast = function(message, type = "success") {
+            const container = document.getElementById("toastContainer");
+            if (!container) return;
+            const toast = document.createElement("div");
+            const bgClass = type === "error" ? "bg-rose-600" : type === "info" ? "bg-deuna-600" : "bg-brand-700";
+            toast.className = `${bgClass} text-white px-4 py-3 rounded-2xl shadow-lg text-xs font-semibold flex items-center gap-2.5 pointer-events-auto transition-all duration-300`;
+            toast.innerHTML = `<i class="fa-solid ${type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-check'}"></i><span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        };
+
+        /* Sincronización con Nube (Firebase del entorno + Realtime DB opcional) */
+        function setCloudBadge(statusText, isOnline = true) {
+            const dot = document.getElementById("cloudStatusDot");
+            const txt = document.getElementById("cloudStatusText");
+            if (txt) txt.textContent = statusText;
+            if (dot) {
+                dot.className = `w-2 h-2 rounded-full ${isOnline ? 'bg-emerald-400 animate-pulse' : 'bg-amber-300'}`;
+            }
+        }
+
+        async function initCloudSync() {
+            // 1. Si el link de WhatsApp trae el nombre de la tienda, enlace de Firebase, ProjectID o API Key, lo aplica de inmediato
+            const params = new URLSearchParams(window.location.search);
+            const cloudParam = params.get("cloud");
+            const apiKeyParam = params.get("apikey");
+            const projectIdParam = params.get("projectid");
+            if (cloudParam && cloudParam.startsWith("https://")) {
+                appState.storeConfig.customFirebaseDbUrl = cloudParam;
+            }
+            if (apiKeyParam) {
+                appState.storeConfig.customFirebaseApiKey = apiKeyParam;
+            }
+            if (projectIdParam) {
+                appState.storeConfig.customFirebaseProjectId = projectIdParam;
+            }
+
+            try {
+                if (typeof __firebase_config !== "undefined" && __firebase_config) {
+                    const firebaseConfig = JSON.parse(__firebase_config);
+                    const appId = typeof __app_id !== "undefined" ? __app_id : "glam-health-boutique-593";
+                    const fbApp = initializeApp(firebaseConfig);
+                    const auth = getAuth(fbApp);
+                    const db = getFirestore(fbApp);
+
+                    if (typeof __initial_auth_token !== "undefined" && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                    currentUser = auth.currentUser;
+
+                    if (currentUser) {
+                        firestoreDocRef = doc(db, "artifacts", appId, "public", "data", "storeState", "mainCatalog");
+                        onSnapshot(
+                            firestoreDocRef,
+                            (snapshot) => {
+                                if (snapshot.exists()) {
+                                    const cloudData = snapshot.data();
+                                    if (cloudData && cloudData.payload) {
+                                        try {
+                                            const parsed = JSON.parse(cloudData.payload);
+                                            appState = {
+                                                storeConfig: { ...INITIAL_SEED_STATE.storeConfig, ...(parsed.storeConfig || {}) },
+                                                orders: Array.isArray(parsed.orders) ? parsed.orders : INITIAL_SEED_STATE.orders,
+                                                categories: Array.isArray(parsed.categories) && parsed.categories.length ? parsed.categories : INITIAL_SEED_STATE.categories,
+                                                coupons: Array.isArray(parsed.coupons) ? parsed.coupons : INITIAL_SEED_STATE.coupons,
+                                                products: Array.isArray(parsed.products) ? parsed.products : INITIAL_SEED_STATE.products
+                                            };
+                                            renderAll();
+                                            setCloudBadge("Sincronizado en Vivo", true);
+                                        } catch (err) {
+                                            console.error("Error leyendo payload:", err);
+                                        }
+                                    }
+                                } else {
+                                    saveStateToCloud(false);
+                                }
+                            },
+                            (err) => {
+                                console.warn("Aviso listener Firebase:", err);
+                                setCloudBadge("Catálogo Activo", false);
+                            }
+                        );
+                    }
+                }
+            } catch (e) {
+                console.warn("Firebase entorno no disponible, usando sincronización directa:", e);
+            }
+
+            if (appState.storeConfig.customFirebaseProjectId && appState.storeConfig.customFirebaseApiKey) {
+                initCustomCloudFirestoreSDK();
+            }
+
+            if (appState.storeConfig.customFirebaseDbUrl) {
+                initCustomRealtimeDatabaseSDK();
+                await pullFromCustomRealtimeDb(appState.storeConfig.customFirebaseDbUrl, false);
+                // Sondeo continuo cada 12 segundos + SDK WebSocket para garantizar que cualquier celular o PC vea siempre la última versión
+                setInterval(() => {
+                    if (document.visibilityState === "visible" && appState.storeConfig.customFirebaseDbUrl) {
+                        pullFromCustomRealtimeDb(appState.storeConfig.customFirebaseDbUrl, false);
+                    }
+                }, 12000);
+            }
+        }
+
+        /* Conecta directamente al Google Cloud Firestore del cliente usando el bloque autodetectado */
+        function initCustomCloudFirestoreSDK() {
+            const projectId = (appState.storeConfig.customFirebaseProjectId || "").trim();
+            const apiKey = (appState.storeConfig.customFirebaseApiKey || "").trim();
+            const dbUrl = (appState.storeConfig.customFirebaseDbUrl || "").trim();
+            const appId = (appState.storeConfig.customFirebaseAppId || "").trim();
+
+            if (!projectId || !apiKey) return;
+
+            try {
+                const customFsConfig = {
+                    apiKey,
+                    projectId,
+                    authDomain: `${projectId}.firebaseapp.com`
+                };
+                if (dbUrl) customFsConfig.databaseURL = dbUrl;
+                if (appId) customFsConfig.appId = appId;
+
+                const customFsApp = initializeApp(customFsConfig, "customClientFirestoreApp_" + Date.now());
+                const customFsDb = getFirestore(customFsApp);
+                customFirestoreDocRef = doc(customFsDb, "glamStoreCatalog", "liveState");
+
+                onSnapshot(
+                    customFirestoreDocRef,
+                    (snap) => {
+                        if (snap.exists()) {
+                            const data = snap.data();
+                            if (data && data.payload) {
+                                try {
+                                    const parsed = JSON.parse(data.payload);
+                                    appState = {
+                                        storeConfig: {
+                                            ...INITIAL_SEED_STATE.storeConfig,
+                                            ...(parsed.storeConfig || {}),
+                                            customFirebaseProjectId: projectId,
+                                            customFirebaseApiKey: apiKey,
+                                            customFirebaseDbUrl: dbUrl || parsed.storeConfig?.customFirebaseDbUrl || "",
+                                            customFirebaseAppId: appId || parsed.storeConfig?.customFirebaseAppId || ""
+                                        },
+                                        orders: Array.isArray(parsed.orders) ? parsed.orders : appState.orders,
+                                        categories: Array.isArray(parsed.categories) && parsed.categories.length ? parsed.categories : appState.categories,
+                                        coupons: Array.isArray(parsed.coupons) ? parsed.coupons : appState.coupons,
+                                        products: Array.isArray(parsed.products) ? parsed.products : appState.products
+                                    };
+                                    renderAll();
+                                    setCloudBadge("Cloud Firestore en Vivo", true);
+                                } catch (parseErr) {
+                                    console.warn("Error leyendo documento de Cloud Firestore:", parseErr);
+                                }
+                            }
+                        } else {
+                            saveStateToCloud(false);
+                        }
+                    },
+                    (err) => {
+                        console.warn("Aviso listener Cloud Firestore personalizado:", err);
+                    }
+                );
+            } catch (err) {
+                console.warn("No se pudo inicializar Cloud Firestore personalizado:", err);
+            }
+        }
+
+        /* Afianza la conexión en vivo usando el SDK oficial de Firebase Realtime Database con URL + API Key */
+        function initCustomRealtimeDatabaseSDK() {
+            const dbUrl = (appState.storeConfig.customFirebaseDbUrl || "").trim();
+            const apiKey = (appState.storeConfig.customFirebaseApiKey || "").trim();
+            if (!dbUrl.startsWith("https://")) return;
+
+            try {
+                const customConfig = { databaseURL: dbUrl };
+                if (apiKey) customConfig.apiKey = apiKey;
+
+                const customApp = initializeApp(customConfig, "customClientRealtimeApp_" + Date.now());
+                const rtdb = getDatabase(customApp);
+                customRtdbRef = dbRef(rtdb, "glamStoreData");
+
+                onValue(customRtdbRef, (snapshot) => {
+                    const data = snapshot.val();
+                    if (data && data.products) {
+                        appState = {
+                            storeConfig: {
+                                ...INITIAL_SEED_STATE.storeConfig,
+                                ...(data.storeConfig || {}),
+                                customFirebaseDbUrl: dbUrl,
+                                customFirebaseApiKey: apiKey || data.storeConfig?.customFirebaseApiKey || ""
+                            },
+                            orders: Array.isArray(data.orders) ? data.orders : appState.orders,
+                            categories: Array.isArray(data.categories) && data.categories.length ? data.categories : appState.categories,
+                            coupons: Array.isArray(data.coupons) ? data.coupons : appState.coupons,
+                            products: Array.isArray(data.products) ? data.products : appState.products
+                        };
+                        renderAll();
+                        setCloudBadge("Sincronizado en Vivo (API Key)", true);
+                    }
+                });
+            } catch (err) {
+                console.warn("Fallback REST activo para Firebase RTDB:", err);
+            }
+        }
+
+        async function saveStateToCloud(showNotification = true) {
+            renderAll();
+            if (firestoreDocRef && currentUser) {
+                try {
+                    await setDoc(firestoreDocRef, {
+                        payload: JSON.stringify(appState),
+                        updatedAt: Date.now()
+                    });
+                    setCloudBadge("Guardado en Nube", true);
+                } catch (err) {
+                    console.warn("No se pudo guardar en Firestore:", err);
+                }
+            }
+
+            if (customFirestoreDocRef) {
+                try {
+                    await setDoc(customFirestoreDocRef, {
+                        payload: JSON.stringify(appState),
+                        updatedAt: Date.now()
+                    });
+                    setCloudBadge("Cloud Firestore Activo", true);
+                } catch (err) {
+                    console.warn("Error guardando en Cloud Firestore del cliente:", err);
+                }
+            }
+
+            if (customRtdbRef) {
+                try {
+                    await dbSet(customRtdbRef, {
+                        ...appState,
+                        updatedAt: Date.now()
+                    });
+                    setCloudBadge("Firebase SDK Activo", true);
+                } catch (err) {
+                    console.warn("Error guardando por SDK RTDB:", err);
+                }
+            }
+
+            const customUrl = appState.storeConfig.customFirebaseDbUrl;
+            if (customUrl && customUrl.startsWith("https://")) {
+                try {
+                    const apiKey = (appState.storeConfig.customFirebaseApiKey || "").trim();
+                    const authQuery = apiKey ? `?key=${encodeURIComponent(apiKey)}` : "";
+                    const cleanUrl = customUrl.replace(/\/$/, "") + "/glamStoreData.json" + authQuery;
+                    await fetch(cleanUrl, {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            ...appState,
+                            updatedAt: Date.now()
+                        })
+                    });
+                    setCloudBadge("Firebase RTDB Activo", true);
+                } catch (err) {
+                    console.warn("Error sincronizando con Firebase RTDB:", err);
+                }
+            }
+
+            if (showNotification) {
+                window.showToast("Cambios guardados y publicados en tiempo real");
+            }
+        }
+
+        async function pullFromCustomRealtimeDb(dbUrl, notify = true) {
+            if (!dbUrl || !dbUrl.startsWith("https://")) return;
+            try {
+                const apiKey = (appState.storeConfig.customFirebaseApiKey || "").trim();
+                const cleanUrl = dbUrl.replace(/\/$/, "") + "/glamStoreData.json?nocache=" + Date.now() + (apiKey ? `&key=${encodeURIComponent(apiKey)}` : "");
+                const res = await fetch(cleanUrl, { cache: "no-store" });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.products) {
+                        appState = {
+                            storeConfig: {
+                                ...INITIAL_SEED_STATE.storeConfig,
+                                ...(data.storeConfig || {}),
+                                customFirebaseDbUrl: dbUrl,
+                                customFirebaseApiKey: apiKey || data.storeConfig?.customFirebaseApiKey || ""
+                            },
+                            orders: Array.isArray(data.orders) ? data.orders : appState.orders,
+                            categories: Array.isArray(data.categories) && data.categories.length ? data.categories : appState.categories,
+                            coupons: Array.isArray(data.coupons) ? data.coupons : appState.coupons,
+                            products: Array.isArray(data.products) ? data.products : appState.products
+                        };
+                        renderAll();
+                        setCloudBadge("Actualizado Ahora", true);
+                        if (notify) window.showToast("Catálogo actualizado con la versión más reciente");
+                    }
+                }
+            } catch (e) {
+                console.warn("No se pudo consultar URL Firebase personalizada:", e);
+            }
+        }
+
+        window.forceRefreshCatalog = async function() {
+            const icon = document.getElementById("refreshIcon");
+            if (icon) icon.classList.add("fa-spin");
+            if (appState.storeConfig.customFirebaseDbUrl) {
+                await pullFromCustomRealtimeDb(appState.storeConfig.customFirebaseDbUrl, true);
+            } else {
+                renderAll();
+                window.showToast("Vista sincronizada con la última versión disponible");
+            }
+            setTimeout(() => {
+                if (icon) icon.classList.remove("fa-spin");
+            }, 600);
+        };
+
+        window.forcePushToCloud = async function() {
+            await saveStateToCloud(true);
+        };
+
+        /* Autodetector Inteligente para extraer apiKey, projectId, databaseURL y appId de cualquier snippet de Firebase */
+        window.smartParseFirebaseSnippet = function(rawText, connectImmediately = false) {
+            const text = (rawText || "").trim();
+            const feedback = document.getElementById("autoDetectFeedbackText");
+            const badge = document.getElementById("autoDetectStatusBadge");
+            if (!text) {
+                if (feedback) feedback.innerHTML = `<i class="fa-solid fa-circle-info mr-1 text-amber-600"></i>Pega el bloque <code>firebaseConfig</code> para extraer los datos automáticamente.`;
+                return;
+            }
+
+            const extractField = (key) => {
+                const regex = new RegExp(`["']?${key}["']?\\s*:\\s*["']([^"']+)["']`, "i");
+                const match = text.match(regex);
+                return match ? match[1].trim() : "";
+            };
+
+            const detectedApiKey = extractField("apiKey");
+            const detectedProjectId = extractField("projectId");
+            let detectedDbUrl = extractField("databaseURL");
+            const detectedAppId = extractField("appId");
+
+            // Si no trae databaseURL explícito pero sí projectId, sugerimos el formato estándar si estaba vacío
+            const currentUrlInput = document.getElementById("firebaseCustomUrlInput");
+            if (!detectedDbUrl && detectedProjectId && (!currentUrlInput || !currentUrlInput.value.trim())) {
+                detectedDbUrl = `https://${detectedProjectId}-default-rtdb.firebaseio.com`;
+            }
+
+            const foundKeys = [];
+            if (detectedProjectId) {
+                document.getElementById("firebaseCustomProjectIdInput").value = detectedProjectId;
+                foundKeys.push("projectId");
+            }
+            if (detectedApiKey) {
+                document.getElementById("firebaseCustomApiKeyInput").value = detectedApiKey;
+                foundKeys.push("apiKey");
+            }
+            if (detectedDbUrl) {
+                document.getElementById("firebaseCustomUrlInput").value = detectedDbUrl;
+                foundKeys.push("databaseURL");
+            }
+            if (detectedAppId) {
+                document.getElementById("firebaseCustomAppIdInput").value = detectedAppId;
+                foundKeys.push("appId");
+            }
+
+            appState.storeConfig.customFirebaseRawSnippet = text;
+
+            if (foundKeys.length > 0) {
+                if (badge) {
+                    badge.textContent = `¡Detectados: ${foundKeys.join(", ")}!`;
+                    badge.className = "px-2.5 py-0.5 rounded-full bg-emerald-100 border border-emerald-300 text-[10px] font-bold text-emerald-800";
+                }
+                if (feedback) {
+                    feedback.innerHTML = `<i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i><strong>¡Autodetección exitosa!</strong> Se extrajeron: <code>${foundKeys.join(", ")}</code>.`;
+                }
+                if (connectImmediately) {
+                    window.connectCustomFirebaseUrl();
+                }
+            } else {
+                if (badge) {
+                    badge.textContent = "Formato no reconocido";
+                    badge.className = "px-2.5 py-0.5 rounded-full bg-rose-100 border border-rose-300 text-[10px] font-bold text-rose-700";
+                }
+                if (feedback) {
+                    feedback.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-1 text-rose-600"></i>No se encontraron claves como <code>apiKey: "..."</code> o <code>projectId: "..."</code> en el texto pegado.`;
+                }
+            }
+        };
+
+        window.connectCustomFirebaseUrl = async function() {
+            const urlInput = document.getElementById("firebaseCustomUrlInput");
+            const apiKeyInput = document.getElementById("firebaseCustomApiKeyInput");
+            const projectIdInput = document.getElementById("firebaseCustomProjectIdInput");
+            const appIdInput = document.getElementById("firebaseCustomAppIdInput");
+            const snippetInput = document.getElementById("firebaseRawSnippetInput");
+
+            const url = (urlInput?.value || "").trim();
+            const apiKey = (apiKeyInput?.value || "").trim();
+            const projectId = (projectIdInput?.value || "").trim();
+            const appId = (appIdInput?.value || "").trim();
+            const rawSnippet = (snippetInput?.value || "").trim();
+
+            if (!url.startsWith("https://") && (!projectId || !apiKey)) {
+                window.showToast("Pega tu bloque en el Autodetector o ingresa Project ID + API Key / URL de Firebase", "error");
+                return;
+            }
+
+            appState.storeConfig.customFirebaseDbUrl = url;
+            appState.storeConfig.customFirebaseApiKey = apiKey;
+            appState.storeConfig.customFirebaseProjectId = projectId;
+            appState.storeConfig.customFirebaseAppId = appId;
+            appState.storeConfig.customFirebaseRawSnippet = rawSnippet;
+
+            if (projectId && apiKey) {
+                initCustomCloudFirestoreSDK();
+            }
+            if (url.startsWith("https://")) {
+                initCustomRealtimeDatabaseSDK();
+            }
+            await saveStateToCloud(true);
+        };
+
+        /* Exporta el archivo index.html con el estado actual + Firebase URL + API Key incrustados de fábrica para subir a GitHub */
+        window.exportUpdatedHtmlForGithub = function() {
+            let fullHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const seedRegex = /const INITIAL_SEED_STATE = \{[\s\S]*?\n        \};/;
+            const updatedSeedBlock = `const INITIAL_SEED_STATE = ${JSON.stringify(appState, null, 12)};`;
+            fullHtml = fullHtml.replace(seedRegex, updatedSeedBlock);
+
+            const blob = new Blob([fullHtml], { type: "text/html;charset=utf-8" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "index.html";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.showToast("Archivo index.html generado con tus cambios y Firebase listos para GitHub");
+        };
+
+        /* ========================================================= */
+        /* GENERADOR DE LINK CON EL NOMBRE DE LA TIENDA Y AUTO-SYNC  */
+        /* ========================================================= */
+        function createStoreSlug(name) {
+            return (name || "mi-tienda")
+                .toString()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "") || "boutique";
+        }
+
+        function getPersonalizedStoreUrl() {
+            const cfg = appState.storeConfig;
+            const slug = createStoreSlug(cfg.storeName);
+            const baseUrl = window.location.origin + window.location.pathname;
+            const params = new URLSearchParams();
+            params.set("tienda", slug);
+            if (cfg.customFirebaseDbUrl && cfg.customFirebaseDbUrl.startsWith("https://")) {
+                params.set("cloud", cfg.customFirebaseDbUrl.trim());
+            }
+            if (cfg.customFirebaseProjectId && cfg.customFirebaseProjectId.trim() !== "") {
+                params.set("projectid", cfg.customFirebaseProjectId.trim());
+            }
+            if (cfg.customFirebaseApiKey && cfg.customFirebaseApiKey.trim() !== "") {
+                params.set("apikey", cfg.customFirebaseApiKey.trim());
+            }
+            return `${baseUrl}?${params.toString()}#${slug}`;
+        }
+
+        function syncBrowserUrlAndTitleWithStoreName() {
+            const cfg = appState.storeConfig;
+            const slug = createStoreSlug(cfg.storeName);
+            const fullTitle = `${cfg.storeName || "Glam & Health"} | ${cfg.storeTagline || "Catálogo Oficial"}`;
+            document.title = fullTitle;
+
+            try {
+                const newUrl = getPersonalizedStoreUrl();
+                window.history.replaceState({ tienda: slug }, fullTitle, newUrl);
+            } catch (e) {
+                // En caso de restricción de iframe, actualizamos el hash igualmente
+                window.location.hash = slug;
+            }
+
+            const previewUrlEl = document.getElementById("adminPreviewStoreUrl");
+            if (previewUrlEl) {
+                previewUrlEl.textContent = getPersonalizedStoreUrl();
+            }
+        }
+
+        window.copyOrShareStoreLink = function() {
+            const shareUrl = getPersonalizedStoreUrl();
+            const cfg = appState.storeConfig;
+            const tempInput = document.createElement("input");
+            tempInput.value = shareUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            window.showToast(`Link de "${cfg.storeName}" copiado listo para pegar en WhatsApp`);
+        };
+
+        /* ========================================================= */
+        /* RENDERIZADO GENERAL DE CABECERA, CATEGORÍAS Y PRODUCTOS   */
+        /* ========================================================= */
+        function renderHeaderAndBranding() {
+            const cfg = appState.storeConfig;
+            document.getElementById("headerStoreName").textContent = cfg.storeName || "Glam & Health";
+            document.getElementById("headerStoreTagline").textContent = cfg.storeTagline || "Boutique 593";
+            document.getElementById("footerStoreName").textContent = `${cfg.storeName} • ${cfg.storeTagline}`;
+            document.getElementById("topBarPromoText").textContent =
+                `Envío GRATIS desde $${Number(cfg.freeShippingThreshold || 45).toFixed(2)} | Pagos con Deuna! o Transferencia`;
+
+            const logoImg = document.getElementById("headerLogoImg");
+            const logoIcon = document.getElementById("headerLogoIcon");
+            if (cfg.logoUrl && cfg.logoUrl.trim() !== "") {
+                logoImg.src = cfg.logoUrl;
+                logoImg.classList.remove("hidden");
+                logoIcon.classList.add("hidden");
+            } else {
+                logoImg.classList.add("hidden");
+                logoIcon.classList.remove("hidden");
+            }
+
+            // Actualizar datos Deuna en el Checkout
+            document.getElementById("checkoutDeunaHolder").textContent = cfg.deunaHolder || cfg.storeName;
+            document.getElementById("checkoutDeunaPhone").textContent = cfg.deunaPhone || cfg.whatsappNumber;
+            document.getElementById("checkoutDeunaQrImg").src = getActiveDeunaQrSrc();
+            document.getElementById("checkoutBankText").textContent = cfg.bankDetails || "";
+
+            // Actualizar título de la pestaña y URL personalizada con el nombre de la tienda
+            syncBrowserUrlAndTitleWithStoreName();
+        }
+
+        function renderCategoryPills() {
+            const bar = document.getElementById("categoryFilterBar");
+            if (!bar) return;
+
+            const allBtnActive = currentFilter.category === "TODAS";
+            let html = `
+                <button onclick="window.selectCategoryFilter('TODAS')" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${allBtnActive ? 'bg-brand-600 text-white shadow-sm' : 'bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200'}">
+                    <i class="fa-solid fa-border-all"></i>
+                    <span>Todas (${appState.products.length})</span>
+                </button>
+            `;
+
+            appState.categories.forEach(cat => {
+                const count = appState.products.filter(p => p.category === cat.name).length;
+                const active = currentFilter.category === cat.name;
+                html += `
+                    <button onclick="window.selectCategoryFilter('${cat.name.replace(/'/g, "\\'")}')" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${active ? 'bg-brand-600 text-white shadow-sm' : 'bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200'}">
+                        <i class="fa-solid ${cat.icon || 'fa-tag'}"></i>
+                        <span>${cat.name} (${count})</span>
+                    </button>
+                `;
+            });
+
+            bar.innerHTML = html;
+        }
+
+        function renderCatalogProducts() {
+            const grid = document.getElementById("productGrid");
+            if (!grid) return;
+
+            const filtered = appState.products.filter(product => {
+                const matchesCat = currentFilter.category === "TODAS" || product.category === currentFilter.category;
+                const q = currentFilter.search.toLowerCase().trim();
+                const variantNames = (product.variants || []).map(v => v.name.toLowerCase()).join(" ");
+                const matchesSearch = !q ||
+                    product.name.toLowerCase().includes(q) ||
+                    product.description.toLowerCase().includes(q) ||
+                    product.category.toLowerCase().includes(q) ||
+                    variantNames.includes(q);
+
+                const minVariantPrice = Math.min(...(product.variants || [{ price: 0 }]).map(v => Number(v.price) || 0));
+                const matchesPrice = minVariantPrice <= currentFilter.maxPrice;
+
+                return matchesCat && matchesSearch && matchesPrice;
+            });
+
+            filtered.sort((a, b) => {
+                const priceA = Math.min(...a.variants.map(v => Number(v.price)));
+                const priceB = Math.min(...b.variants.map(v => Number(v.price)));
+                if (currentFilter.sort === "price-asc") return priceA - priceB;
+                if (currentFilter.sort === "price-desc") return priceB - priceA;
+                if (currentFilter.sort === "name-asc") return a.name.localeCompare(b.name);
+                return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+            });
+
+            document.getElementById("catalogCountText").textContent =
+                `Mostrando ${filtered.length} de ${appState.products.length} productos disponibles`;
+
+            const resetBtn = document.getElementById("resetFiltersBtn");
+            if (currentFilter.category !== "TODAS" || currentFilter.search !== "" || currentFilter.maxPrice < 200) {
+                resetBtn.classList.remove("hidden");
+            } else {
+                resetBtn.classList.add("hidden");
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full bg-white rounded-3xl p-10 text-center border border-brand-200 soft-card-shadow">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xl mb-3">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-brand-900">No encontramos productos con esos filtros</h3>
+                        <p class="text-xs text-brand-500 mt-1 mb-4">Prueba seleccionando otra categoría o restableciendo el rango de precio.</p>
+                        <button onclick="window.resetFilters()" class="px-5 py-2 rounded-full bg-brand-600 text-white text-xs font-semibold">
+                            Ver todos los productos
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(product => {
+                const variants = product.variants && product.variants.length
+                    ? product.variants
+                    : [{ id: "default", name: "Única", price: 15, stock: 5 }];
+
+                if (!selectedVariantsMap[product.id] || !variants.some(v => v.id === selectedVariantsMap[product.id])) {
+                    selectedVariantsMap[product.id] = variants[0].id;
+                }
+
+                const activeVariant = variants.find(v => v.id === selectedVariantsMap[product.id]) || variants[0];
+                const isOutOfStock = Number(activeVariant.stock) <= 0;
+
+                return `
+                    <article class="bg-white rounded-3xl border border-brand-200 overflow-hidden soft-card-shadow flex flex-col transition-all duration-300">
+                        <div class="relative h-60 bg-brand-50 overflow-hidden group">
+                            <img
+                                src="${product.image}"
+                                alt="${product.name}"
+                                onerror="this.src='https://placehold.co/600x600/FBE8EB/96445B?text=Glam+Boutique'"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                                <span class="px-3 py-1 rounded-full bg-white/90 backdrop-blur text-brand-800 text-[11px] font-bold shadow-sm">
+                                    ${product.category}
+                                </span>
+                                ${product.featured ? `
+                                    <span class="px-2.5 py-1 rounded-full bg-champagne-500 text-white text-[11px] font-bold shadow-sm">
+                                        <i class="fa-solid fa-star mr-0.5"></i> Top
+                                    </span>
+                                ` : ""}
+                            </div>
+                            <div class="absolute bottom-3 right-3">
+                                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold shadow-sm ${isOutOfStock ? 'bg-rose-600 text-white' : 'bg-emerald-600/95 text-white'}">
+                                    ${isOutOfStock ? 'Agotado' : `${activeVariant.stock} disponibles`}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-start justify-between gap-2">
+                                    <h3 class="font-serif font-bold text-base text-brand-900 leading-snug">${product.name}</h3>
+                                    <span class="font-serif font-bold text-lg text-brand-600 shrink-0">$${Number(activeVariant.price).toFixed(2)}</span>
+                                </div>
+                                <p class="text-xs text-brand-600 mt-1.5 line-clamp-2 leading-relaxed">${product.description}</p>
+                            </div>
+
+                            <div class="space-y-3 pt-2 border-t border-brand-100">
+                                <!-- Selector de Variantes en Vivo -->
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-brand-500 mb-1.5">
+                                        ${product.variantLabel || 'Selecciona Variante'}: <span class="text-brand-800">${activeVariant.name}</span>
+                                    </label>
+                                    <div class="flex flex-wrap gap-1.5">
+                                        ${variants.map(v => {
+                                            const isSelected = v.id === activeVariant.id;
+                                            const noStock = Number(v.stock) <= 0;
+                                            return `
+                                                <button
+                                                    type="button"
+                                                    onclick="window.selectProductVariant('${product.id}', '${v.id}')"
+                                                    class="px-2.5 py-1 rounded-xl text-xs font-semibold border transition ${
+                                                        isSelected
+                                                            ? 'bg-brand-600 text-white border-brand-600 shadow-sm'
+                                                            : noStock
+                                                                ? 'bg-brand-50 text-brand-300 border-brand-100 line-through'
+                                                                : 'bg-brand-50 text-brand-800 border-brand-200 hover:bg-brand-100'
+                                                    }"
+                                                >
+                                                    ${v.name}
+                                                </button>
+                                            `;
+                                        }).join("")}
+                                    </div>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    onclick="window.addToCart('${product.id}')"
+                                    ${isOutOfStock ? "disabled" : ""}
+                                    class="w-full py-2.5 px-4 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm ${
+                                        isOutOfStock
+                                            ? 'bg-brand-100 text-brand-400 cursor-not-allowed'
+                                            : 'bg-brand-600 hover:bg-brand-700 text-white'
+                                    }"
+                                >
+                                    <i class="fa-solid ${isOutOfStock ? 'fa-ban' : 'fa-cart-plus'}"></i>
+                                    <span>${isOutOfStock ? 'Variante sin stock' : 'Agregar al carrito'}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join("");
+        }
+
+        /* Acciones de Catálogo y Filtros */
+        window.selectProductVariant = function(productId, variantId) {
+            selectedVariantsMap[productId] = variantId;
+            renderCatalogProducts();
+        };
+
+        window.selectCategoryFilter = function(categoryName) {
+            currentFilter.category = categoryName;
+            renderCategoryPills();
+            renderCatalogProducts();
+        };
+
+        window.handleSearch = function(query) {
+            currentFilter.search = query;
+            const dInput = document.getElementById("searchInputDesktop");
+            const mInput = document.getElementById("searchInputMobile");
+            const clearBtn = document.getElementById("clearSearchBtnDesktop");
+            if (dInput && dInput.value !== query) dInput.value = query;
+            if (mInput && mInput.value !== query) mInput.value = query;
+            if (clearBtn) clearBtn.classList.toggle("hidden", !query);
+            renderCatalogProducts();
+        };
+
+        window.handlePriceFilter = function(val) {
+            currentFilter.maxPrice = Number(val);
+            document.getElementById("priceFilterLabel").textContent = `$${val}`;
+            renderCatalogProducts();
+        };
+
+        window.handleSort = function(sortValue) {
+            currentFilter.sort = sortValue;
+            renderCatalogProducts();
+        };
+
+        window.resetFilters = function() {
+            currentFilter = { category: "TODAS", search: "", maxPrice: 200, sort: "featured" };
+            document.getElementById("priceFilterRange").value = 200;
+            document.getElementById("priceFilterLabel").textContent = "$200";
+            window.handleSearch("");
+            renderCategoryPills();
+            renderCatalogProducts();
+        };
+
+        /* ========================================================= */
+        /* LÓGICA DEL CARRITO DE COMPRAS, CUPONES Y WHATSAPP         */
+        /* ========================================================= */
+        window.toggleCartDrawer = function(open) {
+            const drawer = document.getElementById("cartDrawer");
+            const backdrop = document.getElementById("cartDrawerBackdrop");
+            if (open) {
+                backdrop.classList.remove("hidden");
+                drawer.classList.remove("translate-x-full");
+                renderCart();
+            } else {
+                backdrop.classList.add("hidden");
+                drawer.classList.add("translate-x-full");
+            }
+        };
+
+        window.addToCart = function(productId) {
+            const product = appState.products.find(p => p.id === productId);
+            if (!product) return;
+            const variantId = selectedVariantsMap[productId] || product.variants[0]?.id;
+            const variant = product.variants.find(v => v.id === variantId) || product.variants[0];
+            if (!variant || Number(variant.stock) <= 0) {
+                window.showToast("Esta variante está agotada", "error");
+                return;
+            }
+
+            const cartKey = `${product.id}__${variant.id}`;
+            const existing = cart.find(item => item.cartKey === cartKey);
+
+            if (existing) {
+                if (existing.quantity + 1 > Number(variant.stock)) {
+                    window.showToast(`Solo quedan ${variant.stock} unidades disponibles de esta variante`, "error");
+                    return;
+                }
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    cartKey,
+                    productId: product.id,
+                    name: product.name,
+                    category: product.category,
+                    image: product.image,
+                    variantId: variant.id,
+                    variantLabel: product.variantLabel || "Variante",
+                    variantName: variant.name,
+                    price: Number(variant.price),
+                    maxStock: Number(variant.stock),
+                    quantity: 1
+                });
+            }
+
+            renderCart();
+            window.showToast(`${product.name} (${variant.name}) agregado al carrito`);
+        };
+
+        window.updateCartQty = function(cartKey, delta) {
+            const idx = cart.findIndex(i => i.cartKey === cartKey);
+            if (idx === -1) return;
+            const item = cart[idx];
+            const nextQty = item.quantity + delta;
+            if (nextQty <= 0) {
+                cart.splice(idx, 1);
+            } else if (nextQty > item.maxStock) {
+                window.showToast(`Stock máximo disponible: ${item.maxStock}`, "error");
+                return;
+            } else {
+                item.quantity = nextQty;
+            }
+            renderCart();
+        };
+
+        window.removeCartItem = function(cartKey) {
+            cart = cart.filter(i => i.cartKey !== cartKey);
+            renderCart();
+        };
+
+        window.applyCouponCode = function() {
+            const input = document.getElementById("cartCouponInput");
+            const feedback = document.getElementById("cartCouponFeedback");
+            const code = (input.value || "").trim().toUpperCase();
+            if (!code) return;
+
+            const found = appState.coupons.find(c => c.code.toUpperCase() === code && c.active);
+            const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+            if (!found) {
+                appliedCoupon = null;
+                feedback.textContent = "El cupón ingresado no existe o está inactivo.";
+                feedback.className = "text-[11px] text-rose-600 font-semibold block";
+                renderCart();
+                return;
+            }
+
+            if (subtotal < Number(found.minPurchase || 0)) {
+                appliedCoupon = null;
+                feedback.textContent = `Este cupón requiere una compra mínima de $${Number(found.minPurchase).toFixed(2)}.`;
+                feedback.className = "text-[11px] text-amber-700 font-semibold block";
+                renderCart();
+                return;
+            }
+
+            appliedCoupon = found;
+            feedback.textContent = `¡Cupón ${found.code} aplicado con éxito!`;
+            feedback.className = "text-[11px] text-emerald-700 font-semibold block";
+            renderCart();
+        };
+
+        function calculateCartTotals() {
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            let discount = 0;
+            if (appliedCoupon) {
+                if (subtotal >= Number(appliedCoupon.minPurchase || 0)) {
+                    discount = appliedCoupon.type === "percent"
+                        ? subtotal * (Number(appliedCoupon.value) / 100)
+                        : Number(appliedCoupon.value);
+                    discount = Math.min(discount, subtotal);
+                } else {
+                    appliedCoupon = null;
+                }
+            }
+            const afterDiscount = Math.max(0, subtotal - discount);
+            const cfg = appState.storeConfig;
+            const shipping = cart.length === 0
+                ? 0
+                : afterDiscount >= Number(cfg.freeShippingThreshold || 45)
+                    ? 0
+                    : Number(cfg.shippingCost || 3.5);
+            const total = afterDiscount + shipping;
+            return { subtotal, discount, shipping, total };
+        }
+
+        function renderCart() {
+            const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+            document.getElementById("cartCountBadge").textContent = totalItems;
+            document.getElementById("drawerItemsSubtitle").textContent = `${totalItems} artículo(s) en tu carrito`;
+
+            const container = document.getElementById("cartItemsContainer");
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 bg-brand-50/60 rounded-2xl border border-brand-100">
+                        <i class="fa-solid fa-cart-shopping text-3xl text-brand-300 mb-2"></i>
+                        <p class="text-xs font-semibold text-brand-800">Tu carrito está vacío</p>
+                        <p class="text-[11px] text-brand-500 mt-0.5">Elige tus cosméticos, vitaminas o prendas favoritas.</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-3 p-3 rounded-2xl bg-brand-50/70 border border-brand-200">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-xl object-cover border border-brand-200 shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs font-bold text-brand-900 truncate">${item.name}</p>
+                            <p class="text-[11px] text-brand-600">${item.variantLabel}: <strong>${item.variantName}</strong></p>
+                            <p class="text-xs font-bold text-brand-700 mt-0.5">$${(item.price * item.quantity).toFixed(2)}</p>
+                        </div>
+                        <div class="flex flex-col items-end gap-1">
+                            <button onclick="window.removeCartItem('${item.cartKey}')" class="text-[11px] text-rose-500 hover:text-rose-700">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                            <div class="flex items-center gap-1.5 bg-white rounded-full border border-brand-200 px-2 py-0.5">
+                                <button onclick="window.updateCartQty('${item.cartKey}', -1)" class="text-xs font-bold text-brand-700 px-1">-</button>
+                                <span class="text-xs font-bold text-brand-900">${item.quantity}</span>
+                                <button onclick="window.updateCartQty('${item.cartKey}', 1)" class="text-xs font-bold text-brand-700 px-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join("");
+            }
+
+            const { subtotal, discount, shipping, total } = calculateCartTotals();
+            document.getElementById("summarySubtotal").textContent = `$${subtotal.toFixed(2)}`;
+            const discRow = document.getElementById("summaryDiscountRow");
+            if (discount > 0 && appliedCoupon) {
+                discRow.classList.remove("hidden");
+                document.getElementById("summaryDiscountLabel").textContent = `Cupón (${appliedCoupon.code}):`;
+                document.getElementById("summaryDiscountValue").textContent = `-$${discount.toFixed(2)}`;
+            } else {
+                discRow.classList.add("hidden");
+            }
+            document.getElementById("summaryShipping").textContent = shipping === 0 && cart.length > 0 ? "¡GRATIS!" : `$${shipping.toFixed(2)}`;
+            document.getElementById("summaryTotal").textContent = `$${total.toFixed(2)}`;
+        }
+
+        window.handlePaymentMethodChange = function(method) {
+            const deunaCard = document.getElementById("checkoutDeunaCard");
+            const bankCard = document.getElementById("checkoutBankCard");
+            if (method.includes("Deuna")) {
+                deunaCard.classList.remove("hidden");
+                bankCard.classList.add("hidden");
+            } else if (method.includes("Transferencia")) {
+                deunaCard.classList.add("hidden");
+                bankCard.classList.remove("hidden");
+            } else {
+                deunaCard.classList.add("hidden");
+                bankCard.classList.add("hidden");
+            }
+        };
+
+        window.copyDeunaPhone = function() {
+            const phone = appState.storeConfig.deunaPhone || "";
+            const tempInput = document.createElement("input");
+            tempInput.value = phone;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            window.showToast(`Número Deuna! (${phone}) copiado al portapapeles`, "info");
+        };
+
+        /* Captura de Ubicación GPS del Cliente para Entrega a Domicilio */
+        window.captureCustomerGps = function() {
+            if (!navigator.geolocation) {
+                window.showToast("Tu navegador o dispositivo no soporta geolocalización GPS", "error");
+                return;
+            }
+
+            const btnIcon = document.getElementById("gpsBtnIcon");
+            const btnText = document.getElementById("gpsBtnText");
+            const gpsInput = document.getElementById("chkGpsUrl");
+            const badge = document.getElementById("gpsStatusBadge");
+            const clearBtn = document.getElementById("btnClearGpsLocation");
+            const previewLink = document.getElementById("gpsPreviewLink");
+            const coordsLabel = document.getElementById("gpsCoordsLabel");
+
+            if (btnIcon) btnIcon.className = "fa-solid fa-spinner fa-spin text-brand-600";
+            if (btnText) btnText.textContent = "Obteniendo coordenadas GPS...";
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude.toFixed(6);
+                    const lng = position.coords.longitude.toFixed(6);
+                    const mapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
+
+                    if (gpsInput) gpsInput.value = mapsUrl;
+                    if (previewLink) previewLink.href = mapsUrl;
+                    if (coordsLabel) coordsLabel.textContent = `GPS listo (${lat}, ${lng})`;
+                    if (badge) badge.classList.remove("hidden");
+                    if (clearBtn) clearBtn.classList.remove("hidden");
+                    if (btnIcon) btnIcon.className = "fa-solid fa-circle-check text-emerald-600";
+                    if (btnText) btnText.textContent = "Ubicación GPS Adjuntada";
+                    window.showToast("Ubicación GPS adjuntada correctamente");
+                },
+                (err) => {
+                    console.warn("Error GPS:", err);
+                    if (btnIcon) btnIcon.className = "fa-solid fa-location-crosshairs text-brand-600";
+                    if (btnText) btnText.textContent = "Adjuntar mi Ubicación GPS (Google Maps)";
+                    window.showToast("No se pudo obtener el GPS. Verifica los permisos de ubicación.", "error");
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            );
+        };
+
+        window.clearCustomerGps = function() {
+            const gpsInput = document.getElementById("chkGpsUrl");
+            const badge = document.getElementById("gpsStatusBadge");
+            const clearBtn = document.getElementById("btnClearGpsLocation");
+            const btnIcon = document.getElementById("gpsBtnIcon");
+            const btnText = document.getElementById("gpsBtnText");
+
+            if (gpsInput) gpsInput.value = "";
+            if (badge) badge.classList.add("hidden");
+            if (clearBtn) clearBtn.classList.add("hidden");
+            if (btnIcon) btnIcon.className = "fa-solid fa-location-crosshairs text-brand-600";
+            if (btnText) btnText.textContent = "Adjuntar mi Ubicación GPS (Google Maps)";
+        };
+
+        window.submitWhatsAppOrder = async function(e) {
+            e.preventDefault();
+            if (cart.length === 0) {
+                window.showToast("Agrega al menos un producto al carrito antes de enviar el pedido", "error");
+                return;
+            }
+
+            const name = document.getElementById("chkName").value.trim();
+            const phone = document.getElementById("chkPhone").value.trim();
+            const address = document.getElementById("chkAddress").value.trim();
+            const gpsUrl = (document.getElementById("chkGpsUrl")?.value || "").trim();
+            const payment = document.getElementById("chkPaymentMethod").value;
+            const notes = document.getElementById("chkNotes").value.trim();
+            const { subtotal, discount, shipping, total } = calculateCartTotals();
+            const cfg = appState.storeConfig;
+
+            // 1. Crear registro del pedido en el Backend (Estado inicial: Pendiente)
+            const orderId = "PED-" + Math.floor(1000 + Math.random() * 9000);
+            const nowStr = new Date().toLocaleString("es-EC", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+
+            const newOrder = {
+                id: orderId,
+                createdAt: nowStr,
+                customerName: name,
+                customerPhone: phone,
+                address: address,
+                gpsUrl: gpsUrl,
+                paymentMethod: payment,
+                notes: notes,
+                status: "Pendiente",
+                subtotal: subtotal,
+                discount: discount,
+                shipping: shipping,
+                total: total,
+                couponCode: appliedCoupon ? appliedCoupon.code : "",
+                items: cart.map(item => ({
+                    productId: item.productId,
+                    name: item.name,
+                    variantLabel: item.variantLabel,
+                    variantName: item.variantName,
+                    quantity: item.quantity,
+                    price: item.price
+                }))
+            };
+
+            if (!Array.isArray(appState.orders)) appState.orders = [];
+            appState.orders.unshift(newOrder);
+            await saveStateToCloud(false);
+
+            let message = `✨ *NUEVO PEDIDO ${orderId} - ${cfg.storeName.toUpperCase()}* ✨\n\n`;
+            message += `👤 *Cliente:* ${name}\n`;
+            message += `📱 *Teléfono:* ${phone}\n`;
+            message += `📍 *Dirección de Entrega:* ${address}\n`;
+            if (gpsUrl) {
+                message += `🗺️ *Ubicación Exacta GPS:* ${gpsUrl}\n`;
+            }
+            message += `💳 *Método de Pago:* ${payment}\n`;
+            if (notes) message += `📝 *Notas:* ${notes}\n`;
+            message += `\n🛍️ *DETALLE DEL PEDIDO:*\n`;
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. *${item.name}*\n`;
+                message += `   • ${item.variantLabel}: ${item.variantName}\n`;
+                message += `   • Cant: ${item.quantity} x $${item.price.toFixed(2)} = *$${(item.price * item.quantity).toFixed(2)}*\n`;
+            });
+
+            message += `\n────────────────────\n`;
+            message += `💵 *Subtotal:* $${subtotal.toFixed(2)}\n`;
+            if (discount > 0 && appliedCoupon) {
+                message += `🎟️ *Descuento (${appliedCoupon.code}):* -$${discount.toFixed(2)}\n`;
+            }
+            message += `🚚 *Envío a domicilio:* ${shipping === 0 ? "¡GRATIS!" : "$" + shipping.toFixed(2)}\n`;
+            message += `💖 *TOTAL A PAGAR: $${total.toFixed(2)} USD*\n`;
+
+            if (payment.includes("Deuna")) {
+                message += `\n💜 *Pago con Deuna! al número:* ${cfg.deunaPhone} (${cfg.deunaHolder})`;
+            }
+
+            const cleanWhatsapp = (cfg.whatsappNumber || "593991234567").replace(/\D/g, "");
+            const waUrl = `https://wa.me/${cleanWhatsapp}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, "_blank");
+            window.showToast(`Pedido ${orderId} registrado y listo en WhatsApp`);
+        };
+
+        /* ========================================================= */
+        /* NAVEGACIÓN Y AUTENTICACIÓN DEL PANEL ADMINISTRABLE        */
+        /* ========================================================= */
+        const ORDER_STATUS_CONFIG = {
+            "Pendiente": {
+                badgeClass: "bg-amber-50 text-amber-800 border-amber-300",
+                dotClass: "bg-amber-500 animate-pulse",
+                icon: "fa-clock"
+            },
+            "En Proceso": {
+                badgeClass: "bg-sky-50 text-sky-800 border-sky-300",
+                dotClass: "bg-sky-500",
+                icon: "fa-box-open"
+            },
+            "Por Entregar": {
+                badgeClass: "bg-purple-50 text-purple-800 border-purple-300",
+                dotClass: "bg-purple-500 animate-pulse",
+                icon: "fa-motorcycle"
+            },
+            "Despachado": {
+                badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300",
+                dotClass: "bg-emerald-500",
+                icon: "fa-circle-check"
+            }
+        };
+
+        window.switchView = function(view) {
+            currentView = view;
+            const storeEl = document.getElementById("storeView");
+            const adminEl = document.getElementById("adminView");
+            const btnText = document.getElementById("navAdminBtnText");
+
+            if (view === "admin") {
+                storeEl.classList.add("hidden");
+                adminEl.classList.remove("hidden");
+                if (btnText) btnText.textContent = "Ver Tienda";
+                renderAdminAuthView();
+            } else {
+                adminEl.classList.add("hidden");
+                storeEl.classList.remove("hidden");
+                if (btnText) btnText.textContent = "Panel Admin";
+            }
+        };
+
+        window.toggleAdminView = function() {
+            window.switchView(currentView === "admin" ? "store" : "admin");
+        };
+
+        function renderAdminAuthView() {
+            const loginCard = document.getElementById("adminLoginCard");
+            const dashboard = document.getElementById("adminDashboardContent");
+            if (isAdminAuthenticated) {
+                loginCard.classList.add("hidden");
+                dashboard.classList.remove("hidden");
+                renderAdminPanel();
+            } else {
+                loginCard.classList.remove("hidden");
+                dashboard.classList.add("hidden");
+            }
+        }
+
+        window.handleAdminLogin = function(e) {
+            e.preventDefault();
+            const input = document.getElementById("adminPasswordInput");
+            const pass = (input.value || "").trim();
+            const validPass = appState.storeConfig.adminPassword || "admin123";
+            if (pass === validPass) {
+                isAdminAuthenticated = true;
+                input.value = "";
+                renderAdminAuthView();
+                window.showToast("Bienvenida al Panel Administrable");
+            } else {
+                window.showToast("Contraseña incorrecta (Prueba: admin123)", "error");
+            }
+        };
+
+        window.handleAdminLogout = function() {
+            isAdminAuthenticated = false;
+            window.switchView("store");
+        };
+
+        window.switchAdminTab = function(tabKey) {
+            const tabs = ["orders", "products", "categories", "coupons", "settings", "firebase"];
+            tabs.forEach(t => {
+                const panel = document.getElementById(`adminTab_${t}`);
+                const btn = document.getElementById(`adminTabBtn_${t}`);
+                if (panel) panel.classList.toggle("hidden", t !== tabKey);
+                if (btn) {
+                    if (t === tabKey) {
+                        btn.className = "px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-brand-600 text-white shadow-sm flex items-center gap-1.5";
+                    } else {
+                        btn.className = "px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-brand-700 border border-brand-200 hover:bg-brand-50 flex items-center gap-1.5";
+                    }
+                }
+            });
+            renderAdminPanel();
+        };
+
+        window.saveQuickDriverPhone = function(phoneVal) {
+            appState.storeConfig.driverWhatsappNumber = (phoneVal || "").trim();
+            saveStateToCloud(true);
+        };
+
+        function renderAdminPanel() {
+            renderAdminOrdersManager();
+            renderAdminProductsTable();
+            renderAdminCategoriesList();
+            renderAdminCouponsList();
+            populateStoreSettingsForm();
+        }
+
+        /* CRUD de Categorías Infinitas (Con Edición Completa de Nombre e Ícono) */
+        const CATEGORY_ICON_OPTIONS = [
+            { value: "fa-wand-magic-sparkles", label: "✨ Cosméticos / Maquillaje" },
+            { value: "fa-capsules", label: "💊 Vitaminas / Suplementos" },
+            { value: "fa-shirt", label: "👗 Ropa / Moda" },
+            { value: "fa-spray-can-sparkles", label: "🌸 Perfumería / Fragancias" },
+            { value: "fa-pump-soap", label: "🧴 Skincare / Cuidado Piel" },
+            { value: "fa-bag-shopping", label: "👜 Bolsos y Carteras" },
+            { value: "fa-shoe-prints", label: "👠 Calzado / Zapatos" },
+            { value: "fa-gem", label: "💎 Joyería y Accesorios" },
+            { value: "fa-fire", label: "🔥 Promociones / Liquidación" },
+            { value: "fa-star", label: "⭐ Destacados / Especial" }
+        ];
+
+        function renderAdminCategoriesList() {
+            const list = document.getElementById("adminCategoriesList");
+            if (!list) return;
+
+            list.innerHTML = appState.categories.map((cat, idx) => {
+                const usedCount = appState.products.filter(p => p.category === cat.name).length;
+                return `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-2xl bg-brand-50/70 border border-brand-200">
+                        <div class="flex flex-1 flex-wrap sm:flex-nowrap items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-xl bg-white border border-brand-200 text-brand-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid ${cat.icon || 'fa-tag'}"></i>
+                            </div>
+                            <div class="flex-1 min-w-[160px]">
+                                <label class="block text-[10px] font-semibold text-brand-500 uppercase">Nombre de Categoría</label>
+                                <input
+                                    id="editCatName_${cat.id}"
+                                    type="text"
+                                    value="${cat.name}"
+                                    class="w-full font-bold text-xs sm:text-sm text-brand-900 bg-white border border-brand-200 focus:border-brand-500 px-2.5 py-1.5 rounded-xl outline-none"
+                                >
+                            </div>
+                            <div class="w-full sm:w-52">
+                                <label class="block text-[10px] font-semibold text-brand-500 uppercase">Ícono</label>
+                                <select
+                                    id="editCatIcon_${cat.id}"
+                                    class="w-full text-xs text-brand-800 bg-white border border-brand-200 focus:border-brand-500 px-2.5 py-1.5 rounded-xl outline-none"
+                                >
+                                    ${CATEGORY_ICON_OPTIONS.map(opt => `
+                                        <option value="${opt.value}" ${opt.value === cat.icon ? 'selected' : ''}>${opt.label}</option>
+                                    `).join("")}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between sm:justify-end gap-1.5 pt-2 sm:pt-0 border-t sm:border-t-0 border-brand-100">
+                            <span class="text-[11px] text-brand-500 mr-2">${usedCount} prod.</span>
+                            <button
+                                type="button"
+                                onclick="window.saveCategoryEdits('${cat.id}')"
+                                class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition"
+                                title="Guardar cambios de esta categoría"
+                            >
+                                <i class="fa-solid fa-check mr-1"></i>Guardar
+                            </button>
+                            <button type="button" onclick="window.moveCategory(${idx}, -1)" ${idx === 0 ? 'disabled' : ''} class="w-8 h-8 rounded-lg bg-white border border-brand-200 text-brand-700 disabled:opacity-30">
+                                <i class="fa-solid fa-arrow-up text-xs"></i>
+                            </button>
+                            <button type="button" onclick="window.moveCategory(${idx}, 1)" ${idx === appState.categories.length - 1 ? 'disabled' : ''} class="w-8 h-8 rounded-lg bg-white border border-brand-200 text-brand-700 disabled:opacity-30">
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </button>
+                            <button type="button" onclick="window.deleteCategory('${cat.id}')" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 text-xs font-semibold">
+                                Eliminar
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        window.handleAddCategory = function(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("newCatNameInput");
+            const iconSelect = document.getElementById("newCatIconSelect");
+            const name = nameInput.value.trim();
+            if (!name) return;
+
+            if (appState.categories.some(c => c.name.toLowerCase() === name.toLowerCase())) {
+                window.showToast("Esa categoría ya existe", "error");
+                return;
+            }
+
+            appState.categories.push({
+                id: "cat-" + Date.now(),
+                name,
+                icon: iconSelect.value
+            });
+            nameInput.value = "";
+            saveStateToCloud(true);
+        };
+
+        window.saveCategoryEdits = function(catId) {
+            const nameInput = document.getElementById(`editCatName_${catId}`);
+            const iconSelect = document.getElementById(`editCatIcon_${catId}`);
+            const cleanName = (nameInput?.value || "").trim();
+            const newIcon = iconSelect?.value || "fa-tag";
+
+            if (!cleanName) {
+                window.showToast("El nombre de la categoría no puede estar vacío", "error");
+                return;
+            }
+
+            const cat = appState.categories.find(c => c.id === catId);
+            if (!cat) return;
+
+            const duplicate = appState.categories.some(c => c.id !== catId && c.name.toLowerCase() === cleanName.toLowerCase());
+            if (duplicate) {
+                window.showToast("Ya existe otra categoría con ese nombre", "error");
+                return;
+            }
+
+            const oldName = cat.name;
+            cat.name = cleanName;
+            cat.icon = newIcon;
+
+            // Actualizar automáticamente los productos que pertenecían a esta categoría
+            appState.products.forEach(p => {
+                if (p.category === oldName) {
+                    p.category = cleanName;
+                }
+            });
+
+            if (currentFilter.category === oldName) {
+                currentFilter.category = cleanName;
+            }
+
+            saveStateToCloud(true);
+        };
+
+        window.filterAdminOrdersByStatus = function(status) {
+            currentAdminOrderFilter = status;
+            renderAdminOrdersManager();
+        };
+
+        window.updateOrderStatus = function(orderId, newStatus) {
+            const order = (appState.orders || []).find(o => o.id === orderId);
+            if (!order) return;
+            order.status = newStatus;
+            saveStateToCloud(true);
+        };
+
+        window.deleteOrderRecord = function(orderId) {
+            appState.orders = (appState.orders || []).filter(o => o.id !== orderId);
+            saveStateToCloud(true);
+        };
+
+        window.sendOrderToDriverWhatsApp = function(orderId) {
+            const order = (appState.orders || []).find(o => o.id === orderId);
+            if (!order) return;
+
+            const cfg = appState.storeConfig;
+            const customDriverInput = document.getElementById(`driverPhone_${orderId}`);
+            const driverPhoneRaw = (customDriverInput?.value || cfg.driverWhatsappNumber || "").replace(/\D/g, "");
+
+            const isCashOnDelivery = (order.paymentMethod || "").toLowerCase().includes("efectivo");
+            const cobroTexto = isCashOnDelivery
+                ? `💵 *COBRAR AL CLIENTE EN EFECTIVO: $${Number(order.total || 0).toFixed(2)} USD*`
+                : `✅ *PEDIDO YA PAGADO (${order.paymentMethod}) - NO COBRAR*`;
+
+            let msg = `🛵 *HOJA DE RUTA / ENTREGA A DOMICILIO* 🛵\n`;
+            msg += `🏢 *Tienda:* ${cfg.storeName}\n`;
+            msg += `📦 *Pedido:* #${order.id}\n`;
+            msg += `🏷️ *Estado:* ${order.status}\n\n`;
+            msg += `👤 *Cliente:* ${order.customerName}\n`;
+            msg += `📞 *Teléfono Cliente:* ${order.customerPhone}\n`;
+            msg += `📍 *Dirección Exacta:* ${order.address}\n`;
+            if (order.gpsUrl) {
+                msg += `🗺️ *Abrir Ubicación GPS (Google Maps):*\n${order.gpsUrl}\n`;
+            }
+            if (order.notes) {
+                msg += `📝 *Referencia / Notas:* ${order.notes}\n`;
+            }
+            msg += `\n${cobroTexto}\n\n`;
+            msg += `🛍️ *PAQUETES A ENTREGAR:*\n`;
+            (order.items || []).forEach((it, idx) => {
+                msg += `${idx + 1}. ${it.quantity}x ${it.name} (${it.variantName || ""})\n`;
+            });
+
+            // Si el pedido estaba en Pendiente o En Proceso, sugerir cambio automático a "Por Entregar"
+            if (order.status === "Pendiente" || order.status === "En Proceso") {
+                order.status = "Por Entregar";
+                saveStateToCloud(false);
+            }
+
+            const encoded = encodeURIComponent(msg);
+            const waUrl = driverPhoneRaw
+                ? `https://wa.me/${driverPhoneRaw}?text=${encoded}`
+                : `https://api.whatsapp.com/send?text=${encoded}`;
+
+            window.open(waUrl, "_blank");
+            window.showToast(`Datos del pedido ${order.id} listos para enviar al motorizado`);
+        };
+
+        function renderAdminOrdersManager() {
+            const orders = Array.isArray(appState.orders) ? appState.orders : [];
+            const pendingCount = orders.filter(o => o.status !== "Despachado").length;
+            const badge = document.getElementById("adminPendingOrdersBadge");
+            if (badge) badge.textContent = pendingCount;
+
+            const quickDriverInput = document.getElementById("quickDriverPhoneInput");
+            if (quickDriverInput) {
+                quickDriverInput.value = appState.storeConfig.driverWhatsappNumber || "";
+            }
+
+            const statsBar = document.getElementById("adminOrdersStatsBar");
+            if (statsBar) {
+                const counts = {
+                    "TODOS": orders.length,
+                    "Pendiente": orders.filter(o => o.status === "Pendiente").length,
+                    "En Proceso": orders.filter(o => o.status === "En Proceso").length,
+                    "Por Entregar": orders.filter(o => o.status === "Por Entregar").length,
+                    "Despachado": orders.filter(o => o.status === "Despachado").length
+                };
+
+                const filterButtons = [
+                    { key: "TODOS", label: "Todos los Pedidos", icon: "fa-layer-group", color: "border-brand-200 text-brand-800" },
+                    { key: "Pendiente", label: "Pendiente", icon: "fa-clock", color: "border-amber-300 text-amber-800" },
+                    { key: "En Proceso", label: "En Proceso", icon: "fa-box-open", color: "border-sky-300 text-sky-800" },
+                    { key: "Por Entregar", label: "Por Entregar", icon: "fa-motorcycle", color: "border-purple-300 text-purple-800" },
+                    { key: "Despachado", label: "Despachado", icon: "fa-circle-check", color: "border-emerald-300 text-emerald-800" }
+                ];
+
+                statsBar.innerHTML = filterButtons.map(b => {
+                    const active = currentAdminOrderFilter === b.key;
+                    return `
+                        <button
+                            type="button"
+                            onclick="window.filterAdminOrdersByStatus('${b.key}')"
+                            class="p-3 rounded-2xl border text-left transition flex items-center justify-between ${
+                                active
+                                    ? 'bg-brand-600 text-white border-brand-600 shadow-sm'
+                                    : `bg-brand-50/60 hover:bg-brand-100/70 ${b.color}`
+                            }"
+                        >
+                            <div>
+                                <p class="text-[11px] font-semibold opacity-85">${b.label}</p>
+                                <p class="text-lg font-bold leading-tight mt-0.5">${counts[b.key] || 0}</p>
+                            </div>
+                            <i class="fa-solid ${b.icon} text-base opacity-80"></i>
+                        </button>
+                    `;
+                }).join("");
+            }
+
+            const listContainer = document.getElementById("adminOrdersListContainer");
+            if (!listContainer) return;
+
+            const filteredOrders = currentAdminOrderFilter === "TODOS"
+                ? orders
+                : orders.filter(o => o.status === currentAdminOrderFilter);
+
+            if (filteredOrders.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="text-center py-10 bg-brand-50/50 rounded-2xl border border-brand-100">
+                        <i class="fa-solid fa-clipboard-check text-3xl text-brand-300 mb-2"></i>
+                        <p class="text-sm font-bold text-brand-800">No hay pedidos en esta categoría</p>
+                        <p class="text-xs text-brand-500 mt-0.5">Cuando un cliente confirme su compra por WhatsApp, aparecerá automáticamente aquí.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            listContainer.innerHTML = filteredOrders.map(order => {
+                const st = ORDER_STATUS_CONFIG[order.status] || ORDER_STATUS_CONFIG["Pendiente"];
+                const statuses = ["Pendiente", "En Proceso", "Por Entregar", "Despachado"];
+
+                return `
+                    <div class="rounded-3xl border border-brand-200 bg-brand-50/40 p-5 space-y-4 hover:bg-white transition shadow-sm">
+                        <!-- Cabecera del Pedido -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 pb-3">
+                            <div class="flex items-center gap-3">
+                                <span class="px-3 py-1 rounded-xl bg-brand-800 text-white font-mono text-xs font-bold">
+                                    #${order.id}
+                                </span>
+                                <div>
+                                    <h4 class="font-bold text-sm text-brand-900">${order.customerName}</h4>
+                                    <p class="text-[11px] text-brand-500">
+                                        <i class="fa-regular fa-calendar mr-1"></i>${order.createdAt || "Reciente"} •
+                                        <i class="fa-solid fa-phone ml-1 mr-1"></i>${order.customerPhone}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Etiqueta actual + Botones rápidos para cambiar Estado -->
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${st.badgeClass}">
+                                    <span class="w-2 h-2 rounded-full ${st.dotClass}"></span>
+                                    <i class="fa-solid ${st.icon}"></i>
+                                    <span>${order.status}</span>
+                                </span>
+
+                                <select
+                                    onchange="window.updateOrderStatus('${order.id}', this.value)"
+                                    class="px-3 py-1.5 rounded-xl bg-white border border-brand-300 text-xs font-bold text-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-400 cursor-pointer"
+                                    title="Cambiar etiqueta de estado del pedido"
+                                >
+                                    ${statuses.map(s => `<option value="${s}" ${s === order.status ? 'selected' : ''}>Etiqueta: ${s}</option>`).join("")}
+                                </select>
+
+                                <button
+                                    type="button"
+                                    onclick="window.deleteOrderRecord('${order.id}')"
+                                    class="px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 text-xs font-semibold"
+                                    title="Eliminar pedido del historial"
+                                >
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Cuerpo: Dirección + GPS + Productos -->
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 text-xs">
+                            <div class="lg:col-span-6 space-y-2 bg-white p-3.5 rounded-2xl border border-brand-100">
+                                <p class="font-bold text-brand-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-brand-600"></i> Dirección y Logística de Entrega
+                                </p>
+                                <p class="text-brand-700 leading-relaxed">${order.address}</p>
+                                ${order.gpsUrl ? `
+                                    <div class="pt-1">
+                                        <a href="${order.gpsUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-bold text-[11px] transition">
+                                            <i class="fa-solid fa-map-location-dot"></i>
+                                            <span>Abrir Ubicación Exacta GPS en Google Maps</span>
+                                        </a>
+                                    </div>
+                                ` : `
+                                    <p class="text-[11px] text-brand-400 italic">Sin coordenada GPS adjunta (solo dirección escrita)</p>
+                                `}
+                                ${order.notes ? `<p class="text-[11px] text-brand-600 bg-brand-50 p-2 rounded-xl"><strong>Nota cliente:</strong> ${order.notes}</p>` : ""}
+                                <p class="text-[11px] text-brand-700 pt-1">
+                                    <strong>Método de pago:</strong> ${order.paymentMethod}
+                                </p>
+                            </div>
+
+                            <div class="lg:col-span-6 space-y-2 bg-white p-3.5 rounded-2xl border border-brand-100 flex flex-col justify-between">
+                                <div>
+                                    <p class="font-bold text-brand-800 mb-1.5 flex items-center justify-between">
+                                        <span><i class="fa-solid fa-bag-shopping text-brand-600 mr-1"></i> Artículos del Pedido</span>
+                                        <span class="text-brand-600 font-serif text-sm">Total: $${Number(order.total || 0).toFixed(2)}</span>
+                                    </p>
+                                    <ul class="space-y-1 divide-y divide-brand-50">
+                                        ${(order.items || []).map(item => `
+                                            <li class="pt-1 flex justify-between text-[11px]">
+                                                <span><strong>${item.quantity}x</strong> ${item.name} <em class="text-brand-500">(${item.variantName || ''})</em></span>
+                                                <span class="font-semibold">$${(Number(item.price) * Number(item.quantity)).toFixed(2)}</span>
+                                            </li>
+                                        `).join("")}
+                                    </ul>
+                                </div>
+
+                                <!-- Barra de Envío Directo al Motorizado -->
+                                <div class="pt-3 mt-2 border-t border-brand-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                                    <input
+                                        id="driverPhone_${order.id}"
+                                        type="tel"
+                                         value="${appState.storeConfig.driverWhatsappNumber || ''}"
+                                        placeholder="WhatsApp motorizado (opcional)"
+                                        class="px-3 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs font-mono flex-1"
+                                    >
+                                    <button
+                                        type="button"
+                                        onclick="window.sendOrderToDriverWhatsApp('${order.id}')"
+                                        class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm flex items-center justify-center gap-1.5 whitespace-nowrap transition"
+                                    >
+                                        <i class="fa-solid fa-motorcycle"></i>
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        <span>Enviar Datos al Motorizado</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderAdminProductsTable() {
+            const container = document.getElementById("adminProductsTableContainer");
+            if (!container) return;
+
+            container.innerHTML = `
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="border-b border-brand-200 text-brand-500 uppercase">
+                            <th class="py-3 px-2">Producto</th>
+                            <th class="py-3 px-2">Categoría</th>
+                            <th class="py-3 px-2">Variantes y Stock</th>
+                            <th class="py-3 px-2 text-right">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-brand-100">
+                        ${appState.products.map(p => `
+                            <tr class="hover:bg-brand-50/50">
+                                <td class="py-3 px-2">
+                                    <div class="flex items-center gap-3">
+                                        <img src="${p.image}" class="w-11 h-11 rounded-xl object-cover border border-brand-200">
+                                        <div>
+                                            <p class="font-bold text-brand-900">${p.name}</p>
+                                            <p class="text-[11px] text-brand-500">${p.variantLabel}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-brand-100 text-brand-800 font-semibold">${p.category}</span>
+                                </td>
+                                <td class="py-3 px-2">
+                                    <div class="flex flex-wrap gap-1">
+                                        ${p.variants.map(v => `
+                                            <span class="px-2 py-0.5 rounded-lg bg-white border border-brand-200 text-[11px]">
+                                                <strong>${v.name}:</strong> $${Number(v.price).toFixed(2)} (${v.stock} u.)
+                                            </span>
+                                        `).join("")}
+                                    </div>
+                                </td>
+                                <td class="py-3 px-2 text-right whitespace-nowrap">
+                                    <button onclick="window.openProductModal('${p.id}')" class="px-3 py-1.5 rounded-xl bg-brand-100 hover:bg-brand-200 text-brand-800 font-semibold mr-1">
+                                        <i class="fa-solid fa-pen-to-square"></i> Editar
+                                    </button>
+                                    <button onclick="window.deleteProduct('${p.id}')" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 font-semibold">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        `).join("")}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        window.moveCategory = function(index, direction) {
+            const target = index + direction;
+            if (target < 0 || target >= appState.categories.length) return;
+            const temp = appState.categories[index];
+            appState.categories[index] = appState.categories[target];
+            appState.categories[target] = temp;
+            saveStateToCloud(true);
+        };
+
+        window.deleteCategory = function(catId) {
+            if (appState.categories.length <= 1) {
+                window.showToast("Debes mantener al menos una categoría activa", "error");
+                return;
+            }
+            appState.categories = appState.categories.filter(c => c.id !== catId);
+            saveStateToCloud(true);
+        };
+
+        /* Modal Crear / Editar Producto */
+        function populateProductCategorySelect(selectedCat = "") {
+            const select = document.getElementById("prodCategoryInput");
+            if (!select) return;
+            select.innerHTML = appState.categories.map(c =>
+                `<option value="${c.name}" ${c.name === selectedCat ? 'selected' : ''}>${c.name}</option>`
+            ).join("");
+        }
+
+        window.quickCreateCategoryPrompt = function() {
+            document.getElementById("quickCatBox").classList.remove("hidden");
+            document.getElementById("quickCatNameInput").focus();
+        };
+
+        window.confirmQuickCategory = function() {
+            const inp = document.getElementById("quickCatNameInput");
+            const name = inp.value.trim();
+            if (!name) return;
+            if (!appState.categories.some(c => c.name.toLowerCase() === name.toLowerCase())) {
+                appState.categories.push({ id: "cat-" + Date.now(), name, icon: "fa-star" });
+            }
+            populateProductCategorySelect(name);
+            inp.value = "";
+            document.getElementById("quickCatBox").classList.add("hidden");
+            saveStateToCloud(false);
+            window.showToast(`Categoría "${name}" creada y seleccionada`);
+        };
+
+        window.openProductModal = function(productId = null) {
+            const modal = document.getElementById("productModal");
+            const rowsContainer = document.getElementById("variantRowsContainer");
+            rowsContainer.innerHTML = "";
+
+            if (productId) {
+                const p = appState.products.find(item => item.id === productId);
+                if (!p) return;
+                document.getElementById("productModalTitle").textContent = "Editar Producto";
+                document.getElementById("prodIdInput").value = p.id;
+                document.getElementById("prodNameInput").value = p.name;
+                populateProductCategorySelect(p.category);
+                document.getElementById("prodDescInput").value = p.description;
+                document.getElementById("prodImageInput").value = p.image;
+                document.getElementById("prodVariantLabelInput").value = p.variantLabel || "Talla / Tono";
+                document.getElementById("prodFeaturedInput").checked = !!p.featured;
+                p.variants.forEach(v => window.addVariantRow(v));
+            } else {
+                document.getElementById("productModalTitle").textContent = "Nuevo Producto";
+                document.getElementById("prodIdInput").value = "";
+                document.getElementById("prodNameInput").value = "";
+                populateProductCategorySelect(appState.categories[0]?.name || "");
+                document.getElementById("prodDescInput").value = "";
+                document.getElementById("prodImageInput").value = "";
+                document.getElementById("prodVariantLabelInput").value = "Talla / Tono";
+                document.getElementById("prodFeaturedInput").checked = false;
+                window.addVariantRow({ name: "Estándar / Talla M", price: 19.90, stock: 10 });
+            }
+
+            modal.classList.remove("hidden");
+        };
+
+        window.closeProductModal = function() {
+            document.getElementById("productModal").classList.add("hidden");
+        };
+
+        window.addVariantRow = function(variant = { name: "", price: 15, stock: 5 }) {
+            const container = document.getElementById("variantRowsContainer");
+            const row = document.createElement("div");
+            row.className = "grid grid-cols-12 gap-2 items-center variant-item-row";
+            row.innerHTML = `
+                <div class="col-span-5">
+                    <input type="text" required placeholder="Ej. Talla M / Tono Ruby" value="${variant.name || ''}" class="var-name w-full px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs">
+                </div>
+                <div class="col-span-3">
+                    <input type="number" step="0.01" min="0.1" required placeholder="Precio $" value="${variant.price ?? 15}" class="var-price w-full px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs">
+                </div>
+                <div class="col-span-3">
+                    <input type="number" step="1" min="0" required placeholder="Stock" value="${variant.stock ?? 5}" class="var-stock w-full px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs">
+                </div>
+                <div class="col-span-1 text-right">
+                    <button type="button" onclick="this.closest('.variant-item-row').remove()" class="text-rose-500 hover:text-rose-700 text-xs">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `;
+            container.appendChild(row);
+        };
+
+        window.handleSaveProduct = function(e) {
+            e.preventDefault();
+            const id = document.getElementById("prodIdInput").value || ("prod-" + Date.now());
+            const name = document.getElementById("prodNameInput").value.trim();
+            const category = document.getElementById("prodCategoryInput").value;
+            const description = document.getElementById("prodDescInput").value.trim();
+            const image = document.getElementById("prodImageInput").value.trim();
+            const variantLabel = document.getElementById("prodVariantLabelInput").value.trim() || "Opción";
+            const featured = document.getElementById("prodFeaturedInput").checked;
+
+            const rows = Array.from(document.querySelectorAll(".variant-item-row"));
+            if (rows.length === 0) {
+                window.showToast("Agrega al menos una variante con precio y stock", "error");
+                return;
+            }
+
+            const variants = rows.map((r, i) => ({
+                id: `v-${Date.now()}-${i}`,
+                name: r.querySelector(".var-name").value.trim(),
+                price: parseFloat(r.querySelector(".var-price").value) || 0,
+                stock: parseInt(r.querySelector(".var-stock").value, 10) || 0
+            }));
+
+            const existingIdx = appState.products.findIndex(p => p.id === id);
+            const productObj = { id, name, category, description, image, featured, variantLabel, variants };
+
+            if (existingIdx >= 0) {
+                appState.products[existingIdx] = productObj;
+            } else {
+                appState.products.unshift(productObj);
+            }
+
+            window.closeProductModal();
+            saveStateToCloud(true);
+        };
+
+        window.deleteProduct = function(productId) {
+            appState.products = appState.products.filter(p => p.id !== productId);
+            saveStateToCloud(true);
+        };
+
+        /* Compresión ligera de imágenes subidas (Logo, Productos, QR Deuna!) */
+        function compressImageFile(file, maxWidth = 500, callback) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement("canvas");
+                    const ratio = Math.min(1, maxWidth / img.width);
+                    canvas.width = Math.round(img.width * ratio);
+                    canvas.height = Math.round(img.height * ratio);
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    callback(canvas.toDataURL("image/jpeg", 0.84));
+                };
+                img.src = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        window.handleProductImageUpload = function(e) {
+            const file = e.target.files?.[0];
+            compressImageFile(file, 650, (dataUrl) => {
+                document.getElementById("prodImageInput").value = dataUrl;
+                window.showToast("Foto cargada lista para guardar");
+            });
+        };
+
+        window.handleLogoUpload = function(e) {
+            const file = e.target.files?.[0];
+            compressImageFile(file, 320, (dataUrl) => {
+                appState.storeConfig.logoUrl = dataUrl;
+                document.getElementById("cfgLogoUrl").value = dataUrl;
+                window.previewLogoUrl(dataUrl);
+                window.showToast("Logotipo cargado. Haz clic en Guardar Configuración.");
+            });
+        };
+
+        window.previewLogoUrl = function(url) {
+            const img = document.getElementById("adminLogoPreviewImg");
+            const icon = document.getElementById("adminLogoPreviewIcon");
+            if (url && url.trim() !== "") {
+                img.src = url;
+                img.classList.remove("hidden");
+                icon.classList.add("hidden");
+            } else {
+                img.classList.add("hidden");
+                icon.classList.remove("hidden");
+            }
+        };
+
+        window.clearStoreLogo = function() {
+            appState.storeConfig.logoUrl = "";
+            document.getElementById("cfgLogoUrl").value = "";
+            window.previewLogoUrl("");
+        };
+
+        window.handleDeunaQrUpload = function(e) {
+            const file = e.target.files?.[0];
+            compressImageFile(file, 420, (dataUrl) => {
+                appState.storeConfig.deunaCustomQrImage = dataUrl;
+                document.getElementById("adminDeunaQrPreview").src = dataUrl;
+                window.showToast("Imagen QR de Deuna! cargada");
+            });
+        };
+
+        window.resetToAutoDeunaQR = function() {
+            appState.storeConfig.deunaCustomQrImage = "";
+            window.updateAdminDeunaQRPreview();
+            window.showToast("Generador automático de QR activado", "info");
+        };
+
+        window.updateAdminDeunaQRPreview = function() {
+            const holder = document.getElementById("cfgDeunaHolder")?.value || "";
+            const phone = document.getElementById("cfgDeunaPhone")?.value || "";
+            const link = document.getElementById("cfgDeunaPaymentLink")?.value || "";
+            if (!appState.storeConfig.deunaCustomQrImage) {
+                const payload = link.trim() || `Deuna! Titular: ${holder} | Cel: ${phone}`;
+                document.getElementById("adminDeunaQrPreview").src = buildQrImageUrl(payload);
+            }
+        };
+
+        window.generateAutoDeunaQR = function() {
+            appState.storeConfig.deunaCustomQrImage = "";
+            window.updateAdminDeunaQRPreview();
+            window.showToast("Código QR Deuna! generado automáticamente", "info");
+        };
+
+        /* Cupones Admin */
+        function renderAdminCouponsList() {
+            const list = document.getElementById("adminCouponsList");
+            if (!list) return;
+            list.innerHTML = appState.coupons.map(c => `
+                <div class="flex items-center justify-between p-3.5 rounded-2xl bg-brand-50/70 border border-brand-200 text-xs">
+                    <div>
+                        <span class="font-mono font-bold text-sm text-brand-900 bg-white px-2.5 py-1 rounded-lg border border-brand-200">${c.code}</span>
+                        <span class="ml-2 font-semibold text-brand-700">
+                            ${c.type === 'percent' ? `${c.value}% de descuento` : `$${Number(c.value).toFixed(2)} USD de descuento`}
+                        </span>
+                        <span class="text-brand-500 ml-2">(Compra mín: $${Number(c.minPurchase || 0).toFixed(2)})</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="window.toggleCouponStatus('${c.id}')" class="px-3 py-1 rounded-full font-semibold ${c.active ? 'bg-emerald-100 text-emerald-800' : 'bg-brand-100 text-brand-500'}">
+                            ${c.active ? 'Activo' : 'Inactivo'}
+                        </button>
+                        <button onclick="window.deleteCoupon('${c.id}')" class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        window.handleAddCoupon = function(e) {
+            e.preventDefault();
+            const code = document.getElementById("couponCodeInput").value.trim().toUpperCase();
+            const type = document.getElementById("couponTypeInput").value;
+            const value = parseFloat(document.getElementById("couponValueInput").value) || 5;
+            const minPurchase = parseFloat(document.getElementById("couponMinInput").value) || 0;
+            if (!code) return;
+
+            appState.coupons.push({
+                id: "cp-" + Date.now(),
+                code,
+                type,
+                value,
+                minPurchase,
+                active: true
+            });
+            document.getElementById("couponCodeInput").value = "";
+            document.getElementById("couponValueInput").value = "";
+            saveStateToCloud(true);
+        };
+
+        window.toggleCouponStatus = function(couponId) {
+            const c = appState.coupons.find(item => item.id === couponId);
+            if (c) {
+                c.active = !c.active;
+                saveStateToCloud(true);
+            }
+        };
+
+        window.deleteCoupon = function(couponId) {
+            appState.coupons = appState.coupons.filter(item => item.id !== couponId);
+            saveStateToCloud(true);
+        };
+
+        function populateStoreSettingsForm() {
+            const cfg = appState.storeConfig;
+            document.getElementById("cfgLogoUrl").value = cfg.logoUrl || "";
+            window.previewLogoUrl(cfg.logoUrl || "");
+            document.getElementById("cfgStoreName").value = cfg.storeName || "";
+            document.getElementById("cfgStoreTagline").value = cfg.storeTagline || "";
+            document.getElementById("cfgWhatsapp").value = cfg.whatsappNumber || "";
+            document.getElementById("cfgShippingCost").value = cfg.shippingCost ?? 3.5;
+            document.getElementById("cfgFreeThreshold").value = cfg.freeShippingThreshold ?? 45;
+            document.getElementById("cfgBankDetails").value = cfg.bankDetails || "";
+            document.getElementById("cfgAdminPassword").value = cfg.adminPassword || "admin123";
+            document.getElementById("cfgDeunaEnabled").checked = cfg.deunaEnabled !== false;
+            document.getElementById("cfgDeunaHolder").value = cfg.deunaHolder || "";
+            document.getElementById("cfgDeunaPhone").value = cfg.deunaPhone || "";
+            document.getElementById("cfgDeunaPaymentLink").value = cfg.deunaPaymentLink || "";
+            document.getElementById("adminDeunaQrPreview").src = getActiveDeunaQrSrc();
+            document.getElementById("firebaseCustomUrlInput").value = cfg.customFirebaseDbUrl || "";
+            const apiKeyInput = document.getElementById("firebaseCustomApiKeyInput");
+            if (apiKeyInput) apiKeyInput.value = cfg.customFirebaseApiKey || "";
+            const projectIdInput = document.getElementById("firebaseCustomProjectIdInput");
+            if (projectIdInput) projectIdInput.value = cfg.customFirebaseProjectId || "";
+            const appIdInput = document.getElementById("firebaseCustomAppIdInput");
+            if (appIdInput) appIdInput.value = cfg.customFirebaseAppId || "";
+            const rawSnippetInput = document.getElementById("firebaseRawSnippetInput");
+            if (rawSnippetInput) rawSnippetInput.value = cfg.customFirebaseRawSnippet || "";
+        }
+
+        window.handleSaveStoreSettings = function(e) {
+            e.preventDefault();
+            const cfg = appState.storeConfig;
+            cfg.logoUrl = document.getElementById("cfgLogoUrl").value.trim();
+            cfg.storeName = document.getElementById("cfgStoreName").value.trim();
+            cfg.storeTagline = document.getElementById("cfgStoreTagline").value.trim();
+            cfg.whatsappNumber = document.getElementById("cfgWhatsapp").value.trim();
+            cfg.shippingCost = parseFloat(document.getElementById("cfgShippingCost").value) || 0;
+            cfg.freeShippingThreshold = parseFloat(document.getElementById("cfgFreeThreshold").value) || 0;
+            cfg.bankDetails = document.getElementById("cfgBankDetails").value.trim();
+            cfg.adminPassword = document.getElementById("cfgAdminPassword").value.trim() || "admin123";
+            cfg.deunaEnabled = document.getElementById("cfgDeunaEnabled").checked;
+            cfg.deunaHolder = document.getElementById("cfgDeunaHolder").value.trim();
+            cfg.deunaPhone = document.getElementById("cfgDeunaPhone").value.trim();
+            cfg.deunaPaymentLink = document.getElementById("cfgDeunaPaymentLink").value.trim();
+            saveStateToCloud(true);
+        };
+
+        function renderAll() {
+            renderHeaderAndBranding();
+            renderCategoryPills();
+            renderCatalogProducts();
+            renderCart();
+            const orders = Array.isArray(appState.orders) ? appState.orders : [];
+            const pendingCount = orders.filter(o => o.status !== "Despachado").length;
+            const badge = document.getElementById("adminPendingOrdersBadge");
+            if (badge) badge.textContent = pendingCount;
+            if (currentView === "admin" && isAdminAuthenticated) {
+                renderAdminPanel();
+            }
+        }
+
+        /* Auto-refresco cuando el usuario vuelve a la pestaña en celular o PC */
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "visible" && appState.storeConfig.customFirebaseDbUrl) {
+                pullFromCustomRealtimeDb(appState.storeConfig.customFirebaseDbUrl, false);
+            }
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            renderAll();
+            initCloudSync();
+        });
+    </script>
+</body>
+</html>
