@@ -749,22 +749,34 @@ const firebaseConfig = {
                         <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-2">
                             <div class="flex items-center justify-between">
                                 <span class="font-bold text-brand-900 text-[11px]">
-                                    Si en esa ventana ves un botón que dice "Crear base de datos" (Create database):
+                                    ⚠️ IMPORTANTE: Antes de pegar en Firebase, borra TODO el texto que haya en el cuadro (Ctrl + A y Borrar):
                                 </span>
                             </div>
                             <p class="text-[11px] text-brand-700">
-                                1️⃣ Haz clic en <strong>"Crear base de datos"</strong> &rarr; elige <strong>"Comenzar en modo de prueba" (Start in test mode)</strong> &rarr; dale a <strong>Habilitar/Crear</strong>.<br>
-                                2️⃣ Si ya está creada, pega estas reglas públicas y dale al botón <strong>Publicar (Publish)</strong>:
+                                • Si estás en <strong>Firestore Database</strong>, usa el botón <strong>Copiar Regla Firestore</strong>.<br>
+                                • Si estás en <strong>Realtime Database</strong> (y te salía <em>Parse error</em>), usa el botón <strong>Copiar Regla Realtime DB (JSON)</strong>.
                             </p>
-                            <div class="flex items-center justify-between gap-2 bg-brand-50 p-2 rounded-lg border border-brand-200 font-mono text-[10px] text-brand-900">
-                                <code id="firestoreRulesSnippetText" class="truncate">rules_version = '2'; service cloud.firestore { match /databases/{database}/documents { match /{document=**} { allow read, write: if true; } } }</code>
-                                <button
-                                    type="button"
-                                    onclick="window.copyFirestoreRulesSnippet()"
-                                    class="px-2.5 py-1 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-sans font-bold text-[10px] shrink-0"
-                                >
-                                    Copiar Regla
-                                </button>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                                <div class="flex items-center justify-between gap-2 bg-brand-50 p-2 rounded-lg border border-brand-200 font-mono text-[10px] text-brand-900">
+                                    <span class="truncate font-sans font-semibold">Opción A: Regla Firestore</span>
+                                    <button
+                                        type="button"
+                                        onclick="window.copyFirestoreRulesSnippet()"
+                                        class="px-2.5 py-1 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-sans font-bold text-[10px] shrink-0"
+                                    >
+                                        Copiar Regla Firestore
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between gap-2 bg-brand-50 p-2 rounded-lg border border-brand-200 font-mono text-[10px] text-brand-900">
+                                    <span class="truncate font-sans font-semibold">Opción B: Regla Realtime DB</span>
+                                    <button
+                                        type="button"
+                                        onclick="window.copyRtdbRulesSnippet()"
+                                        class="px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-sans font-bold text-[10px] shrink-0"
+                                    >
+                                        Copiar Regla Realtime DB (JSON)
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1807,14 +1819,25 @@ const firebaseConfig = {
         };
 
         window.copyFirestoreRulesSnippet = function() {
-            const rulesText = `rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if true;\n    }\n  }\n}`;
+            const rulesText = "rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if true;\n    }\n  }\n}";
             const tempArea = document.createElement("textarea");
             tempArea.value = rulesText;
             document.body.appendChild(tempArea);
             tempArea.select();
             document.execCommand("copy");
             document.body.removeChild(tempArea);
-            window.showToast("Reglas copiadas. Pégalas en la ventana de Firebase y dale a Publicar.");
+            window.showToast("Regla de Firestore copiada. Borra todo el cuadro en Firebase antes de pegar.");
+        };
+
+        window.copyRtdbRulesSnippet = function() {
+            const rulesText = '{\n  "rules": {\n    ".read": true,\n    ".write": true\n  }\n}';
+            const tempArea = document.createElement("textarea");
+            tempArea.value = rulesText;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempArea);
+            window.showToast("Regla JSON de Realtime Database copiada. Borra todo el cuadro en Firebase antes de pegar.");
         };
 
         async function pullFromCustomRealtimeDb(dbUrl, notify = true) {
